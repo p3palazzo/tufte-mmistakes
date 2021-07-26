@@ -1,0 +1,158 @@
+@import "settings";
+
+* {
+  font-variant: proportional-nums oldstyle-nums;
+}
+
+p.subtitle, h1, h2, h3 { font-variant: lining-nums; }
+.newthought { font-variant: all-small-caps !important; }
+
+.subfigures > p:last-of-type,
+caption,
+figcaption,
+sup,
+.marginnote,
+.sidenote {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+dd {
+  margin-left: 0;
+}
+
+dt,
+h5,
+h6,
+blockquote > footer,
+sup,
+.sidenote-number,
+.sidenote-number::after,
+.sidenote::before {
+  font-variant: oldstyle-nums;
+  font-weight: 500;
+}
+
+iframe,
+img,
+video {
+  border: 0.5px solid $text-color;
+  &.line,
+  &.nobg {
+    border: 0;
+  }
+}
+
+ul {
+  list-style-type: none;
+  li {
+    text-indent: -2rem;
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+hr {
+  border: 0;
+  clear: both;
+  width: 100%;
+  padding: 1.2rem 0;
+  content: "* * *";
+}
+
+// Outset dates in résumé
+.cv dt {
+  font-variant: tabular-nums oldstyle-nums all-small-caps;
+  font-weight: 400;
+  margin-left: -8rem;
+}
+
+@media (min-width: 761px) {
+  ol,
+  ul {
+    padding-left: 0;
+  }
+}
+
+p.signoff,
+#main-nav,
+#lang-select {
+  a:link {
+    background: none;
+    text-shadow: none;
+    &::after {
+      content: "  ";
+    }
+  }
+}
+
+#lang-select {
+  float: right;
+  font-weight: 500;
+  margin-right: 45%;
+  margin-top: 0.5rem;
+  margin-top: 1rem;
+}
+
+.en:lang(en), .fr:lang(fr), .pt:lang(pt){
+    color: transparentize($text-color, 0.5);
+  }
+
+@media (max-width: $medium) {
+  dt,
+  h5,
+  h6 {
+    float: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: $background-color;
+    background-color: lighten($text-color, 10%);
+    a:link {
+      text-decoration: none;
+      background: -webkit-linear-gradient(lighten($text-color, 10%), lighten($text-color, 10%)), -webkit-linear-gradient(lighten($text-color, 10%), lighten($text-color, 10%)), -webkit-linear-gradient(lighten($background-color, 15%), lighten($background-color, 15%));
+      background: linear-gradient(lighten($text-color, 10%), lighten($text-color, 10%)), linear-gradient(lighten($text-color, 10%), lighten($text-color, 10%)), linear-gradient(lighten($background-color, 15%), lighten($background-color, 15%));
+      -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      background-repeat: no-repeat, no-repeat, repeat-x;
+      text-shadow: 0.03em 0 lighten($text-color, 10%), -0.03em 0 lighten($text-color, 10%), 0 0.03em lighten($text-color, 10%), 0 -0.03em lighten($text-color, 10%), 0.06em 0 lighten($text-color, 10%), -0.06em 0 lighten($text-color, 10%), 0.09em 0 lighten($text-color, 10%), -0.09em 0 lighten($text-color, 10%), 0.12em 0 lighten($text-color, 10%), -0.12em 0 lighten($text-color, 10%), 0.15em 0 lighten($text-color, 10%), -0.15em 0 lighten($text-color, 10%);
+      background-position: 0% 93%, 100% 93%, 0% 93%;
+    }
+    img, .line, .nobg {
+      background: none;
+    }
+    table {
+      border-top: 2px solid $background-color;
+      border-bottom: 2px solid $background-color;
+      td {
+        border-top: 1px solid $background-color;
+      }
+      th {
+        border-bottom: 1px solid $background-color;
+      }
+    }
+    .line,
+    .nobg {
+      border: 0;
+      filter: none;
+      -webkit-filter: none;
+    }
+    .marginnote,
+    .sidenote {
+      background: transparentize(lighten($text-color, 10%), 0.3);
+    }
+  }
+  #main-nav a:link,
+  #lang-select a:link {
+      background: none;
+      text-shadow: none;
+  }
+  .en:lang(en), .fr:lang(fr), .pt:lang(pt){
+    color: transparentize($background-color, 0.5);
+  }
+}
+// vim: set shiftwidth=2 foldmethod=indent
