@@ -22,11 +22,6 @@ li:not(:first-child) {
     margin-top: initial;
 }
 
-/* Make "Home" link small */
-p.signoff {
-    font-size: %type-size-6;
-}
-
 /**
  * Makes it so that top-level <p> don't need to be wrapped in <section>
  */

@@ -59,7 +59,3 @@ $green:     #859900;
 @media (prefers-color-scheme: dark)  {
   @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
 }
-html * {
-    color-profile: sRGB;
-    rendering-intent: auto;
-}
