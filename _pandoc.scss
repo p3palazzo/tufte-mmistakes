@@ -1,4 +1,8 @@
 
+/* Make byline (date and/or author) small */
+p.byline { font-size: 1.2rem; }
+
+.page__content {
 /* For smart quotes */
 q { quotes: "“" "”" "‘" "’"; }
 
@@ -14,30 +18,34 @@ article > section {
   padding-bottom: 1rem;
 }
 
-/* Make byline (date and/or author) small */
-p.byline { font-size: $type-size-6; }
-
 
 /* Simulate Pandoc's table output styles */
 table {
+  border: 0;
   border-collapse: collapse;
-  border-top: 2px solid $text-color;
-  border-bottom: 2px solid $text-color;
   caption {
+    font-size: 1.1rem;
     font-weight: 500;
     margin: 1.1rem 0;
   }
 }
+thead,
 th {
+  border-top: 2px solid $text-color;
   border-bottom: 1px solid $text-color;
 }
 td, th {
-  font-variant: tabular-nums;
+  border: 0;
+  font-size: 1.4rem;
+  font-variant: tabular-nums oldstyle-nums;
   padding: 10px;
   text-align: left;
   & > p {
     margin-top: 0;
   }
+}
+tbody {
+  border-bottom: 2px solid $text-color;
 }
 
 /* Allow tables to be full width
@@ -112,4 +120,5 @@ pre:not(.sourceCode) {
 #refs a {
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
 }

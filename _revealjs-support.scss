@@ -16,6 +16,8 @@ h3.unlisted { display: none; }
 // Fix width of incremental Reveal.js sections
 // Align Reveal.js presenter notes as regular paragraphs.
 // Alternatively, uncomment the second line to hide them completely.
+.page__content div.incremental,
+.page__content div.notes,
 div.incremental,
 div.notes {
   @extend section;

@@ -1,11 +1,4 @@
-@charset "utf-8";
-
-* {
-  font-variant: proportional-nums oldstyle-nums;
-}
-
-p.subtitle, h1, h2, h3 { font-variant: lining-nums; }
-.newthought { font-variant: all-small-caps !important; }
+.page__content {
 
 .subfigures > p:last-of-type,
 caption,
@@ -17,31 +10,43 @@ sup,
   margin-bottom: 0.3rem;
 }
 
-dd {
-  font-size: $type-size-5;
-  margin-left: 0;
+div.subfigures > p:last-of-type,
+section > figure > figcaption {
+  margin-right: -60%;
+  max-width: 50%;
 }
 
-dt,
-h5,
-h6,
-blockquote > footer,
-sup,
+// Reverte para as medidas normais quando é fullwidth
+div.subfigures.fullwidth > p:last-of-type {
+  margin-right: 0;
+  max-width: 33%;
+}
+
+div.columns figcaption {
+    max-width: 60%;
+}
+
 .sidenote-number,
 .sidenote-number::after,
 .sidenote::before {
+  font-family: $global-font-family !important;
   font-variant: oldstyle-nums;
   font-weight: 500;
 }
 
-iframe,
 img,
-video {
+video,
+iframe {
   border: 0.5px solid $text-color;
-  &.line,
-  &.nobg {
-    border: 0;
-  }
+}
+
+img.line,
+img.nobg {
+  border: 0;
+}
+
+dd {
+    font-size: 1.4rem;
 }
 
 ul {
@@ -53,29 +58,18 @@ ul {
     }
   }
 }
-li.masthead__menu-item {
-  background: none;
-  border: 0;
-  font-size: $type-size-6;
-  text-indent: 0;
-  &::before {
-    content: "";
-  }
-}
 
 hr {
   border: 0;
   clear: both;
   width: 100%;
   padding: 1.2rem 0;
-  content: "* * *";
 }
 
-// Outset dates in résumé
-.cv dt {
-  font-variant: tabular-nums oldstyle-nums all-small-caps;
-  font-weight: 400;
-  margin-left: -8rem;
+table.total tbody tr:last-of-type td {
+    border-top: 1px solid $text-color;
+}
+
 }
 
 @media (min-width: 761px) {
@@ -85,54 +79,80 @@ hr {
   }
 }
 
-#main-nav,
-#lang-select {
-  a:link {
-    background: none;
-    text-shadow: none;
-    &::after {
-      content: "  ";
+@media (max-width: 760px) {
+    .page__content {
+        dt,
+        h5,
+        h6 {
+        float: none;
+        }
+        img.marginnote,
+        section > figure > figcaption,
+        div.fullwidth > figure > figcaption,
+        div.column > figure > figcaption,
+        div.subfigures > p:last-of-type,
+        div.subfigures.columns > p:last-of-type,
+        div.subfigures.fullwidth > p:last-of-type {
+            margin-right: 0;
+            max-width: none;
+        }
+        .column,
+        img.marginnote {
+            display: inline;
+            width: 100% !important;
+        }
     }
-  }
 }
 
-#lang-select {
-  float: right;
-  font-weight: 500;
-  margin-right: 45%;
-  margin-top: 0.5rem;
-  margin-top: 1rem;
-}
+/*****************************************************
+ * O Moodle Aprender 3 não tem modo escuro.
+ * Para adequar ao nosso esquema de cores,
+ * incluir código abaixo na seção "Geral".
 
-.en:lang(en), .fr:lang(fr), .pt:lang(pt){
-    color: transparentize($text-color, 0.5);
-  }
+   <style>
+     body,
+     div.page,
+     #region-main,
+     div.content,
+     h3.sectionname,
+     #page .course-content ul li.section.main {
+       color: #111115; background-color: $background-color;
+     }
+   </style>
 
-// Minimal-Mistakes
-.site-title {
-  a,
-  a > .site-subtitle {
-    background: none;
-  }
-  font-variant: lining-nums;
-  font-weight: 400;
-}
+ * O código a seguir cancela o modo escuro neste site.
+ *****************************************************/
 
-.site-subtitle {
-  font-size: $h-size-4;
-  font-style: italic;
-}
-
-@media (max-width: $medium) {
-  dt,
-  h5,
-  h6 {
-    float: none;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: no-preference),
+       (prefers-color-scheme: light),
+       (prefers-color-scheme: dark) {
   body {
+    color: $text-color;
+    background-color: $background-color;
+    a:link {
+      text-decoration: none;
+      background: -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
+      background: linear-gradient($background-color, $background-color), linear-gradient($background-color, $background-color), linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
+      -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      background-repeat: no-repeat, no-repeat, repeat-x;
+      text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
+      background-position: 0% 93%, 100% 93%, 0% 93%;
+    }
+    img, .line, .nobg {
+      background: none;
+    }
+    table {
+      border-top: 2px solid $text-color;
+      border-bottom: 2px solid $text-color;
+      td {
+        border-top: 1px solid $text-color;
+      }
+      th {
+        border-bottom: 1px solid $text-color;
+      }
+    }
     .line,
     .nobg {
       border: 0;
@@ -140,13 +160,5 @@ hr {
       -webkit-filter: none;
     }
   }
-  #main-nav a:link,
-  #lang-select a:link {
-      background: none;
-      text-shadow: none;
-  }
-  .en:lang(en), .fr:lang(fr), .pt:lang(pt){
-    color: transparentize($background-color, 0.5);
-  }
 }
-// vim: set shiftwidth=2 foldmethod=indent
+// vim: set shiftwidth=4 :
