@@ -43,6 +43,7 @@ easy to activate.
 
 ## Installation
 
-Extract (or check out) the `*.scss` files from this repository into the
-`_sass` directory of your Jekyll project.
+- Extract (or submodule, or check out) the `*.scss` files from this
+  repository into the `_sass` directory of your Jekyll project.
+- Copy `main.scss` and `revealjs-main.scss` to `/assets/css/`.
 
