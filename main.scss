@@ -185,7 +185,8 @@ ol li {
 	}
 
 	a.btn {
-		background: none;
+		background: transparentize($text-color, 0.7);
+    box-shadow: 2px 2px 4px 4px transparentize($text-color, 0.5) inset;
 		color: $background-color;
 		font-size: $type-size-5;
 		font-variant: all-small-caps;
