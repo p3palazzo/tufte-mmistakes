@@ -49,6 +49,9 @@ html {
     padding-top: 0.3rem;
     width: 100%;
   }
+  h2:empty {
+    padding: 0;
+  }
   dt, h3, h4, h5 {
     @extend .smallcaps;
     font-size: $heading2Size;
