@@ -178,6 +178,7 @@ figure {
 }
 
 figcaption {
+    color: $text-color;
     float: right;
     clear: right;
     margin-top: 0;
@@ -456,6 +457,10 @@ label.margin-toggle:not(.sidenote-number) {
 a:link,
 a:visited {
     color: inherit;
+}
+.page__content a:hover,
+a:hover {
+    color: $text-color;
 }
 
 .no-tufte-underline:link {
