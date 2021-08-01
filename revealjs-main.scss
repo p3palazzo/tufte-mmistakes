@@ -34,11 +34,20 @@ html {
   div.subfigures > p,
   dl,
   figcaption,
-  h1, h2, h3, h4, h5,
+  h3, h4, h5,
   ol, ul,
   .box {
     background: transparentize($backgroundColor, 0.3);
     backdrop-filter: blur(5px);
+  }
+  h1, h2 {
+    background: $backgroundColor;
+    position: fixed;
+    bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.3rem;
+    width: 100%;
   }
   dt, h3, h4, h5 {
     @extend .smallcaps;
