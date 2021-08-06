@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+// Reset font sizes set by Minimal-Mistakes
+* {
+    font-size: initial;
+}
+
 /* Import ET Book styles
    adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
@@ -8,15 +13,17 @@ html {
     font-size: 15px;
 }
 
-body {
+body.wide {
     width: 87.5%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
+    max-width: 1400px;
+}
+body {
     font-family: $serif;
     background-color: $background-color;
     color: $text-color;
-    max-width: 1400px;
     counter-reset: sidenote-counter;
 }
 
@@ -38,6 +45,41 @@ p.subtitle {
     line-height: 1;
     em { font-style: normal; }
 }
+}
+
+// Use reduced widths only on .wide pages
+.wide .page__content {
+    hr,
+    section > p,
+    section > footer,
+    section > table,
+    section > div > table,
+    blockquote p,
+    blockquote footer,
+    div.csl-bib-body {
+        width: 55%;
+    }
+    section > dl,
+    section > ol,
+    section > ul {
+        width: 50%;
+    }
+    figure {
+        max-width: 55%;
+    }
+    div.fullwidth,
+    table.fullwidth {
+        width: 100%;
+    }
+    pre > code {
+        width: 52.5%;
+    }
+    pre.fullwidth > code {
+        width: 90%;
+    }
+    .fullwidth {
+        max-width: 90%;
+    }
 }
 
 .page__content {
@@ -66,7 +108,6 @@ h3 {
 hr {
     display: block;
     height: 1px;
-    width: 55%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
@@ -136,28 +177,18 @@ blockquote {
 }
 
 blockquote p {
-    width: 55%;
     margin-right: 40px;
 }
 
 blockquote footer {
-    width: 55%;
     font-size: 1.1rem;
     text-align: right;
-}
-
-section > p,
-section > footer,
-section > table,
-section > div > table {
-    width: 55%;
 }
 
 /* 50 + 5 == 55, to be the same width as paragraph */
 section > dl,
 section > ol,
 section > ul {
-    width: 50%;
     -webkit-padding-start: 5%;
 }
 
@@ -172,7 +203,6 @@ figure {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    max-width: 55%;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin: 0 0 3em 0;
@@ -200,7 +230,6 @@ figure.fullwidth figcaption {
    implemented in Jekyll-Pandoc-Tufte.
  */
 div.csl-bib-body {
-    width: 55%;
     font-size: 1.4rem;
     line-height: 2rem;
 }
@@ -286,11 +315,6 @@ blockquote .marginnote {
     text-align: left;
 }
 
-div.fullwidth,
-table.fullwidth {
-    width: 100%;
-}
-
 div.table-wrapper {
     overflow-x: auto;
     font-family: $sans-serif-narrow;
@@ -325,18 +349,12 @@ h3 > code {
 
 pre > code {
     font-size: 0.9rem;
-    width: 52.5%;
     margin-left: 2.5%;
     overflow-x: auto;
     display: block;
 }
 
-pre.fullwidth > code {
-    width: 90%;
-}
-
 .fullwidth {
-    max-width: 90%;
     clear:both;
 }
 
@@ -383,7 +401,7 @@ label.margin-toggle:not(.sidenote-number) {
         padding-right: 8%;
     }
 
-  .page__content {
+  .wide .page__content {
     hr,
     section > p,
     section > footer,

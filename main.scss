@@ -108,17 +108,9 @@ ul.visible-links {
 	font-family: "Font Awesome 5 Free" !important;
 }
 
-/***************
- * Page layout *
- ***************/
-.page {
-	width: 87.5%;
-}
-
 /******************
  * Header overlay *
  ******************/
-.page,
 .page__hero--overlay {
 	font-size: $type-size-4;
 	padding: 5rem 0;
