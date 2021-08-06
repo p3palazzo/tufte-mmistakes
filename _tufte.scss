@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-// Reset font sizes set by Minimal-Mistakes
-* {
-    font-size: initial;
-}
-
 /* Import ET Book styles
    adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
@@ -425,6 +420,7 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     figcaption,
+    div.fullwidth figcaption,
     figure.fullwidth figcaption {
         margin-right: 0%;
         max-width: none;

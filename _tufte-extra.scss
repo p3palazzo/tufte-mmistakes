@@ -1,4 +1,18 @@
-.wide .page__content {
+body.wide {
+    max-width: 1150px;
+
+    /**
+     * Makes it so that top-level <p> don't need to be wrapped in <section>
+     */
+    article > p,
+    article > li,
+    article > footer,
+    article > table {
+        width: 55%;
+    }
+}
+
+.page__content {
 /* The default x-height for code is slightly too large in side notes */
 .marginnote code, .sidenote code {
     font-size: 0.9rem;
@@ -26,20 +40,6 @@ li:not(:first-child) {
 /* Make "Home" link small */
 p.signoff {
     font-size: 1.2rem;
-}
-
-body.wide {
-    max-width: 1150px;
-
-/**
- * Makes it so that top-level <p> don't need to be wrapped in <section>
- */
-article > p,
-article > li,
-article > footer,
-article > table {
-    width: 55%;
-}
 }
 
 /*
@@ -178,7 +178,7 @@ div.fullwidth {
         }
     }
     figcaption {
-        max-width: 33%; // Correctly align Pandoc-crossref figcaptions in full-width figures
+        max-width: 31.5%;
     }
 }
 
