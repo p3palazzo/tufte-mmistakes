@@ -13,7 +13,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-family: $serif;
     background-color: $background-color;
     color: $text-color;
     max-width: 1400px;
@@ -74,7 +74,8 @@ hr {
 }
 
 .numeral {
-    font-family: et-book-roman-old-style;
+    font-family: $serif;
+    font-variant: oldstyle-nums;
 }
 
 .danger {
@@ -259,7 +260,8 @@ img {
 
 .sidenote-number:after,
 .sidenote:before {
-    font-family: et-book-roman-old-style;
+    font-family: $serif;
+    font-variant: oldstyle-nums;
     position: relative;
     vertical-align: baseline;
 }
@@ -291,16 +293,16 @@ table.fullwidth {
 
 div.table-wrapper {
     overflow-x: auto;
-    font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+    font-family: $sans-serif-narrow;
 }
 
 .sans {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-family: $sans-serif;
     letter-spacing: .03em;
 }
 
 code, pre > code {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: $monospace;
     font-size: 1.0rem;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
