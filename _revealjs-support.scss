@@ -39,10 +39,11 @@ div.r-stack > figure {
 // Support Pandoc columns for reveal.js
 .columns {
   @extend .fullwidth;
+  clear: both;
   &.subfigures > p:last-of-type {
     max-width: 33%;
-   margin-bottom: 1.1rem;
- }
+    margin-bottom: 1.1rem;
+  }
 }
 
 .column  {

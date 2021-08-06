@@ -150,6 +150,7 @@ li > dl {
 // Subfigures need to share width and margin features of regular
 // figures, but zero-padding them leads to unexpected results.
 div.subfigures {
+    @extend .fullwidth;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin: 0 0 3em 0;
@@ -162,7 +163,6 @@ div.subfigures {
         line-height: 1.6;
         vertical-align: baseline;
         position: relative;
-        max-width: 40%;
     }
 }
 
@@ -171,14 +171,9 @@ div.fullwidth {
     & > figure {
         max-width: 100%;
     }
-    &.subfigures {
-        max-width: 90%;
-        & > p:last-of-type { // Subfigure captions
-            max-width: 33%;
-        }
-    }
-    figcaption {
-        max-width: 31.5%;
+    figcaption,
+    p:last-of-type {
+        max-width: 31%;
     }
 }
 

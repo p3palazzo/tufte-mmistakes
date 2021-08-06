@@ -11,16 +11,14 @@ sup,
   margin-bottom: 0.3rem;
 }
 
-div.subfigures > p:last-of-type,
 section > figure > figcaption {
   margin-right: -60%;
   max-width: 50%;
 }
 
 // Reverte para as medidas normais quando é fullwidth
-div.subfigures.fullwidth > p:last-of-type {
-  margin-right: 0;
-  max-width: 33%;
+.fullwidth p {
+    width: 100%;
 }
 
 div.columns figcaption {
