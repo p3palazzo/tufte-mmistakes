@@ -21,11 +21,11 @@ html {
   font-size: $mainFontSize;
   font-variant: oldstyle-nums proportional-nums;
 }
-.smallcaps { // Declare before @extends that depend on it.
-  font-variant: all-small-caps;
-}
 
 .reveal {
+  .smallcaps { // Declare before @extends that depend on it.
+    font-variant: all-small-caps;
+  }
   // Elements ------------------------------------
   // Provide a soft background knockout that disappears
   // in front of the default background color.
