@@ -133,7 +133,7 @@ li:not(:first-child) {
 // Bonus: fix width of <dl> inside <li>
 li > dl {
     &, & > p {
-	width: 100%;
+        width: 100%;
     }
 }
 /* Here there ends the semantic emulation of .newthought */
@@ -215,21 +215,21 @@ p~figure > img.marginnote, div.notes~figure > img.marginnote { margin-top: 1.6re
 // TODO: use variables and a rebase mixin instead of
 //       hard-coding every color twice.
 @media (prefers-color-scheme: dark) {
-  body { color: #fffff8;
-         background-color: lighten(#111, 10%); }
+  body { color: $background-color;
+         background-color: lighten($text-color, 10%); }
   a:link { text-decoration: none;
-           background: -webkit-linear-gradient(#111, #111), -webkit-linear-gradient(#111, #111), -webkit-linear-gradient(lighten(#fffff8, 10%), lighten(#fffff8, 10%));
-           background: linear-gradient(#111, #111), linear-gradient(#111, #111), linear-gradient(lighten(#fffff8, 10%), lighten(#fffff8, 10%));
+           background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%));
+           background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%));
            -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
            -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
            background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
            background-repeat: no-repeat, no-repeat, repeat-x;
-           text-shadow: 0.03em 0 #111, -0.03em 0 #111, 0 0.03em #111, 0 -0.03em #111, 0.06em 0 #111, -0.06em 0 #111, 0.09em 0 #111, -0.09em 0 #111, 0.12em 0 #111, -0.12em 0 #111, 0.15em 0 #111, -0.15em 0 #111;
+           text-shadow: 0.03em 0 $text-color, -0.03em 0 $text-color, 0 0.03em $text-color, 0 -0.03em $text-color, 0.06em 0 $text-color, -0.06em 0 $text-color, 0.09em 0 $text-color, -0.09em 0 $text-color, 0.12em 0 $text-color, -0.12em 0 $text-color, 0.15em 0 $text-color, -0.15em 0 $text-color;
            background-position: 0% 93%, 100% 93%, 0% 93%; }
-  img { background-color: darken(#fffff8, 10%); } // Prevents transparent PNGs from becoming unreadable
-  table { border-top: 2px solid #fffff8;
-          border-bottom: 2px solid #fffff8; }
-  td { border-top: 1px solid #fffff8; }
-  th { border-bottom: 1px solid #fffff8; }
+  img { background-color: darken($background-color, 10%); } // Prevents transparent PNGs from becoming unreadable
+  table { border-top: 2px solid $background-color;
+          border-bottom: 2px solid $background-color; }
+  td { border-top: 1px solid $background-color; }
+  th { border-bottom: 1px solid $background-color; }
 }
 // vim: set shiftwidth=4 :
