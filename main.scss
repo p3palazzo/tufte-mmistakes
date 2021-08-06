@@ -74,6 +74,9 @@ body {
 	line-height: 1;
 }
 
+/*******************************************
+ * Masthead, site title and navigation links
+ *******************************************/
 .masthead {
 	display: none;
 }
@@ -93,35 +96,28 @@ a.site-title {
 	}
 }
 
+// Smaller Masthead links
 ul.visible-links {
 	font-size: $h-size-4;
 }
 
+// Fix FontAwesome icons
 .fas,
 .fab,
 .fa {
 	font-family: "Font Awesome 5 Free" !important;
 }
 
-.page__content h2 {
-  margin-top: 3em;
+/***************
+ * Page layout *
+ ***************/
+.page {
+	width: 87.5%;
 }
 
-ul li, // Resets minimal-mistakes/_base.scss
-ol li {
-	margin-bottom: 0;
-}
-
-.wide .sticky {
-	background: $background-color;
-	margin-left: 7.5%;
-	padding: 2em 5%;
-	top: 0;
-	width: 55%;
-	opacity: 1;
-	z-index: 999;
-}
-
+/******************
+ * Header overlay *
+ ******************/
 .page,
 .page__hero--overlay {
 	font-size: $type-size-4;
@@ -195,8 +191,53 @@ ol li {
 	}
 }
 
-.page {
-	width: 87.5%;
+/****************************
+ * Navigation and page meta *
+ ****************************/
+.wide .sticky {
+	background: $background-color;
+	margin-left: 7.5%;
+	padding: 2em 5%;
+	top: 0;
+	width: 55%;
+	opacity: 1;
+	z-index: 999;
+}
+
+.wide .sidebar__right,
+.wide .pagination {
+	@extend section;
+	width: 55%;
+}
+
+.toc {
+	border: none;
+	box-shadow: none;
+	color: $text-color;
+	header {
+		display: none;
+	}
+}
+
+.page__meta {
+  font-variant: lining-nums;
+}
+
+.page__date strong {
+	font-weight: 500;
+}
+
+/****************
+ * Page content *
+ ****************/
+.page__content h2 {
+  margin-top: 3em;
+}
+
+// Resets minimal-mistakes/_base.scss
+ul li,
+ol li {
+	margin-bottom: 0;
 }
 
 // Figures in Minimal-mistakes are flex.
@@ -219,31 +260,9 @@ figure {
 	}
 }
 
-.wide .sidebar__right,
-.wide .pagination {
-	@extend section;
-	width: 55%;
-}
-
-.toc {
-	border: none;
-	box-shadow: none;
-	color: $text-color;
-	header {
-		display: none;
-	}
-}
-
+// Fix link underlines
 a:hover {
 	text-decoration: none !important;
-}
-
-.page__meta {
-  font-variant: lining-nums;
-}
-
-.page__date strong {
-	font-weight: 500;
 }
 
 a.pagination--pager {
@@ -265,6 +284,16 @@ a.pagination--pager {
 .page__footer-copyright {
 	font-size: $type-size-5;
 }
+
+/******************
+ * Helper classes *
+ ******************/
+/*
+// Native way of handling fullwidth divs
+.fullwidth {
+  @extend .full;
+}
+*/
 
 @media (max-width: $medium) {
 	.page,
