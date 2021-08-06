@@ -343,6 +343,9 @@ pre.fullwidth > code {
 span.newthought {
     font-variant: small-caps;
     font-size: 1.2em;
+    .smallcaps {
+      text-transform: uppercase;
+    }
 }
 
 input.margin-toggle {
