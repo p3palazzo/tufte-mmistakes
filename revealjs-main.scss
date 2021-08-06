@@ -82,16 +82,6 @@ html {
   td {
     font-variant: tabular-nums;
   }
-  // Subfigures are a nice feature of Pandoc-crossref. We use them
-  // inside column layouts.
-  figcaption,
-  div.subfigures > p:last-of-type {
-    padding: 8px 2.5%; // 2.5% + 45% + 2.5% = 50% column width.
-    position: fixed;
-    bottom: 2.5%;
-    max-width: 60%;
-    text-align: left;
-  }
 
   // Section and heading modifiers ---------------
   box-shadow: inset 0 0 5em 1em darken($backgroundColor, 0.3);
@@ -162,23 +152,28 @@ html {
   .columns {
     margin-top: -20px;
   }
+  .subfigures > p,
   .column figure {
-    object-fit: contain;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    width: 100%;
     img {
-      margin: 0;
-      height: auto;
-      width: auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
-    figcaption {
-      // Workaround assuming we'll only ever have 2 columns per slide.
-      width: inherit;
-      max-width: 45%;
+      object-fit: contain;
     }
   }
+  // Subfigures are a nice feature of Pandoc-crossref. We use them
+  // inside column layouts.
+  figcaption,
+  div.subfigures > p:last-of-type {
+    padding: 8px 2.5%; // 2.5% + 45% + 2.5% = 50% column width.
+    position: fixed;
+    bottom: 2.5%;
+    height: auto;
+    max-width: 60%;
+    text-align: left;
+  }
+
   .epigraph > blockquote > p {
     font-style: italic;
   }
