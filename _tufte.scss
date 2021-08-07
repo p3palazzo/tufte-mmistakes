@@ -350,6 +350,7 @@ pre > code {
 }
 
 .fullwidth {
+    margin-right: -60%;
     clear:both;
 }
 
@@ -389,7 +390,7 @@ label.margin-toggle:not(.sidenote-number) {
 }
 }
 
-@media (max-width: 760px) {
+@media (max-width: $medium) {
     body {
         width: 84%;
         padding-left: 8%;
