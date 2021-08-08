@@ -179,8 +179,13 @@ div.fullwidth {
 
 /* Pandoc will not generate figures with captions if the
  * image is within a <span>, so the .marginnote class needs
- * to be applied to a freestanding image. This makes sure its
+ * to be applied to a freestanding image or to a div
+ * containing the whole figure. This makes sure its
  * caption is properly aligned. */
+.marginnote > figure > figcaption {
+    max-width: 100%;
+}
+
 img.marginnote~figcaption {
     margin-right: -60%;
     max-width: 50%;
