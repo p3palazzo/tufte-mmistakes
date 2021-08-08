@@ -131,6 +131,10 @@ html {
         display: none;
       }
     }
+    // Make sure images don't overflow from their containers
+    img {
+      object-fit: contain;
+    }
     // Hide images and text we can't put into presenter notes.
     // Prefer images as backgrounds so they fill the entire slide.
     dd,
@@ -159,9 +163,6 @@ html {
     padding: 0;
     height: 100vh;
     width: 100%;
-    img {
-      object-fit: contain;
-    }
   }
   // Subfigures are a nice feature of Pandoc-crossref. We use them
   // inside column layouts.
