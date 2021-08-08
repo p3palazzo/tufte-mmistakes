@@ -11,12 +11,19 @@ sup,
   margin-bottom: 0.3rem;
 }
 
+// Allow caption to align to top of iframe container
+div.fluid-width-video-wrapper {
+    float: left;
+}
+
+// Properly place captions of iframe "figures"
+.iframe-wrapper:not(.fullwidth) > p:last-of-type,
 section > figure > figcaption {
   margin-right: -60%;
   max-width: 50%;
 }
 
-// Reverte para as medidas normais quando é fullwidth
+// Revert to regular paragraph width
 .fullwidth p {
     width: 100%;
 }
