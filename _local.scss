@@ -1,5 +1,5 @@
 article.page:first-child {
-    width: 100%;
+    width: calc(100% - 5rem);
     padding-right: 45%;
 }
 
@@ -66,6 +66,12 @@ ul {
     text-indent: -2rem;
     &::before {
       content: "— ";
+    }
+    p {
+        text-indent: 0;
+        &:first-child {
+            display: inline;
+        }
     }
   }
 }
