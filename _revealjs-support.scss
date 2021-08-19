@@ -24,12 +24,8 @@ div.notes {
   // &.notes { display: none !important; }
 }
 
-// Right now .r-stack figures are hard-coded to show up
-// in two equal columns.
-div.r-stack:not(.marginnote) > figure {
+div.r-stack > figure {
   float: left;
-  max-width: 45%;
-  margin-right: 5%;
   & > figcaption {
     float: none;
     max-width: 100%;
