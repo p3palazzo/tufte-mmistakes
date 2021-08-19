@@ -172,7 +172,7 @@ div.subfigures {
 
 // Fullwidth images within Pandoc-crossref figures and subfigures
 div.fullwidth {
-    & > figure {
+    &:not(.subfigures) > figure {
         max-width: 100%;
     }
     figcaption,
