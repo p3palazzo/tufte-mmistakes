@@ -26,9 +26,10 @@ div.notes {
 
 // Right now .r-stack figures are hard-coded to show up
 // in two equal columns.
-div.r-stack > figure {
+div.r-stack:not(.marginnote) > figure {
   float: left;
-  max-width: 50%;
+  max-width: 45%;
+  margin-right: 5%;
   & > figcaption {
     float: none;
     max-width: 100%;
