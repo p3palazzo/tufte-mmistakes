@@ -157,10 +157,12 @@ div.subfigures {
         margin-right: -60%;
     }
     & > p:last-of-type { // Subfigure captions
+        margin-right: -60%;
+        max-width: 50%;
         float: right;
         clear: right;
         margin-top: 0;
-        margin-bottom: 0;
+        margin-bottom: 0.3rem;
         font-size: 1.1rem;
         line-height: 1.6;
         vertical-align: baseline;
@@ -175,6 +177,7 @@ div.fullwidth {
     }
     figcaption,
     p:last-of-type {
+        margin-right: 0;
         max-width: 31%;
     }
 }
