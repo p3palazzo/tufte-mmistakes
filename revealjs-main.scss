@@ -140,11 +140,11 @@ html {
     // Prefer images as backgrounds so they fill the entire slide.
     dd,
     & > div.iframe-wrapper,
-    & > div.fullwidth > figure,
-    & > div.marginnote > figure,
+    & > div.fullwidth:not(.r-stack) > figure,
+    & > div.marginnote:not(.r-stack) > figure,
     & > figure {
       & > iframe,
-      & > img,
+      & > img:not(.fragment),
       & > video {
         display: none;
         visibility: hidden;
