@@ -78,9 +78,6 @@ html {
     text-shadow: $headingTextShadow;
   }
   section {
-    &.green {    // For when we want transparent slides, use green screen.
-      background-color: #00ff00;
-    }
     &.has-dark-background,
     &#title-slide {
       height: 100vh;
