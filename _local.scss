@@ -107,6 +107,21 @@ article.page:first-child {
     }
 }
 
+/*
+ * Minimal-Mistakes utility classes for full backward
+ * compatibility with Tufte CSS
+ */
+.align-right {
+    @extend .marginnote;
+}
+
+.full {
+    @extend .fullwidth;
+    @include breakpoint($medium) {
+        margin-right: -60% !important;
+    }
+}
+
 @media (max-width: $medium) {
     .page__content {
         .column,
