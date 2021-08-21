@@ -40,19 +40,6 @@ html {
     background: transparentize($backgroundColor, 0.3);
     backdrop-filter: blur(5px);
   }
-  h1:not(.allowframebreaks),
-  h2 {
-    background: $backgroundColor;
-    position: fixed;
-    bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 0.3rem;
-    width: 100%;
-  }
-  h2:empty {
-    padding: 0;
-  }
   dt, h3, h4, h5 {
     @extend .smallcaps;
     font-size: $heading2Size;
@@ -131,6 +118,19 @@ html {
       p.date {
         display: none;
       }
+    }
+    h1:not(.allowframebreaks),
+    h2 {
+      background: $backgroundColor;
+      position: fixed;
+      bottom: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 0.3rem;
+      width: 100%;
+    }
+    h2:empty {
+      padding: 0;
     }
     // Make sure images don't overflow from their containers
     img {
