@@ -38,8 +38,10 @@ div.r-stack > figure {
   @extend .fullwidth;
   clear: both;
   &.subfigures > p:last-of-type {
-    max-width: 33%;
-    margin-bottom: 1.1rem;
+      margin-bottom: 1.1rem;
+      @include breakpoint($medium) {
+          max-width: 33%;
+      }
   }
 }
 
@@ -48,6 +50,16 @@ div.r-stack > figure {
   figure {
     margin-bottom: 1em;
     max-width: 90%;
-    figcaption { float: right; }
+    figcaption {
+      margin-right: 0;
+      max-width: none;
+      @include breakpoint($medium) {
+        margin-right: 0;
+        max-width: 60%;
+        float: right;
+      }
+    }
   }
 }
+
+// vim: set shiftwidth=2 foldmethod=indent :

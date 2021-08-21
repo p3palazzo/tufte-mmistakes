@@ -232,13 +232,6 @@ ol li {
 	margin-bottom: 0;
 }
 
-// Figures in Minimal-mistakes are flex.
-// One should either reset them to display:block (easy fix)
-// or use margin-left: auto in its child elements.
-figure {
-    display: block;
-}
-
 blockquote {
 	border: none;
 	font-style: normal;
