@@ -236,8 +236,8 @@ h3 {
     @include breakpoint($large) {
       clear: left;
       float: left;
-      margin-left: -300px;
-      max-width: 290px;
+      margin-left: -50%;
+      max-width: 45%;
     }
 }
 
