@@ -305,9 +305,11 @@ body {
 
     blockquote .sidenote,
     blockquote .marginnote {
-        margin-right: -82%;
-        min-width: 59%;
         text-align: left;
+        @include breakpoint($medium) {
+            margin-right: calc(-82% - 2rem); // some margin is messing up the alignment.
+            min-width: 59%;
+        }
     }
 
     div.table-wrapper {

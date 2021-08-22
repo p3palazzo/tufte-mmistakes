@@ -75,17 +75,6 @@ ul {
     font-variant: all-small-caps;
 }
 
-/* The alignment in l.311 of _tufte.scss results in sidenotes
- * for blockquotes that do not align with other sidenotes and
- * marginnotes. Here we correct this discrepancy. */
-blockquote .sidenote,
-blockquote .marginnote {
-    @include breakpoint($medium) {
-        margin-right: -60%;
-        min-width: 50%;
-    }
-}
-
 /* Semantic emulation of NEWTHOUGHT
  *
  * .newthought provides no semantic cues in the markup.
