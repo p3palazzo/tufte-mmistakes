@@ -122,6 +122,19 @@ article.page:first-child {
     }
 }
 
+.margin-toggle:checked + span.sidenote,
+.margin-toggle:checked + span.marginnote {
+    @extend .notice;
+    position: absolute;
+    width: 84%;
+    height: auto;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
+}
+
 @media (max-width: $medium) {
     .page__content {
         .column,
