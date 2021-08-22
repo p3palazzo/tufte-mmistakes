@@ -13,7 +13,6 @@ article.page:first-child {
 .page__content {
     caption,
     figcaption,
-    sup,
     blockquote footer,
     .subfigures p,
     .marginnote,
@@ -21,6 +20,10 @@ article.page:first-child {
         font-size: 1.1rem;
         font-weight: 500;
         margin-bottom: 0.3rem;
+    }
+
+    sup {
+        font-weight: 500;
     }
 
     // Figures in Minimal-mistakes are flex.
@@ -106,34 +109,65 @@ article.page:first-child {
     table.total tbody tr:last-of-type td {
         border-top: 1px solid $text-color;
     }
-}
 
-/*
- * Minimal-Mistakes utility classes for full backward
- * compatibility with Tufte CSS
- */
-.align-right {
-    @extend .marginnote;
-}
-
-.full {
-    @extend .fullwidth;
+    /*
+     * Minimal-Mistakes utility classes can pull their own weight.
+     * .align-left can be use to float elements side-by-side.
+     */
     @include breakpoint($medium) {
-        margin-right: -60% !important;
-    }
-}
+        .align-left {
+            max-width: calc(50% - 2rem);
+        }
 
-.margin-toggle:checked + span.sidenote,
-.margin-toggle:checked + span.marginnote {
-    @extend .notice;
-    position: absolute;
-    width: 84%;
-    height: auto;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
+        .full,
+        .fullwidth {
+            .align-left {
+                max-width: calc(33% - 2rem);
+            }
+        }
+    }
+
+    div.subfigures {
+        img.align-left + figcaption {
+            float: left;
+        }
+    }
+
+    // .align-center prevents elements from taking up the width of the container
+    .align-center > * {
+        width: auto;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    // .align-right as equivalent to marginnote
+    .align-right {
+        @extend .marginnote;
+        @include breakpoint($medium) {
+            margin-right: -60%;
+            max-width: 50%;
+        }
+    }
+
+    .full {
+        @extend .fullwidth;
+        @include breakpoint($medium) {
+            margin-right: -60% !important;
+        }
+    }
+
+    .margin-toggle:checked + span.sidenote,
+    .margin-toggle:checked + span.marginnote {
+        @extend .notice;
+        position: absolute;
+        width: 84%;
+        height: auto;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
+    }
 }
 
 @media (max-width: $medium) {

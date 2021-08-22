@@ -24,13 +24,13 @@ div.notes {
   // &.notes { display: none !important; }
 }
 
-div.r-stack > figure {
-  float: left;
-  & > figcaption {
-    float: none;
-    max-width: 100%;
-    width: 100%;
-  }
+div.r-stack > figure > figcaption {
+  float: right;
+}
+
+// Allow subfigures to display side-by-side
+div.subfigures > figure {
+  display: inline;
 }
 
 // Support Pandoc columns for reveal.js
