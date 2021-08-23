@@ -25,17 +25,6 @@
         // &.notes { display: none !important; }
     }
 
-    div.r-stack {
-        // Prevent next para from starting alongside the stack
-        &:not(.full) {
-            clear: both;
-        }
-        & > figure > figcaption {
-            float: right;
-            margin-right: 1em;
-        }
-    }
-
     // Allow subfigures to display side-by-side
     div.subfigures > figure {
         display: inline;

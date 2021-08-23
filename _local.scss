@@ -130,6 +130,7 @@ article.page:first-child {
     div.subfigures {
         img.align-left + figcaption {
             float: left;
+            margin-right: 1rem;
         }
     }
 
@@ -156,6 +157,7 @@ article.page:first-child {
         }
     }
 
+    // Turn marginnotes on narrow screens into a lighbox
     .margin-toggle:checked + span.sidenote,
     .margin-toggle:checked + span.marginnote {
         @extend .notice;
