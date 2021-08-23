@@ -159,9 +159,10 @@ article.page:first-child {
     }
 
     .full {
-        @extend .fullwidth;
+        clear: right;
         @include breakpoint($medium) {
-            margin-right: -60% !important;
+            max-width: 160%;
+            width: 160%;
         }
     }
 
