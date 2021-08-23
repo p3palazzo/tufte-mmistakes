@@ -193,11 +193,12 @@ div.full {
  * image is within a <span>, so the .marginnote class needs
  * to be applied to a div containing the whole figure.
  * This makes sure its caption is properly aligned.
+ *
+ * Note: obviated by using img.align-right instead of
+ *       div.marginnote
  */
-div.marginnote > figure {
-    & > figcaption {
-        max-width: 100%;
-    }
+div.marginnote > figure > figcaption {
+    max-width: 100%;
 }
 
 /*
