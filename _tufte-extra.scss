@@ -148,7 +148,8 @@ div.subfigures {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin: 0 0 3em 0;
-    &.fullwidth {
+    &.fullwidth,
+    &.full {
         @include breakpoint($medium) {
             margin-right: -60%;
         }
@@ -172,7 +173,8 @@ div.subfigures {
 }
 
 // Fullwidth images within Pandoc-crossref figures and subfigures
-div.fullwidth {
+div.fullwidth,
+div.full {
     &:not(.subfigures) > figure {
         max-width: 100%;
     }

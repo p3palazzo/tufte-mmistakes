@@ -1,65 +1,74 @@
-// Reveal.js uses <h2> to make new slides. Typically, we will
-// have Pandoc shift these headings when generating a regular
-// web page, so they become <h3>. Headings that use the
-// .unlisted class may have no title and are there just to
-// provide a background-image in reveal.js. Therefore, we don't
-// want them to add unnecessary vertical space and just suppress
-// them completely.
-// Comment this line out if this is not the behavior you expect.
-h3.unlisted { display: none; }
-
-// Similarly, we might be using <hr> to start a new slide and
-// therefore might not want it to show up at all in the text.
-// Uncomment this line if you want to suppress it.
-// hr { display: none; }
-
-// Fix width of incremental Reveal.js sections
-// Align Reveal.js presenter notes as regular paragraphs.
-// Alternatively, uncomment the second line to hide them completely.
-.page__content div.incremental,
-.page__content div.notes,
-div.incremental,
-div.notes {
-  @extend section;
-  // &.notes { display: none !important; }
-}
-
-div.r-stack > figure > figcaption {
-  float: right;
-}
-
-// Allow subfigures to display side-by-side
-div.subfigures > figure {
-  display: inline;
-}
-
-// Support Pandoc columns for reveal.js
-.columns {
-  @extend .fullwidth;
-  clear: both;
-  &.subfigures > p:last-of-type {
-      margin-bottom: 1.1rem;
-      @include breakpoint($medium) {
-          max-width: 33%;
-      }
-  }
-}
-
-.column  {
-  float: left;
-  figure {
-    margin-bottom: 1em;
-    max-width: 90%;
-    figcaption {
-      margin-right: 0;
-      max-width: none;
-      @include breakpoint($medium) {
-        margin-right: 0;
-        max-width: 60%;
-        float: right;
-      }
+.page__content {
+    // Reveal.js uses <h2> to make new slides. Typically, we will
+    // have Pandoc shift these headings when generating a regular
+    // web page, so they become <h3>. Headings that use the
+    // .unlisted class may have no title and are there just to
+    // provide a background-image in reveal.js. Therefore, we don't
+    // want them to add unnecessary vertical space and just suppress
+    // them completely.
+    // Comment this line out if this is not the behavior you expect.
+    h3.unlisted {
+        display: none;
     }
-  }
+
+    // Similarly, we might be using <hr> to start a new slide and
+    // therefore might not want it to show up at all in the text.
+    // Uncomment this line if you want to suppress it.
+    // hr { display: none; }
+
+    // Fix width of incremental Reveal.js sections
+    // Align Reveal.js presenter notes as regular paragraphs.
+    // Alternatively, uncomment the second line to hide them completely.
+    div.incremental,
+    div.notes {
+        @extend section;
+        // &.notes { display: none !important; }
+    }
+
+    div.r-stack {
+        // Prevent next para from starting alongside the stack
+        &:not(.full) {
+            clear: both;
+        }
+        & > figure > figcaption {
+            float: right;
+            margin-right: 1em;
+        }
+    }
+
+    // Allow subfigures to display side-by-side
+    div.subfigures > figure {
+        display: inline;
+    }
+
+    // Support Pandoc columns for reveal.js
+    .columns {
+        @extend .fullwidth;
+        clear: both;
+        &.subfigures > p:last-of-type {
+            margin-bottom: 1.1rem;
+            @include breakpoint($medium) {
+                max-width: 33%;
+            }
+        }
+    }
+
+    .column  {
+        float: left;
+        figure {
+            margin-bottom: 1em;
+            max-width: 90%;
+            figcaption {
+                margin-right: 0;
+                max-width: none;
+                @include breakpoint($medium) {
+                    margin-right: 0;
+                    max-width: 60%;
+                    float: right;
+                }
+            }
+        }
+    }
 }
 
-// vim: set shiftwidth=2 foldmethod=indent :
+// vim: set shiftwidth=4 foldmethod=indent :

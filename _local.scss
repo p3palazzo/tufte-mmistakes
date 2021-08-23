@@ -116,13 +116,13 @@ article.page:first-child {
      */
     @include breakpoint($medium) {
         .align-left {
-            max-width: calc(50% - 2rem);
+            max-width: calc(50% - 3rem);
         }
 
         .full,
         .fullwidth {
             .align-left {
-                max-width: calc(33% - 2rem);
+                max-width: calc(33% - 3rem);
             }
         }
     }
