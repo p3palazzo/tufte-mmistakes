@@ -32,29 +32,23 @@
 
     // Support Pandoc columns for reveal.js
     .columns {
-        @extend .fullwidth;
-        clear: both;
         &.subfigures > p:last-of-type {
             margin-bottom: 1.1rem;
-            @include breakpoint($medium) {
-                max-width: 33%;
-            }
         }
     }
 
     .column  {
         float: left;
-        figure {
+        img {
             margin-bottom: 1em;
-            max-width: 90%;
-            figcaption {
-                margin-right: 0;
-                max-width: none;
-                @include breakpoint($medium) {
-                    margin-right: 0;
-                    max-width: 60%;
-                    float: right;
-                }
+            max-width: calc(100% - 3em);
+        }
+        figcaption {
+            margin-right: 0;
+            max-width: none;
+            @include breakpoint($medium) {
+                margin-right: 1em;
+                float: right;
             }
         }
     }

@@ -137,8 +137,7 @@ html {
     // Prefer images as backgrounds so they fill the entire slide.
     dd,
     & > div.iframe-wrapper,
-    & > div.fullwidth:not(.r-stack) > figure,
-    & > div.marginnote:not(.r-stack) > figure,
+    & > div:not(.columns):not(.r-stack) > figure,
     & > figure {
       & > iframe,
       & > img:not(.fragment),
