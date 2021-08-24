@@ -13,197 +13,192 @@ body.wide {
 }
 
 .page__content {
-/* The default x-height for code is slightly too large in side notes */
-.marginnote code, .sidenote code {
-    font-size: 0.9rem;
-}
-/* ... and slightly too small in body text */
-code {
-    font-size: 1.05rem;
-}
-/* Also make the sidenote numbers hang */
-.sidenote {
-    text-indent: -0.4rem;
-}
-.sidenote:before {
-    /* removes trailing space from the counter content */
-    content: counter(sidenote-counter);
-    left: -0.4rem;
-}
-
-/* To get spacing between lists, use paragraphs.
- * 0.25rem of spacing between list elements looks bad. */
-li:not(:first-child) {
-    margin-top: initial;
-}
-
-/* Make "Home" link small */
-p.signoff {
-    font-size: 1.2rem;
-}
-
-/*
- * Enable hyphens on supported platforms
- */
-article {
-    -webkit-hyphens: auto;
-        -ms-hyphens: auto;
-            hyphens: auto;
-}
-/* Sidenotes end up with a bunch of hyphens because they're so small */
-.sidenote,
-.marginnote {
-  hyphens: none;
-}
-
-/* <details> is a little used collapsible block. */
-details {
-    @extend section;
-    summary > p { display: inline; }
-}
-
-/* Tabular numbers for list items, small-caps Roman numerals */
-ol,
-ul {
-    & > li::marker {
-        font-variant: tabular-nums oldstyle-nums all-small-caps !important;
+    /* The default x-height for code is slightly too large in side notes */
+    .marginnote code, .sidenote code {
+        font-size: 0.9rem;
     }
-}
-
-/* Typographically correct small caps. */
-.smallcaps {
-    font-variant: all-small-caps;
-}
-
-/* Semantic emulation of NEWTHOUGHT
- *
- * .newthought provides no semantic cues in the markup.
- * However, we can style semantic elements so that they
- * look just like Tufte's emphasized paragraph openings.
- * We do this to <h5> and <h6> by analogy with the LaTeX
- * \paragraph and \subparagraph features. We have also
- * thrown in <dt> because what else are we going to use
- * definition lists for? */
-
-// First, we make sure line heights and font sizes match.
-article > dl,
-section > dl {
-    clear: left;
-    font-size: 1.4rem;
-    line-height: 2rem;
-}
-
-// ...second, we float the headings so they run in with
-// the following paragraph...
-dt,
-h5,
-h6 {
-    font-size: 1.4rem;
-    @include breakpoint($medium) {
-        float: left;
-        margin: 0 1.4rem 0 0;
-        padding: 0;
+    /* ... and slightly too small in body text */
+    code {
+        font-size: 1.05rem;
     }
-}
-
-// ...third, we take care of the styling...
-dt,
-dt > a,
-h5,
-h6 {
-    @extend .newthought;
-    clear: left;
-    font-style: normal;
-    font-variant: small-caps;
-    font-weight: 400;
-}
-
-// Finally, we flush the <dt> inline with the <dd>.
-// This reverses the margin setting on l.160 of _tufte.scss
-dt:not(:first-child),
-li:not(:first-child) {
-    margin-top: 0;
-}
-
-// Bonus: fix width of <dl> inside <li>
-li > dl {
-    &, & > p {
-        width: 100%;
+    /* Also make the sidenote numbers hang */
+    .sidenote {
+        text-indent: -0.4rem;
     }
-}
-/* Here there ends the semantic emulation of .newthought */
+    .sidenote:before {
+        /* removes trailing space from the counter content */
+        content: counter(sidenote-counter);
+        left: -0.4rem;
+    }
 
-/* Pandoc and Pandoc-crossref have strict and peculiar ways
- * of generating HTML figures. Notably, Pandoc applies classes
- * not to the <figure> tag, but to the <img> within it.
- * Pandoc-crossref has a .subfigures class used for complex
- * figures containing several related images. The caption of a
- * .subfigures is not a <figcaption> but a simple <p>. Here we
- * try to account for all these cases and make sure everything
- * lines up. */
+    /* To get spacing between lists, use paragraphs.
+     * 0.25rem of spacing between list elements looks bad. */
+    li:not(:first-child) {
+        margin-top: initial;
+    }
 
-// Subfigures need to share width and margin features of regular
-// figures, but zero-padding them leads to unexpected results.
-div.subfigures {
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
-    &.fullwidth,
-    &.full {
-        @include breakpoint($medium) {
-            margin-right: -60%;
+    /* Make "Home" link small */
+    p.signoff {
+        font-size: 1.2rem;
+    }
+
+    /*
+     * Enable hyphens on supported platforms
+     */
+    article {
+        -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+                hyphens: auto;
+    }
+    /* Sidenotes end up with a bunch of hyphens because they're so small */
+    .sidenote,
+    .marginnote {
+      hyphens: none;
+    }
+
+    /* <details> is a little used collapsible block. */
+    details {
+        @extend section;
+        summary > p { display: inline; }
+    }
+
+    /* Tabular numbers for list items, small-caps Roman numerals */
+    ol,
+    ul {
+        & > li::marker {
+            font-variant: tabular-nums oldstyle-nums all-small-caps !important;
         }
     }
-    & > p:last-of-type { // Subfigure captions
-        font-size: 1.1rem;
-        line-height: 1.6;
-        vertical-align: baseline;
-        position: relative;
-        margin-right: 0;
+
+    /* Semantic emulation of NEWTHOUGHT
+     *
+     * .newthought provides no semantic cues in the markup.
+     * However, we can style semantic elements so that they
+     * look just like Tufte's emphasized paragraph openings.
+     * We do this to <h5> and <h6> by analogy with the LaTeX
+     * \paragraph and \subparagraph features. We have also
+     * thrown in <dt> because what else are we going to use
+     * definition lists for? */
+
+    // First, we make sure line heights and font sizes match.
+    article > dl,
+    section > dl {
+        clear: left;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    // ...second, we float the headings so they run in with
+    // the following paragraph...
+    dt,
+    h5,
+    h6 {
+        font-size: 1.4rem;
+        @include breakpoint($medium) {
+            float: left;
+            margin: 0 1.4rem 0 0;
+            padding: 0;
+        }
+    }
+
+    // ...third, we take care of the styling...
+    dt,
+    dt > a,
+    h5,
+    h6 {
+        @extend .newthought;
+        clear: left;
+        font-style: normal;
+        font-variant: small-caps;
+        font-weight: 400;
+    }
+
+    // Finally, we flush the <dt> inline with the <dd>.
+    // This reverses the margin setting on l.160 of _tufte.scss
+    dt:not(:first-child),
+    li:not(:first-child) {
         margin-top: 0;
-        margin-bottom: 0.3rem;
-        max-width: none;
-        @include breakpoint($medium) {
-            margin-right: -60%;
-            max-width: 50%;
-            float: right;
-            clear: right;
+    }
+
+    // Bonus: fix width of <dl> inside <li>
+    li > dl {
+        &, & > p {
+            width: 100%;
         }
     }
-}
+    /* Here there ends the semantic emulation of .newthought */
 
-// Fullwidth images within Pandoc-crossref figures and subfigures
-div.fullwidth,
-div.full {
-    &:not(.subfigures) > figure {
+    /* Pandoc and Pandoc-crossref have strict and peculiar ways
+     * of generating HTML figures. Notably, Pandoc applies classes
+     * not to the <figure> tag, but to the <img> within it.
+     * Pandoc-crossref has a .subfigures class used for complex
+     * figures containing several related images. The caption of a
+     * .subfigures is not a <figcaption> but a simple <p>. Here we
+     * try to account for all these cases and make sure everything
+     * lines up. */
+
+    // Subfigures need to share width and margin features of regular
+    // figures, but zero-padding them leads to unexpected results.
+    div.subfigures {
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+        margin: 0 0 3em 0;
+        &.fullwidth,
+        &.full {
+            @include breakpoint($medium) {
+                margin-right: -60%;
+            }
+        }
+        & > p:last-of-type { // Subfigure captions
+            font-size: 1.1rem;
+            line-height: 1.6;
+            vertical-align: baseline;
+            position: relative;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0.3rem;
+            max-width: none;
+            @include breakpoint($medium) {
+                margin-right: -60%;
+                max-width: 50%;
+                float: right;
+                clear: right;
+            }
+        }
+    }
+
+    // Fullwidth images within Pandoc-crossref figures and subfigures
+    div.fullwidth,
+    div.full {
+        &:not(.subfigures) > figure {
+            max-width: 100%;
+        }
+        &:not(.columns) figcaption,
+        &.subfigures > p:last-of-type {
+            margin-right: 0;
+            max-width: none;
+            @include breakpoint($medium) {
+                max-width: 31%;
+            }
+        }
+    }
+
+    /*
+     * Pandoc will not generate figures with captions if the
+     * image is within a <span>, so the .marginnote class needs
+     * to be applied to a div containing the whole figure.
+     * This makes sure its caption is properly aligned.
+     *
+     * Note: obviated by using img.align-right instead of
+     *       div.marginnote
+     */
+    div.marginnote > figure > figcaption {
         max-width: 100%;
     }
-    &:not(.columns) figcaption,
-    &.subfigures > p:last-of-type {
-        margin-right: 0;
-        max-width: none;
-        @include breakpoint($medium) {
-            max-width: 31%;
-        }
-    }
-}
 
-/*
- * Pandoc will not generate figures with captions if the
- * image is within a <span>, so the .marginnote class needs
- * to be applied to a div containing the whole figure.
- * This makes sure its caption is properly aligned.
- *
- * Note: obviated by using img.align-right instead of
- *       div.marginnote
- */
-div.marginnote > figure > figcaption {
-    max-width: 100%;
-}
-
-/*
- * Here there ends the styling of Pandoc and Pandoc-crossref figures
- */
+    /*
+     * Here there ends the styling of Pandoc and Pandoc-crossref figures
+     */
 }
 
 // Dark colorscheme with a softer background
