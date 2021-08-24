@@ -10,6 +10,11 @@ article.page:first-child {
     }
 }
 
+/* Typographically correct small caps. */
+.smallcaps {
+    font-variant: all-small-caps;
+}
+
 .page__content {
     caption,
     figcaption,
