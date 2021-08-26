@@ -231,11 +231,11 @@ ul.visible-links {
       @include breakpoint($large) {
         clear: left;
         float: left;
+        margin-top: 0;
         margin-left: -50%;
         max-width: 45%;
+        line-height: 2rem;
         font-size: $type-size-4;
-        font-style: normal;
-        font-variant: small-caps;
       }
   }
 }
@@ -292,12 +292,12 @@ a.pagination--pager {
   @include breakpoint($large) {
     float: left;
     clear: left;
-    margin-left: -300px;
-    width: 280px;
-    margin-top: 0.3rem;
+    margin-left: -15%;
+    width: 10%;
+    margin-top: 0;
     margin-bottom: 0;
     font-size: 1.1rem;
-    line-height: 1.3;
+    line-height: 2rem;
     text-align: right;
     vertical-align: baseline;
     position: relative;
