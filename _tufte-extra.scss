@@ -59,7 +59,7 @@ body.wide {
     /* <details> is a little used collapsible block. */
     details {
         @extend section;
-        summary > p { display: inline; }
+        summary > p:first-child { display: inline; }
     }
 
     /* Tabular numbers for list items, small-caps Roman numerals */
@@ -86,6 +86,9 @@ body.wide {
         clear: left;
         font-size: 1.4rem;
         line-height: 2rem;
+        dd {
+            font-size: 1.4rem;
+        }
     }
 
     // ...second, we float the headings so they run in with
@@ -143,27 +146,12 @@ body.wide {
         -webkit-margin-start: 0;
         -webkit-margin-end: 0;
         margin: 0 0 3em 0;
-        &.fullwidth,
-        &.full {
-            @include breakpoint($medium) {
-                margin-right: -60%;
-            }
+        figcaption {
+            float: left;
+            margin-right: 1em;
         }
-        & > p:last-of-type { // Subfigure captions
-            font-size: 1.1rem;
-            line-height: 1.6;
-            vertical-align: baseline;
-            position: relative;
-            margin-right: 0;
-            margin-top: 0;
-            margin-bottom: 0.3rem;
-            max-width: none;
-            @include breakpoint($medium) {
-                margin-right: -60%;
-                max-width: 50%;
-                float: right;
-                clear: right;
-            }
+        &:not(.full) > p:not(:last-of-type) {
+            float: left; // Allow caption to align to top of subfigure container
         }
     }
 
@@ -181,19 +169,6 @@ body.wide {
                 max-width: 31%;
             }
         }
-    }
-
-    /*
-     * Pandoc will not generate figures with captions if the
-     * image is within a <span>, so the .marginnote class needs
-     * to be applied to a div containing the whole figure.
-     * This makes sure its caption is properly aligned.
-     *
-     * Note: obviated by using img.align-right instead of
-     *       div.marginnote
-     */
-    div.marginnote > figure > figcaption {
-        max-width: 100%;
     }
 
     /*

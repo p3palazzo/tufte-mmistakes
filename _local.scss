@@ -17,11 +17,7 @@ article.page:first-child {
 
 .page__content {
     caption,
-    figcaption,
-    blockquote footer,
-    .subfigures p,
-    .marginnote,
-    .sidenote {
+    blockquote footer {
         font-size: 1.1rem;
         font-weight: 500;
         margin-bottom: 0.3rem;
@@ -31,46 +27,8 @@ article.page:first-child {
         font-weight: 500;
     }
 
-    // Figures in Minimal-mistakes are flex.
-    // One should either reset them to display:block (easy fix)
-    // or use margin-left: auto in its child elements.
-    figure {
-        display: block;
-    }
-
-    // Allow caption to align to top of iframe or subfigure container
-    div.subfigures:not(.fullwidth) > p:not(:last-of-type),
     div.fluid-width-video-wrapper {
-        float: left;
-    }
-
-    // Properly place captions of iframe "figures"
-    .iframe-wrapper:not(.fullwidth) > p:last-of-type,
-    section > figure > figcaption {
-        margin-right: 0;
-        max-width: none;
-        @include breakpoint($medium) {
-            margin-right: -60%;
-            max-width: 50%;
-        }
-    }
-
-    // Revert to regular paragraph width
-    .fullwidth p {
-        width: 100%;
-    }
-
-    .subfigures figcaption {
-        margin-right: 0;
-        max-width: 50%;
-    }
-
-    .sidenote-number,
-    .sidenote-number::after,
-    .sidenote::before {
-        font-family: $global-font-family !important;
-        font-variant: oldstyle-nums;
-        font-weight: 500;
+        float: left; // Allow caption to align to top of iframe container
     }
 
     img,
@@ -82,10 +40,6 @@ article.page:first-child {
     img.line,
     img.nobg {
         border: 0;
-    }
-
-    dd {
-        font-size: 1.4rem;
     }
 
     ul {
@@ -132,23 +86,31 @@ article.page:first-child {
             max-width: 33%;
         }
 
-        div.subfigures {
-            // account for the width of letter captions
+        div.subfigures { // account for the width of letter captions
             img.align-left {
                 max-width: calc(50% - 3rem);
             }
             &.full img.align-left {
                 max-width: calc(33% - 3rem);
             }
-            img.align-left + figcaption {
-                float: left;
-                margin-right: 1rem;
+        }
+
+        // Pandoc + reveal.js multicolumn slides
+        .column {
+            display: block;
+            clear: both;
+            width: 90%;
+            margin-right: 10%;
+            @include breakpoint($medium) {
+                clear: none;
+                margin-right: 0;
+                width: unset;
             }
         }
     }
 
     // .align-center prevents elements from taking up the width of the container
-    .align-center > * {
+    .align-center {
         width: auto;
         min-width: 0;
         max-width: 100%;
@@ -156,18 +118,10 @@ article.page:first-child {
 
     // .align-right as equivalent to marginnote
     .align-right {
-        @extend .marginnote;
         @include breakpoint($medium) {
             margin-right: -60%;
             max-width: 50%;
-        }
-    }
-
-    .full {
-        clear: right;
-        @include breakpoint($medium) {
-            max-width: 160%;
-            width: 160%;
+            clear: right;
         }
     }
 
@@ -176,25 +130,12 @@ article.page:first-child {
     .margin-toggle:checked + span.marginnote {
         @extend .notice;
         position: absolute;
-        width: 84%;
         height: auto;
         left: auto;
         right: auto;
         top: auto;
         bottom: auto;
         box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
-    }
-}
-
-@media (max-width: $medium) {
-    .page__content {
-        .column,
-        div.marginnote figure {
-            display: block;
-            clear: both;
-            width: 90% !important;
-            margin-right: 10%;
-        }
     }
 }
 
