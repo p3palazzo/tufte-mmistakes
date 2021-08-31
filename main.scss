@@ -287,7 +287,7 @@ a.pagination--pager {
     content: "[";
   }
   &::after {
-    content: "[";
+    content: "]";
   }
   @include breakpoint($large) {
     float: left;
