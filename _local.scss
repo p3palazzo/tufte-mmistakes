@@ -1,6 +1,6 @@
 article.page:first-child {
     float: right;
-    width: calc(100% - 5rem);
+    width: calc(100% - 2.5rem);
     @include breakpoint($medium) {
         padding-right: calc(45% - 5rem);
     }
