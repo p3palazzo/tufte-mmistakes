@@ -66,8 +66,11 @@ article.page:first-child {
         padding: 1.2rem 0;
     }
 
-    table.total tbody tr:last-of-type td {
-        border-top: 1px solid $text-color;
+    table.total {
+        font-variant: tabular-nums oldstyle-nums;
+        tbody tr:last-of-type td {
+            border-top: 1px solid $text-color;
+        }
     }
 
     /*
