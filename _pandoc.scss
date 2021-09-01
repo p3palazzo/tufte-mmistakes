@@ -40,8 +40,10 @@ td, th {
   font-variant: tabular-nums oldstyle-nums;
   padding: 10px;
   text-align: left;
+  vertical-align: top;
   & > p {
     margin-top: 0;
+    line-height: 1;
   }
 }
 tbody {
