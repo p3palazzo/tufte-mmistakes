@@ -227,7 +227,7 @@ ul.visible-links {
     margin-top: 3em;
   }
 
-  h3 {
+  section > h3 {
       @include breakpoint($large) {
         clear: left;
         float: left;
