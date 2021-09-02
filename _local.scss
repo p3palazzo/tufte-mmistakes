@@ -121,9 +121,12 @@ article.page:first-child {
 
     // .align-right as equivalent to marginnote
     .align-right {
+        text-align: left;
+        font-weight: 500;
         @include breakpoint($medium) {
             margin-right: -60%;
             max-width: 50%;
+            width: 50%;
             clear: right;
         }
     }
