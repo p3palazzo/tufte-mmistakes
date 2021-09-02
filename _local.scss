@@ -15,6 +15,12 @@ article.page:first-child {
     font-variant: all-small-caps;
 }
 
+.page__meta,
+.page__date strong {
+  font-variant: lining-nums;
+	font-weight: 500;
+}
+
 .page__content {
     caption,
     blockquote footer {
@@ -154,9 +160,8 @@ article.page:first-child {
             ul {
                 list-style-type: none;
                 li {
-                    display: inline;
                     text-indent: 0;
-                    &:first-child::before {
+                    &::before {
                         content: "";
                     }
                 }
