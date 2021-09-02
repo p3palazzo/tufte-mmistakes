@@ -112,22 +112,22 @@ body {
         margin: 5em 0;
     }
 
-    div.epigraph > blockquote {
+    .epigraph > blockquote {
         margin-top: 3em;
         margin-bottom: 3em;
     }
 
-    div.epigraph > blockquote,
-    div.epigraph > blockquote > p {
+    .epigraph > blockquote,
+    .epigraph > blockquote > p {
         font-style: italic;
         em { font-style: normal; }
     }
 
-    div.epigraph > blockquote > footer {
+    .epigraph > blockquote > footer {
         font-style: normal;
     }
 
-    div.epigraph > blockquote > footer > cite {
+    .epigraph > blockquote > footer > cite {
         font-style: italic;
     }
     /* end chapter epigraphs styles */

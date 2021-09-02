@@ -140,6 +140,36 @@ article.page:first-child {
         bottom: auto;
         box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
     }
+
+    section > h3,
+    .sidebar {
+        max-width: 100%;
+        blockquote {
+            margin: 0;
+            padding: 0;
+            font-style: italic;
+            ul {
+                list-style-type: none;
+                li {
+                    display: inline;
+                    text-indent: 0;
+                    &:first-child::before {
+                        content: "";
+                    }
+                }
+            }
+        }
+        @include breakpoint($large) {
+            clear: left;
+            float: left;
+            margin-top: 0;
+            margin-left: -50%;
+            max-width: 45%;
+            width: 45%;
+            font-size: $type-size-4;
+            line-height: 2rem;
+        }
+    }
 }
 
 /*****************************************************

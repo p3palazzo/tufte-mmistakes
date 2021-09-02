@@ -114,9 +114,6 @@ ul.visible-links {
 .page__hero--overlay {
 	font-size: $type-size-4;
 	padding: 5rem 0;
-}
-
-.page__hero--overlay {
 	&,
 	& .page__title,
 	& .page__meta,
@@ -217,27 +214,6 @@ ul.visible-links {
 
 .page__date strong {
 	font-weight: 500;
-}
-
-/****************
- * Page content *
- ****************/
-.page__content {
-  h2 {
-    margin-top: 3em;
-  }
-
-  section > h3 {
-      @include breakpoint($large) {
-        clear: left;
-        float: left;
-        margin-top: 0;
-        margin-left: -50%;
-        max-width: 45%;
-        line-height: 2rem;
-        font-size: $type-size-4;
-      }
-  }
 }
 
 // Resets minimal-mistakes/_base.scss
