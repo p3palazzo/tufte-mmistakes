@@ -1,6 +1,9 @@
 
 /* Make byline (date and/or author) small */
-p.byline { font-size: 1.2rem; }
+p.byline {
+    font-size: $type-size-6;
+    line-height: 1.3;
+}
 
 .page__content {
 /* For smart quotes */

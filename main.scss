@@ -97,47 +97,16 @@ ul.visible-links {
 	font-family: "Font Awesome 5 Free" !important;
 }
 
-/******************
- * Header overlay *
- ******************/
+/****************************
+ * Header overlay gradients *
+ ****************************/
 .page__hero--overlay {
-	font-size: $type-size-4;
-	padding: 5rem 0;
 	&,
 	& .page__title,
 	& .page__meta,
 	& a {
 		color: $background-color;
 		text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
-	}
-
-	h1 {
-    font-weight: 400;
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    font-size: 3.2rem;
-    line-height: 1;
-		font-weight: $heading-font-weight;
-	}
-
-	span.subtitle {
-		font-style: italic;
-		margin-top: 1rem;
-		margin-bottom: 1rem;
-		font-size: 1.8rem;
-		display: block;
-		line-height: 1;
-		em { font-style: normal; }
-	}
-
-	blockquote {
-		font-style: italic;
-		padding: 0;
-	}
-
-	.page__hero-caption {
-		font-size: $type-size-6;
-		font-weight: 500;
 	}
 
 	a.btn,
@@ -156,16 +125,6 @@ ul.visible-links {
 		background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
 		background-repeat: no-repeat, no-repeat, repeat-x;
 		background-position: 0% 93%, 100% 93%, 0% 93%; 
-	}
-
-	a.btn {
-		background: transparentize($text-color, 0.7);
-    box-shadow: 2px 2px 4px 4px transparentize($text-color, 0.5) inset;
-		color: $background-color;
-		font-size: $type-size-5;
-		font-variant: all-small-caps;
-		font-weight: 500;
-    letter-spacing: 0.1rem;
 	}
 }
 
@@ -221,12 +180,12 @@ a.pagination--pager {
   @include breakpoint($large) {
     float: left;
     clear: left;
-    margin-left: -15%;
-    width: 10%;
+    margin-left: -50px;
+    width: 40px;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.1rem;
-    line-height: 2rem;
+    font-size: $type-size-6;
+    line-height: 2;
     text-align: right;
     vertical-align: baseline;
     &::before,

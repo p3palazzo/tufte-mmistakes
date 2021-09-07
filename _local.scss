@@ -9,18 +9,70 @@
   	font-weight: 500;
 }
 
+/******************
+ * Header overlay *
+ ******************/
+.page__hero--overlay {
+	  font-size: $type-size-5;
+	  padding: 5rem 0;
+
+	  h1 {
+        font-weight: 300;
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
+        font-size: 3.2rem;
+        line-height: 1;
+	  }
+
+	  span.subtitle {
+		    font-style: italic;
+		    margin-top: 1rem;
+		    margin-bottom: 1rem;
+		    font-size: $type-size-6;
+		    display: block;
+		    line-height: 1;
+		    em { font-style: normal; }
+	  }
+
+	  blockquote {
+		    font-style: italic;
+		    padding: 0;
+	  }
+
+	  .page__hero-caption {
+		    font-size: $type-size-6;
+		    font-weight: 500;
+	  }
+
+	  a.btn {
+		    background: transparentize($text-color, 0.7);
+        box-shadow: 2px 2px 4px 4px transparentize($text-color, 0.5) inset;
+		    color: $background-color;
+		    font-size: $type-size-5;
+		    font-variant: all-small-caps;
+		    font-weight: 500;
+        letter-spacing: 0.1rem;
+	}
+}
+
 .page__content {
     blockquote footer {
-        font-size: 1.1rem;
+        font-size: $type-size-6;
         font-weight: 500;
         margin-bottom: 0.3rem;
     }
 
-    .toc ul {
-        li {
-            font-style: italic;
-            margin-left: 2rem;
-            font-size: $type-size-5;
+    .toc {
+        font-size: $type-size-6;
+        blockquote {
+            padding: 0;
+        }
+        ul {
+            li {
+                font-style: italic;
+                margin-left: $type-size-4;
+                font-size: $type-size-5;
+            }
         }
     }
 
@@ -46,7 +98,7 @@
     ul {
         list-style-type: none;
         li {
-	    text-indent: -2rem;
+            text-indent: calc(0px - #{$type-size-4});
             &::before {
                 content: "— ";
             }
