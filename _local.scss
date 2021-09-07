@@ -1,15 +1,3 @@
-article.page:first-child {
-    float: right;
-    width: calc(100% - 2rem);
-    @include breakpoint($medium) {
-        padding-right: calc(45% - 5rem);
-    }
-    @include breakpoint($large) {
-        width: 75%;
-        padding-right: 30%;
-    }
-}
-
 /* Typographically correct small caps. */
 .smallcaps {
     font-variant: all-small-caps;
@@ -126,14 +114,15 @@ article.page:first-child {
     }
 
     // .align-right as equivalent to marginnote
-    .align-right {
-        text-align: left;
-        font-weight: 500;
-        @include breakpoint($medium) {
-            margin-right: -60%;
-            max-width: 50%;
-            width: 50%;
-            clear: right;
+    img.align-right {
+        @include breakpoint($large) {
+            padding-left: 0;
+            margin: 0 -200px 0 1em;
+            width: calc(200px - 1em);
+        }
+        @include breakpoint($x-large) {
+            width: calc(300px - 1em);
+            margin-right: -300px;
         }
     }
 
@@ -148,35 +137,6 @@ article.page:first-child {
         top: auto;
         bottom: auto;
         box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
-    }
-
-    section > h3,
-    .sidebar {
-        max-width: 100%;
-        blockquote {
-            margin: 0;
-            padding: 0;
-            font-style: italic;
-            ul {
-                list-style-type: none;
-                li {
-                    text-indent: 0;
-                    &::before {
-                        content: "";
-                    }
-                }
-            }
-        }
-        @include breakpoint($large) {
-            clear: left;
-            float: left;
-            margin-top: 0;
-            margin-left: -50%;
-            max-width: 45%;
-            width: 45%;
-            font-size: $type-size-4;
-            line-height: 2rem;
-        }
     }
 }
 
