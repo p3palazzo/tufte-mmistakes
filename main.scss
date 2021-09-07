@@ -28,9 +28,6 @@ $caption-font-family: $garamond;
 $sans-serif: $garamond;
 $sans-serif-narrow: $garamond;
 
-/* type scale */
-$type-size-6: 1.1rem;
-
 /*
    Colors
    ========================================================================== */
@@ -38,10 +35,13 @@ $type-size-6: 1.1rem;
 $background-color: #fffff8;
 $lighter-gray: #b4d5fe;
 $dark-gray: #111;
+$gray: $dark-gray;
 
 $border-color: $background-color;
 
 $footer-background-color: $background-color;
+
+$muted-text-color: $dark-gray;
 
 /*
    Other
@@ -61,18 +61,7 @@ $border-radius: 0;
 	"revealjs-support"
 ;
 
-$heading-font-weight: 400;
-
-// Undo Tufte limits on body width because Minimal-Mistakes already does this.
-body {
-	width: initial;
-	max-width: initial;
-	margin: initial;
-	padding: initial;
-	font-family: $global-font-family;
-	font-variant: oldstyle-nums proportional-nums;
-	line-height: 1;
-}
+$heading-font-weight: 300;
 
 /*******************************************
  * Masthead, site title and navigation links
@@ -177,34 +166,6 @@ ul.visible-links {
 		font-variant: all-small-caps;
 		font-weight: 500;
     letter-spacing: 0.1rem;
-	}
-}
-
-/****************************
- * Navigation and page meta *
- ****************************/
-.wide .sticky {
-	background: $background-color;
-	margin-left: 7.5%;
-	padding: 2em 5%;
-	top: 0;
-	width: 55%;
-	opacity: 1;
-	z-index: 999;
-}
-
-.wide .sidebar__right,
-.wide .pagination {
-	@extend section;
-	width: 55%;
-}
-
-.toc {
-	border: none;
-	box-shadow: none;
-	color: $text-color;
-	header {
-		display: none;
 	}
 }
 
