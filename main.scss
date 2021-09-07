@@ -49,6 +49,14 @@ $muted-text-color: $dark-gray;
 
 $border-radius: 0;
 
+/*
+   Grid
+   ========================================================================== */
+
+$right-sidebar-width-narrow: 300px;
+$right-sidebar-width: 400px;
+$right-sidebar-width-wide: 400px;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 

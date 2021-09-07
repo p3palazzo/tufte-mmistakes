@@ -63,13 +63,13 @@ body {
         @include breakpoint($large) {
             float: left;
             margin-top: 0;
-            margin-left: -200px;
-            width: calc(200px - 1em);
+            margin-left: calc(0px - #{$right-sidebar-width-narrow});
+            width: calc(#{$right-sidebar-width-narrow} - 1em);
             font-size: $type-size-5;
         }
         @include breakpoint($x-large) {
-            margin-left: -300px;
-            width: calc(300px - 1em);
+            margin-left: calc(0px - #{$right-sidebar-width});
+            width: calc(#{$right-sidebar-width} - 1em);
         }
     }
 
@@ -251,13 +251,13 @@ body {
         @include breakpoint($large) {
             float: right;
             clear: right;
-            width: 200px;
-            margin: 0.3rem -200px 0 0;
+            width: $right-sidebar-width-narrow;
+            margin: 0.3rem calc(0px - #{$right-sidebar-width-narrow}) 0 0;
             padding-left: 1em;
         }
         @include breakpoint($x-large) {
-            width: 300px;
-            margin-right: -300px;
+            width: $right-sidebar-width;
+            margin-right: calc(0px - #{$right-sidebar-width});
         }
     }
 
@@ -310,10 +310,10 @@ body {
     blockquote .marginnote {
         text-align: left;
         @include breakpoint($large) {
-            margin-right: calc(-200px - 2.8rem);
+            margin-right: calc(0px - #{$right-sidebar-width-narrow} - 2rem);
         }
         @include breakpoint($x-large) {
-            margin-right: calc(-300px - 2.8rem);
+            margin-right: calc(0px - #{$right-sidebar-width} - 2rem);
         }
     }
 
@@ -360,22 +360,22 @@ body {
     .fullwidth {
         @include breakpoint($large) {
             display: block; // Prevent float overlap
-            margin-right: -200px !important;
+            margin-right: calc(0px - #{$right-sidebar-width-narrow}) !important;
             clear:both;
         }
         @include breakpoint($x-large) {
-            margin-right: -300px !important;
+            margin-right: calc(0px - #{$right-sidebar-width}) !important;
         }
     }
     
     img.full {
         @include breakpoint($large) {
-            max-width: calc(100% + 200px);
-            width: calc(100% + 200px);
+            max-width: calc(100% + #{$right-sidebar-width-narrow});
+            width: calc(100% + #{$right-sidebar-width-narrow});
         }
         @include breakpoint($x-large) {
-            max-width: calc(100% + 300px);
-            width: calc(100% + 300px);
+            max-width: calc(100% + #{$right-sidebar-width});
+            width: calc(100% + #{$right-sidebar-width});
         }
     }
 

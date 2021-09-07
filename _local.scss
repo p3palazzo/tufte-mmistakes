@@ -176,12 +176,12 @@
     img.align-right {
         @include breakpoint($large) {
             padding-left: 0;
-            margin: 0 -200px 0 1em;
-            width: calc(200px - 1em);
+            margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
+            width: calc(#{$right-sidebar-width-narrow} - 1em);
         }
         @include breakpoint($x-large) {
-            width: calc(300px - 1em);
-            margin-right: -300px;
+            width: calc(#{$right-sidebar-width} - 1em);
+            margin-right: calc(0px - #{$right-sidebar-width});
         }
     }
 
