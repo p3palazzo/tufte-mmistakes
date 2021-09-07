@@ -150,10 +150,6 @@ body {
         font-size: 1.4rem;
     }
 
-    blockquote p {
-        margin-right: 40px;
-    }
-
     blockquote footer {
         font-size: 1.1rem;
         text-align: right;
@@ -316,8 +312,10 @@ body {
     blockquote .marginnote {
         text-align: left;
         @include breakpoint($large) {
-            //margin-right: calc(-82% - 2rem);
-            //min-width: 59%;
+            margin-right: calc(-200px - 2.8rem);
+        }
+        @include breakpoint($x-large) {
+            margin-right: calc(-300px - 2.8rem);
         }
     }
 
