@@ -17,6 +17,14 @@
         margin-bottom: 0.3rem;
     }
 
+    .toc ul {
+        li {
+            font-style: italic;
+            margin-left: 2rem;
+            font-size: $type-size-5;
+        }
+    }
+
     sup {
         font-weight: 500;
     }
