@@ -39,7 +39,7 @@ th {
 }
 td, th {
   border: 0;
-  font-size: 1.4rem;
+  font-size: $type-size-4;
   font-variant: tabular-nums oldstyle-nums;
   padding: 10px;
   text-align: left;
@@ -100,8 +100,8 @@ pre:not(.sourceCode) {
 
 // Line blocks (e.g. for poetry)
 .line-block {
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: $type-size-5;
+  line-height: 2;
 }
 
 @media (max-width: 760px) {
