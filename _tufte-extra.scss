@@ -158,13 +158,9 @@ body.wide {
         &:not(.subfigures) > figure {
             max-width: 100%;
         }
-        &:not(.columns) figcaption,
-        &.subfigures > p:last-of-type {
+        &.subfigures p:last-of-type,
+        &:not(.columns) figcaption {
             margin-right: 0;
-            max-width: none;
-            @include breakpoint($medium) {
-                max-width: 31%;
-            }
         }
     }
 
