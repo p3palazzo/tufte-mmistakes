@@ -136,18 +136,25 @@
         // at normal width and 3 at full-width. See if we can
         // do otherwise.
         .align-left {
-            max-width: 50%;
-        }
-        .full .align-left {
-            max-width: 33%;
+            width: 100%;
+            margin-bottom: 1em;
+            @include breakpoint($medium) {
+                width: calc(#{$right-sidebar-width-narrow} - 0.5em);
+            }
         }
 
-        div.subfigures { // account for the width of letter captions
+        div.subfigures > figure { // account for the width of letter captions
             img.align-left {
-                max-width: calc(50% - 3rem);
+                @include breakpoint($medium) {
+                    width: calc(#{$right-sidebar-width-narrow} - 3em);
+                }
             }
-            &.full img.align-left {
-                max-width: calc(33% - 3rem);
+            figcaption {
+                padding-left: 0;
+                max-width: 2em;
+            }
+            &:not(:last-of-type) figcaption {
+                margin-right: 1em;
             }
         }
 
