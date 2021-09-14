@@ -368,6 +368,7 @@ body {
         }
     }
     
+    video.full,
     img.full {
         @include breakpoint($large) {
             max-width: calc(100% + #{$right-sidebar-width-narrow});
