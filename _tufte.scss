@@ -464,10 +464,6 @@ body {
         width: 85%;
     }
 
-    img {
-        width: 100%;
-    }
-
     @include breakpoint($medium) {
         hr,
         section > p,

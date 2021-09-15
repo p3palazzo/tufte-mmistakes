@@ -146,7 +146,7 @@
         div.subfigures > figure { // account for the width of letter captions
             img.align-left {
                 @include breakpoint($medium) {
-                    width: calc(#{$right-sidebar-width-narrow} - 3em);
+                    max-width: calc(#{$right-sidebar-width-narrow} - 3em);
                 }
             }
             figcaption {
@@ -184,10 +184,10 @@
         @include breakpoint($large) {
             padding-left: 0;
             margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
-            width: calc(#{$right-sidebar-width-narrow} - 1em);
+            max-width: calc(#{$right-sidebar-width-narrow} - 1em);
         }
         @include breakpoint($x-large) {
-            width: calc(#{$right-sidebar-width} - 1em);
+            max-width: calc(#{$right-sidebar-width} - 1em);
             margin-right: calc(0px - #{$right-sidebar-width});
         }
     }
