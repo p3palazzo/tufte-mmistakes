@@ -206,6 +206,60 @@
     }
 }
 
+// A class to get outset dates in a résumé or CV
+.cv dt {
+    font-variant: tabular-nums oldstyle-nums all-small-caps;
+    font-weight: 400;
+    margin-left: -8rem;
+}
+
+/*************************
+ * Multilingual websites *
+ *************************/
+
+p.signoff,
+#main-nav,
+#lang-select {
+    a:link {
+	background: none;
+	text-shadow: none;
+	&::after {
+	    content: "  ";
+	}
+    }
+}
+
+#lang-select {
+    float: right;
+    font-weight: 500;
+    margin-right: 45%;
+    margin-top: 0.5rem;
+    margin-top: 1rem;
+}
+
+// Add languages as needed.
+.en:lang(en),
+.fr:lang(fr),
+.pt:lang(pt) {
+    color: $muted-text-color;
+}
+
+// Minimal-Mistakes page footer
+.page__footer-follow,
+ul.social-icons {
+    a:link {
+	border: 0;
+	background: none;
+	text-shadow: none;
+    }
+}
+.page__footer-follow,
+.page__footer-copyright {
+    a:hover {
+	color: inherit;
+    }
+}
+
 /*****************************************************
  * O Moodle Aprender 3 não tem modo escuro.
  * Para adequar ao nosso esquema de cores,
@@ -225,42 +279,44 @@
  * O código a seguir cancela o modo escuro neste site.
  *****************************************************/
 
-@media (prefers-color-scheme: no-preference),
-       (prefers-color-scheme: light),
-       (prefers-color-scheme: dark) {
-  body {
-    color: $text-color;
-    background-color: $background-color;
-    a:link {
-      text-decoration: none;
-      background: -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
-      background: linear-gradient($background-color, $background-color), linear-gradient($background-color, $background-color), linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
-      -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-      -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-      background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-      background-repeat: no-repeat, no-repeat, repeat-x;
-      text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
-      background-position: 0% 93%, 100% 93%, 0% 93%;
-    }
-    img, .line, .nobg {
-      background: none;
-    }
-    table {
-      border-top: 2px solid $text-color;
-      border-bottom: 2px solid $text-color;
-      td {
-        border-top: 1px solid $text-color;
-      }
-      th {
-        border-bottom: 1px solid $text-color;
-      }
-    }
-    .line,
-    .nobg {
-      border: 0;
-      filter: none;
-      -webkit-filter: none;
-    }
-  }
-}
+/*
+ *@media (prefers-color-scheme: no-preference),
+ *       (prefers-color-scheme: light),
+ *       (prefers-color-scheme: dark) {
+ *  body {
+ *    color: $text-color;
+ *    background-color: $background-color;
+ *    a:link {
+ *      text-decoration: none;
+ *      background: -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
+ *      background: linear-gradient($background-color, $background-color), linear-gradient($background-color, $background-color), linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
+ *      -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+ *      -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+ *      background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+ *      background-repeat: no-repeat, no-repeat, repeat-x;
+ *      text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
+ *      background-position: 0% 93%, 100% 93%, 0% 93%;
+ *    }
+ *    img, .line, .nobg {
+ *      background: none;
+ *    }
+ *    table {
+ *      border-top: 2px solid $text-color;
+ *      border-bottom: 2px solid $text-color;
+ *      td {
+ *        border-top: 1px solid $text-color;
+ *      }
+ *      th {
+ *        border-bottom: 1px solid $text-color;
+ *      }
+ *    }
+ *    .line,
+ *    .nobg {
+ *      border: 0;
+ *      filter: none;
+ *      -webkit-filter: none;
+ *    }
+ *  }
+ *}
+ */
 // vim: set shiftwidth=4 foldmethod=indent :

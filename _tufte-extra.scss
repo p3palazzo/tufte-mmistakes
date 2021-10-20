@@ -173,21 +173,27 @@ body.wide {
 // TODO: use variables and a rebase mixin instead of
 //       hard-coding every color twice.
 @media (prefers-color-scheme: dark) {
-    body { color: $background-color;
-           background-color: lighten($text-color, 10%); }
+    html,
+    body,
+    img,
+    .page__footer {
+        color: $light-gray;
+        background-color: $dark-gray; }
+    .page__meta {
+	color: $light-gray;
+    }
     a:link { text-decoration: none;
-             background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%));
-             background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient(lighten($background-color, 10%), lighten($background-color, 10%));
+             background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
+             background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
              -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
              -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
              background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
              background-repeat: no-repeat, no-repeat, repeat-x;
-             text-shadow: 0.03em 0 $text-color, -0.03em 0 $text-color, 0 0.03em $text-color, 0 -0.03em $text-color, 0.06em 0 $text-color, -0.06em 0 $text-color, 0.09em 0 $text-color, -0.09em 0 $text-color, 0.12em 0 $text-color, -0.12em 0 $text-color, 0.15em 0 $text-color, -0.15em 0 $text-color;
+             text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
              background-position: 0% 93%, 100% 93%, 0% 93%; }
-    img { background-color: darken($background-color, 10%); } // Prevents transparent PNGs from becoming unreadable
-    table { border-top: 2px solid $background-color;
-            border-bottom: 2px solid $background-color; }
-    td { border-top: 1px solid $background-color; }
-    th { border-bottom: 1px solid $background-color; }
+    table { border-top: 2px solid $light-gray;
+            border-bottom: 2px solid $light-gray; }
+    td { border-top: 1px solid $light-gray; }
+    th { border-bottom: 1px solid $light-gray; }
 }
 // vim: set shiftwidth=4 foldmethod=indent :
