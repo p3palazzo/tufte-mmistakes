@@ -216,16 +216,15 @@
 /*************************
  * Multilingual websites *
  *************************/
-
 p.signoff,
 #main-nav,
 #lang-select {
     a:link {
-	background: none;
-	text-shadow: none;
-	&::after {
-	    content: "  ";
-	}
+        background: none;
+        text-shadow: none;
+        &::after {
+            content: "  ";
+        }
     }
 }
 
@@ -244,79 +243,111 @@ p.signoff,
     color: $muted-text-color;
 }
 
+/*******************************************
+ * Masthead, site title and navigation links
+ *******************************************/
+a.site-title,
+ul.visible-links a {
+      background: none !important;
+}
+
+a.site-title {
+    font-size: $h-size-1;
+    font-variant: all-small-caps;
+    .site-subtitle {
+        font-size: $h-size-6;
+        font-variant: normal oldstyle-nums;
+    }
+}
+
+// Smaller Masthead links
+ul.visible-links {
+    font-size: $h-size-4;
+}
+
+// Fix FontAwesome icons
+.fas,
+.fab,
+.fa {
+	font-family: "Font Awesome 5 Free" !important;
+}
+
 // Minimal-Mistakes page footer
 .page__footer-follow,
 ul.social-icons {
     a:link {
-	border: 0;
-	background: none;
-	text-shadow: none;
+        border: 0;
+        background: none;
+        text-shadow: none;
     }
 }
 .page__footer-follow,
 .page__footer-copyright {
     a:hover {
-	color: inherit;
+        color: inherit;
     }
 }
 
-/*****************************************************
- * O Moodle Aprender 3 não tem modo escuro.
- * Para adequar ao nosso esquema de cores,
- * incluir código abaixo na seção "Geral".
+/****************************
+ * Header overlay gradients *
+ ****************************/
+.page__hero--overlay {
+	  &,
+	  & .page__title,
+	  & .page__meta,
+	  & a {
+	    	color: $background-color;
+	    	text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
+	  }
 
-   <style>
-     body,
-     div.page,
-     #region-main,
-     div.content,
-     h3.sectionname,
-     #page .course-content ul li.section.main {
-       color: #111115; background-color: $background-color;
-     }
-   </style>
+	  a.btn,
+	  blockquote,
+	  blockquote a,
+	  .page__hero-caption a {
+	  	  text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
+	  }
 
- * O código a seguir cancela o modo escuro neste site.
- *****************************************************/
+	  blockquote a,
+	  .page__hero-caption a {
+        background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
+        background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
+        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-repeat: no-repeat, no-repeat, repeat-x;
+        background-position: 0% 93%, 100% 93%, 0% 93%; 
+	  }
+}
 
-/*
- *@media (prefers-color-scheme: no-preference),
- *       (prefers-color-scheme: light),
- *       (prefers-color-scheme: dark) {
- *  body {
- *    color: $text-color;
- *    background-color: $background-color;
- *    a:link {
- *      text-decoration: none;
- *      background: -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
- *      background: linear-gradient($background-color, $background-color), linear-gradient($background-color, $background-color), linear-gradient(lighten($text-color, 15%), lighten($text-color, 15%));
- *      -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
- *      -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
- *      background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
- *      background-repeat: no-repeat, no-repeat, repeat-x;
- *      text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
- *      background-position: 0% 93%, 100% 93%, 0% 93%;
- *    }
- *    img, .line, .nobg {
- *      background: none;
- *    }
- *    table {
- *      border-top: 2px solid $text-color;
- *      border-bottom: 2px solid $text-color;
- *      td {
- *        border-top: 1px solid $text-color;
- *      }
- *      th {
- *        border-bottom: 1px solid $text-color;
- *      }
- *    }
- *    .line,
- *    .nobg {
- *      border: 0;
- *      filter: none;
- *      -webkit-filter: none;
- *    }
- *  }
- *}
- */
+// Resets minimal-mistakes/_base.scss
+ul li,
+ol li {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border: none;
+    font-style: normal;
+}
+
+// Fix link underlines
+a:hover {
+    text-decoration: none !important;
+}
+
+a.pagination--pager {
+    @extend .tufte-underline;
+    border: none;
+    font-weight: 500;
+    text-shadow: none;
+    &:hover {
+        @extend .hover-tufte-underline;
+        color: $text-color;
+        background: $background-color;
+    }
+}
+
+.page__footer-copyright {
+    font-size: $type-size-6;
+}
 // vim: set shiftwidth=4 foldmethod=indent :
