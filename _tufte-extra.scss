@@ -180,7 +180,7 @@ body.wide {
         color: $light-gray;
         background-color: $dark-gray; }
     .page__meta {
-	color: $light-gray;
+        color: $light-gray;
     }
     a:link { text-decoration: none;
              background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
@@ -191,9 +191,15 @@ body.wide {
              background-repeat: no-repeat, no-repeat, repeat-x;
              text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
              background-position: 0% 93%, 100% 93%, 0% 93%; }
-    table { border-top: 2px solid $light-gray;
-            border-bottom: 2px solid $light-gray; }
-    td { border-top: 1px solid $light-gray; }
-    th { border-bottom: 1px solid $light-gray; }
+    table {
+        border-top: 2px solid $light-gray;
+        border-bottom: 2px solid $light-gray;
+    }
+    td {
+        border-top: 1px solid $light-gray;
+    }
+    th {
+        border-bottom: 1px solid $light-gray;
+    }
 }
 // vim: set shiftwidth=4 foldmethod=indent :
