@@ -183,31 +183,30 @@ body.wide {
         color: $light-gray;
     }
     .page__content {
+        color: $light-gray;
         h2 {
             border-bottom-color: $dark-gray;
         }
+        .sidenote,
+        .marginnote,
+        .subfigures p:last-of-type,
+        figcaption {
+            color: $light-gray;
+        }
     }
     a:hover {
-        color: $light-gray !important;
+        color: $lighter-gray !important;
     }
-    a:link {
-        text-decoration: none;
-        background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
-        background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
-        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
-         background-position: 0% 93%, 100% 93%, 0% 93%;
-    }
+    .page__content,
+    .paee__footer,
+    .page__meta,
     .sidenote,
     .marginnote,
     .subfigures p:last-of-type,
     figcaption {
         a:link {
-            background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($muted-text-color, $muted-text-color);
-            background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($muted-text-color, $muted-text-color);
+            background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
+            background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
             -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
             -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
             background-size: 0.05em 1px, 0.05em 1px, 1px 1px;

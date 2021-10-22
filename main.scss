@@ -32,13 +32,12 @@ $sans-serif-narrow: $garamond;
    Colors
    ========================================================================== */
 
-$background-color: #fffff8;
+$lighter-gray: #fffff8;
 $darker-gray: #111;
 $dark-gray: lighten($darker-gray, 10%);
 
-$border-color: $background-color;
-
-$footer-background-color: $background-color;
+$background-color: $lighter-gray;
+$text-color: $darker-gray;
 
 /*
    Other
