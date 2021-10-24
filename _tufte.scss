@@ -10,9 +10,9 @@ html {
 
 body {
     font-family: $global-font-family;
-	  font-variant: oldstyle-nums proportional-nums;
+    font-variant: oldstyle-nums proportional-nums;
     counter-reset: sidenote-counter;
-	  line-height: 1;
+    line-height: 1;
     &.wide {
         width: 87.5%;
         margin-left: auto;
