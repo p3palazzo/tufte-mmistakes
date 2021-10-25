@@ -329,15 +329,13 @@ a:hover {
 }
 
 a.pagination--pager {
-    @extend .tufte-underline;
     border: none;
     font-weight: 500;
-    text-shadow: none;
-    &:hover {
-        @extend .hover-tufte-underline;
-        color: $text-color;
-        background: $background-color;
-    }
+}
+
+.page__share,
+.page__related {
+    border: none;
 }
 
 .page__footer-copyright {

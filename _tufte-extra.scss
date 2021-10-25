@@ -201,10 +201,16 @@ body.wide {
     a:hover {
         color: $lighter-gray !important;
     }
+    a.pagination--pager:hover {
+	color: $gray;
+    }
     .greedy-nav,
     .page__content,
     .page__footer,
     .page__meta,
+    .page__share,
+    .pagination,
+    .archive__item-title,
     .sidenote,
     .marginnote,
     .subfigures p:last-of-type,
@@ -217,7 +223,7 @@ body.wide {
             background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
             background-repeat: no-repeat, no-repeat, repeat-x;
             text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
-             background-position: 0% 93%, 100% 93%, 0% 93%;
+            background-position: 0% 93%, 100% 93%, 0% 93%;
         }
     }
     table {
