@@ -175,18 +175,20 @@ body.wide {
 @media (prefers-color-scheme: dark) {
     html,
     body,
+    .greedy-nav,
     .page__footer {
         color: $light-gray;
         background-color: $dark-gray;
+    }
+    .masthead,
+    .page__content h2 {
+	border-bottom-color: $dark-gray;
     }
     .page__meta {
         color: $light-gray;
     }
     .page__content {
         color: $light-gray;
-        h2 {
-            border-bottom-color: $dark-gray;
-        }
         .align-right,
         .sidenote,
         .sidenote-number,
@@ -199,6 +201,7 @@ body.wide {
     a:hover {
         color: $lighter-gray !important;
     }
+    .greedy-nav,
     .page__content,
     .page__footer,
     .page__meta,
