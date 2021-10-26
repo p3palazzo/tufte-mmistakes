@@ -195,6 +195,10 @@ img.align-right {
     }
 }
 
+.wide img.align-right {
+    margin-right: 0;
+}
+
 // Turn marginnotes on narrow screens into a lighbox
 .margin-toggle:checked + span.sidenote,
 .margin-toggle:checked + span.marginnote {
@@ -350,7 +354,7 @@ a:hover {
 }
 
 a.pagination--pager {
-    border: none;
+    border-color: $text-color;
     font-weight: 500;
     &:hover {
         background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
@@ -389,6 +393,15 @@ a.pagination--pager {
     }
 }
 
+.page__share + .pagination {
+    border-top: 0;
+}
+
+p.page__taxonomy strong {
+    text-transform: none;
+    font-weight: 500;
+}
+
 // Dark colorscheme with a softer background
 // TODO: use variables and a rebase mixin instead of
 //       hard-coding every color twice.
@@ -413,25 +426,29 @@ a.pagination--pager {
     figcaption {
         color: $light-gray;
     }
+    .page__share a {
+        background-color: $gray;
+        color: $dark-gray;
+    }
     a:hover {
         color: $lighter-gray !important;
     }
-    a.pagination--pager:hover {
-        color: $gray;
-        background-color: $light-gray;
+    a.pagination--pager {
+        border-color: $light-gray;
+        &:hover {
+            background-color: $light-gray;
+        }
     }
     .greedy-nav,
-    .initial-content,
-    .page__footer,
-    .page__meta,
-    .page__share,
-    .pagination,
+    .page__content,
+    .archive,
+    .page__footer-copyright,
     .archive__item-title,
     .sidenote,
     .marginnote,
     .subfigures p:last-of-type,
     figcaption {
-        a:link {
+        a:link:not(.btn) {
             background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
             background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
             -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;

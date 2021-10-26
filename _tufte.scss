@@ -66,6 +66,16 @@ h3 {
     }
 }
 
+h4 {
+    font-variant: all-small-caps;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    &.page__related-title,
+    &.page__share-title {
+        font-size: $h-size-5;
+    }
+}
+
 hr {
     display: block;
     height: 1px;
@@ -508,7 +518,10 @@ a:hover {
     text-shadow: unset;
 }
 
-a:link, .tufte-underline, .hover-tufte-underline:hover {
+.page__content a:link:not(.btn),
+.archive a:link:not(.btn),
+.tufte-underline,
+.hover-tufte-underline:hover {
     text-decoration: none;
     background: -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient($background-color, $background-color), -webkit-linear-gradient(currentColor, currentColor);
     background: linear-gradient($background-color, $background-color), linear-gradient($background-color, $background-color), linear-gradient(currentColor, currentColor);
@@ -521,7 +534,10 @@ a:link, .tufte-underline, .hover-tufte-underline:hover {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    a:link, .tufte-underline, .hover-tufte-underline:hover {
+    .page__content a:link:not(.btn),
+    .archive a:link:not(.btn),
+    .tufte-underline,
+    .hover-tufte-underline:hover {
         background-position-y: 87%, 87%, 87%;
     }
 }
