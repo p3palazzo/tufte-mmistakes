@@ -205,10 +205,16 @@ img.align-right {
 }
 
 // A class to get outset dates in a résumé or CV
-.cv dt {
-    font-variant: tabular-nums oldstyle-nums all-small-caps;
-    font-weight: 400;
-    margin-left: -8rem;
+.cv {
+    dt {
+        font-variant: tabular-nums oldstyle-nums all-small-caps;
+        font-weight: 400;
+        margin-left: -6rem;
+        margin-top: 0;
+    }
+    dd {
+        margin-left: 0;
+    }
 }
 
 /*************************

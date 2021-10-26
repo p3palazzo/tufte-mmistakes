@@ -100,7 +100,8 @@ section {
     padding-bottom: $type-size-6;
 }
 
-.initial-content {
+.initial-content,
+.page__content {
     h5,
     h6,
     p,
@@ -109,6 +110,7 @@ section {
     dd,
     ol,
     ul {
+        font-family: $global-font-family;
         font-size: $type-size-5;
         line-height: 1.3;
     }

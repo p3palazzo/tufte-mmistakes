@@ -114,9 +114,12 @@ h6 {
 
 // Finally, we flush the <dt> inline with the <dd>.
 // This reverses the margin setting on l.160 of _tufte.scss
-dt:not(:first-child),
-li:not(:first-child) {
-    margin-top: 0;
+.initial-content,
+.page__content {
+    dt:not(:first-child),
+    li:not(:first-child) {
+        margin-top: 0;
+    }
 }
 
 // Bonus: fix width of <dl> inside <li>
