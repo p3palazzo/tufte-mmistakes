@@ -94,7 +94,7 @@ img.nobg {
     border: 0;
 }
 
-.page__content ul {
+.initial-content ul {
     list-style-type: none;
     li {
         text-indent: calc(0px - #{$type-size-4});
@@ -357,6 +357,16 @@ a.pagination--pager {
 
 .page__footer-copyright {
     font-size: $type-size-6;
+}
+
+/**********************
+ * Archives and grids *
+ **********************/
+.archive__item {
+    padding: 0;
+    h2 {
+        font-family: $garamond;
+    }
 }
 
 // Dark colorscheme with a softer background

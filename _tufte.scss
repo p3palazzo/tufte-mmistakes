@@ -57,6 +57,9 @@ h3 {
     margin-bottom: $type-size-5;
     line-height: 1.3;
     em { font-style: normal; }
+}
+
+.page__content h3 {
     @include breakpoint($large) {
         float: left;
         margin-top: 0;
@@ -97,7 +100,7 @@ section {
     padding-bottom: $type-size-6;
 }
 
-.page__content {
+.initial-content {
     h5,
     h6,
     p,
