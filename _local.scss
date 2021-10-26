@@ -63,14 +63,18 @@ blockquote footer {
 
 .toc {
     font-size: $type-size-6;
+    color: $text-color;
     blockquote {
         padding: 0;
     }
     ul {
         li {
+            font-size: $type-size-5;
             font-style: italic;
             margin-left: $type-size-4;
-            font-size: $type-size-5;
+            a {
+                font-weight: 500;
+            }
         }
     }
 }
@@ -94,7 +98,7 @@ img.nobg {
     border: 0;
 }
 
-.initial-content ul {
+.initial-content ul:not(.toc__menu) {
     list-style-type: none;
     li {
         text-indent: calc(0px - #{$type-size-4});
@@ -383,6 +387,7 @@ a.pagination--pager {
     html,
     body,
     .greedy-nav,
+    .toc,
     .page__footer {
         color: $light-gray;
         background-color: $dark-gray;
