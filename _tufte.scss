@@ -40,64 +40,64 @@ body {
     }
 }
 
+h2 {
+    clear: both;
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 2.1rem;
+    margin-bottom: $type-size-5;
+    line-height: 1;
+    em { font-style: normal; }
+}
+
+h3 {
+    font-style: italic;
+    font-weight: 400;
+    margin-top: $type-size-4;
+    margin-bottom: $type-size-5;
+    line-height: 1.3;
+    em { font-style: normal; }
+    @include breakpoint($large) {
+        float: left;
+        margin-top: 0;
+        margin-left: calc(0px - #{$right-sidebar-width-narrow});
+        width: calc(#{$right-sidebar-width-narrow} - 1em);
+        font-size: $type-size-5;
+    }
+    @include breakpoint($x-large) {
+        margin-left: calc(0px - #{$right-sidebar-width});
+        width: calc(#{$right-sidebar-width} - 1em);
+    }
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: $type-size-6 0;
+    padding: 0;
+}
+
+.numeral {
+    font-family: $serif;
+    font-variant: oldstyle-nums;
+}
+
+.danger {
+    color: red;
+}
+
+article {
+    padding: 5rem 0rem;
+}
+
+section {
+    padding-top: $type-size-6;
+    padding-bottom: $type-size-6;
+}
+
 .page__content {
-    h2 {
-        clear: both;
-        font-style: italic;
-        font-weight: 300;
-        margin-top: 2.1rem;
-        margin-bottom: $type-size-5;
-        line-height: 1;
-        em { font-style: normal; }
-    }
-
-    h3 {
-        font-style: italic;
-        font-weight: 400;
-        margin-top: $type-size-4;
-        margin-bottom: $type-size-5;
-        line-height: 1.3;
-        em { font-style: normal; }
-        @include breakpoint($large) {
-            float: left;
-            margin-top: 0;
-            margin-left: calc(0px - #{$right-sidebar-width-narrow});
-            width: calc(#{$right-sidebar-width-narrow} - 1em);
-            font-size: $type-size-5;
-        }
-        @include breakpoint($x-large) {
-            margin-left: calc(0px - #{$right-sidebar-width});
-            width: calc(#{$right-sidebar-width} - 1em);
-        }
-    }
-
-    hr {
-        display: block;
-        height: 1px;
-        border: 0;
-        border-top: 1px solid #ccc;
-        margin: $type-size-6 0;
-        padding: 0;
-    }
-
-    .numeral {
-        font-family: $serif;
-        font-variant: oldstyle-nums;
-    }
-
-    .danger {
-        color: red;
-    }
-
-    article {
-        padding: 5rem 0rem;
-    }
-
-    section {
-        padding-top: $type-size-6;
-        padding-bottom: $type-size-6;
-    }
-
     h5,
     h6,
     p,
@@ -109,312 +109,310 @@ body {
         font-size: $type-size-5;
         line-height: 1.3;
     }
+}
 
-    p {
-        margin-top: $type-size-5;
-        margin-bottom: $type-size-5;
-        padding-right: 0;
-        vertical-align: baseline;
+p {
+    padding-right: 0;
+    vertical-align: baseline;
+}
+
+/* Chapter Epigraphs */
+div.epigraph {
+    margin: 5em 0;
+}
+
+.epigraph > blockquote {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.epigraph > blockquote,
+.epigraph > blockquote > p {
+    font-style: italic;
+    em { font-style: normal; }
+}
+
+.epigraph > blockquote > footer {
+    font-style: normal;
+}
+
+.epigraph > blockquote > footer > cite {
+    font-style: italic;
+}
+/* end chapter epigraphs styles */
+
+blockquote {
+    font-size: $type-size-5;
+}
+
+blockquote footer {
+    font-size: $type-size-6;
+    text-align: right;
+}
+
+/* 50 + 5 == 55, to be the same width as paragraph */
+section > dl,
+section > ol,
+section > ul {
+    -webkit-padding-start: 5%;
+    @include breakpoint($large) {
+        padding-left: 0;
     }
+}
 
-    /* Chapter Epigraphs */
-    div.epigraph {
-        margin: 5em 0;
-    }
+dt:not(:first-child),
+li:not(:first-child) {
+    margin-top: 0.25rem;
+}
 
-    .epigraph > blockquote {
-        margin-top: 3em;
-        margin-bottom: 3em;
-    }
+figure {
+    // Figures in Minimal-mistakes are flex.
+    // One should either reset them to display:block (easy fix)
+    // or use margin-left: auto in its child elements.
+    display: block;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    margin: 0 0 3em 0;
+}
 
-    .epigraph > blockquote,
-    .epigraph > blockquote > p {
-        font-style: italic;
-        em { font-style: normal; }
-    }
+/******************************************************
+ * CSL styling taken from Tufte-CSS, not yet
+   implemented in Jekyll-Pandoc-Tufte.
+ */
+div.csl-bib-body {
+    font-size: $type-size-5;
+    line-height: 1.3;
+}
 
-    .epigraph > blockquote > footer {
-        font-style: normal;
-    }
+div.csl-entry {
+    clear: both;
+    margin-top: .5rem;
+}
 
-    .epigraph > blockquote > footer > cite {
-        font-style: italic;
-    }
-    /* end chapter epigraphs styles */
+.hanging div.csl-entry {
+    margin-left: $type-size-4;
+    text-indent: -2rem;
+}
 
-    blockquote {
-        font-size: $type-size-5;
-    }
+div.csl-left-margin {
+    min-width: $type-size-4;
+    float: left;
+}
 
-    blockquote footer {
-        font-size: $type-size-6;
-        text-align: right;
-    }
+div.csl-right-inline {
+    margin-left: $type-size-4;
+    padding-left: 1rem;
+}
 
-    /* 50 + 5 == 55, to be the same width as paragraph */
-    section > dl,
-    section > ol,
-    section > ul {
-        -webkit-padding-start: 5%;
-        @include breakpoint($large) {
-            padding-left: 0;
-        }
-    }
+div.csl-indent {
+    margin-left: $type-size-4;
+}
 
-    dt:not(:first-child),
-    li:not(:first-child) {
-        margin-top: 0.25rem;
-    }
+div.hanging-indent{
+    margin-left: 1.5rem;
+    text-indent: -1.5rem;
+}
 
-    figure {
-        // Figures in Minimal-mistakes are flex.
-        // One should either reset them to display:block (easy fix)
-        // or use margin-left: auto in its child elements.
+/* Sidenotes, margin notes, figures, captions */
+video,
+iframe,
+img {
+    max-width: 100%;
+}
+
+span.sidenote,
+span.marginnote {
+    display: none;
+    @include breakpoint($large) {
         display: block;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-        -webkit-margin-start: 0;
-        -webkit-margin-end: 0;
-        margin: 0 0 3em 0;
     }
+}
 
-    /******************************************************
-     * CSL styling taken from Tufte-CSS, not yet
-       implemented in Jekyll-Pandoc-Tufte.
-     */
-    div.csl-bib-body {
-        font-size: $type-size-5;
-        line-height: 1.3;
+figcaption,
+.subfigures p:last-of-type,
+.align-right,
+.sidenote,
+.marginnote {
+    color: $text-color;
+    font-size: $type-size-6;
+    font-weight: 500;
+    line-height: 1.3;
+    vertical-align: baseline;
+    position: relative;
+    text-align: left;
+    @include breakpoint($large) {
+        float: right;
+        clear: right;
+        width: $right-sidebar-width-narrow;
+        margin: 0.3rem calc(0px - #{$right-sidebar-width-narrow}) 0 0;
+        padding-left: 1em;
     }
-
-    div.csl-entry {
-        clear: both;
-        margin-top: .5rem;
+    @include breakpoint($x-large) {
+        width: $right-sidebar-width;
+        margin-right: calc(0px - #{$right-sidebar-width});
     }
+}
 
-    .hanging div.csl-entry {
-        margin-left: $type-size-4;
-        text-indent: -2rem;
+.margin-toggle:checked + .sidenote,
+.margin-toggle:checked + .marginnote {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    vertical-align: baseline;
+    position: relative;
+}
+
+.sidenote-number {
+    counter-increment: sidenote-counter;
+    font-family: $global-font-family;
+    font-variant: oldstyle-nums;
+    font-weight: 500;
+}
+
+.sidenote-number:after,
+.sidenote:before {
+    font-family: $global-font-family;
+    font-variant: oldstyle-nums;
+    font-weight: 500;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.sidenote-number:after {
+    content: counter(sidenote-counter);
+    font-size: $type-size-6;
+    top: -0.5rem;
+    left: 0.1rem;
+}
+
+.sidenote:before {
+    content: counter(sidenote-counter) " ";
+    font-size: $type-size-5;
+    top: -0.5rem;
+}
+
+label {
+    cursor: pointer;
+}
+
+blockquote .sidenote,
+blockquote .marginnote {
+    text-align: left;
+    @include breakpoint($large) {
+        margin-right: calc(0px - #{$right-sidebar-width-narrow} - 2rem);
     }
-
-    div.csl-left-margin {
-        min-width: $type-size-4;
-        float: left;
+    @include breakpoint($x-large) {
+        margin-right: calc(0px - #{$right-sidebar-width} - 2rem);
     }
+}
 
-    div.csl-right-inline {
-        margin-left: $type-size-4;
-        padding-left: 1rem;
+div.table-wrapper {
+    overflow-x: auto;
+    font-family: $sans-serif-narrow;
+}
+
+.sans {
+    font-family: $sans-serif;
+    letter-spacing: .03em;
+}
+
+code, pre > code {
+    font-family: $monospace;
+    font-size: $type-size-7;
+    line-height: 1.42;
+    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+}
+
+.sans > code {
+    font-size: $type-size-6;
+}
+
+h1 > code,
+h2 > code,
+h3 > code {
+    font-size: $type-size-7;
+}
+
+.marginnote > code,
+.sidenote > code {
+    font-size: $type-size-6;
+}
+
+pre > code {
+    font-size: $type-size-7;
+    margin-left: 2.5%;
+    overflow-x: auto;
+    display: block;
+}
+
+.full,
+.fullwidth {
+    @include breakpoint($large) {
+        display: block; // Prevent float overlap
+        margin-right: calc(0px - #{$right-sidebar-width-narrow}) !important;
+        clear:both;
     }
-
-    div.csl-indent {
-        margin-left: $type-size-4;
+    @include breakpoint($x-large) {
+        margin-right: calc(0px - #{$right-sidebar-width}) !important;
     }
+}
 
-    div.hanging-indent{
-        margin-left: 1.5rem;
-        text-indent: -1.5rem;
+video.full,
+img.full {
+    @include breakpoint($large) {
+        max-width: calc(100% + #{$right-sidebar-width-narrow});
+        width: calc(100% + #{$right-sidebar-width-narrow});
     }
-
-    /* Sidenotes, margin notes, figures, captions */
-    video,
-    iframe,
-    img {
-        max-width: 100%;
+    @include breakpoint($x-large) {
+        max-width: calc(100% + #{$right-sidebar-width});
+        width: calc(100% + #{$right-sidebar-width});
     }
+}
 
-    span.sidenote,
-    span.marginnote {
+span.newthought {
+    font-variant: small-caps;
+    font-size: $type-size-5;
+    .smallcaps {
+      text-transform: uppercase;
+    }
+}
+
+input.margin-toggle {
+    display: none;
+}
+
+label.sidenote-number {
+    display: inline;
+}
+
+label.margin-toggle:not(.sidenote-number) {
+    display: inline;
+    @include breakpoint($large) {
         display: none;
-        @include breakpoint($large) {
-            display: block;
-        }
     }
+}
 
-    figcaption,
-    .subfigures p:last-of-type,
-    .align-right,
-    .sidenote,
-    .marginnote {
-        color: $text-color;
-        font-size: $type-size-6;
-        font-weight: 500;
-        line-height: 1.3;
-        vertical-align: baseline;
-        position: relative;
-        text-align: left;
-        @include breakpoint($large) {
-            float: right;
-            clear: right;
-            width: $right-sidebar-width-narrow;
-            margin: 0.3rem calc(0px - #{$right-sidebar-width-narrow}) 0 0;
-            padding-left: 1em;
-        }
-        @include breakpoint($x-large) {
-            width: $right-sidebar-width;
-            margin-right: calc(0px - #{$right-sidebar-width});
-        }
-    }
+.iframe-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
 
-    .margin-toggle:checked + .sidenote,
-    .margin-toggle:checked + .marginnote {
-        display: block;
-        float: left;
-        left: 1rem;
-        clear: both;
-        width: 95%;
-        margin: 1rem 2.5%;
-        vertical-align: baseline;
-        position: relative;
-    }
-
-    .sidenote-number {
-        counter-increment: sidenote-counter;
-        font-family: $global-font-family;
-        font-variant: oldstyle-nums;
-        font-weight: 500;
-    }
-
-    .sidenote-number:after,
-    .sidenote:before {
-        font-family: $global-font-family;
-        font-variant: oldstyle-nums;
-        font-weight: 500;
-        position: relative;
-        vertical-align: baseline;
-    }
-
-    .sidenote-number:after {
-        content: counter(sidenote-counter);
-        font-size: $type-size-6;
-        top: -0.5rem;
-        left: 0.1rem;
-    }
-
-    .sidenote:before {
-        content: counter(sidenote-counter) " ";
-        font-size: $type-size-5;
-        top: -0.5rem;
-    }
-
-    label {
-        cursor: pointer;
-    }
-
-    blockquote .sidenote,
-    blockquote .marginnote {
-        text-align: left;
-        @include breakpoint($large) {
-            margin-right: calc(0px - #{$right-sidebar-width-narrow} - 2rem);
-        }
-        @include breakpoint($x-large) {
-            margin-right: calc(0px - #{$right-sidebar-width} - 2rem);
-        }
-    }
-
-    div.table-wrapper {
-        overflow-x: auto;
-        font-family: $sans-serif-narrow;
-    }
-
-    .sans {
-        font-family: $sans-serif;
-        letter-spacing: .03em;
-    }
-
-    code, pre > code {
-        font-family: $monospace;
-        font-size: $type-size-7;
-        line-height: 1.42;
-        -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
-    }
-
-    .sans > code {
-        font-size: $type-size-6;
-    }
-
-    h1 > code,
-    h2 > code,
-    h3 > code {
-        font-size: $type-size-7;
-    }
-
-    .marginnote > code,
-    .sidenote > code {
-        font-size: $type-size-6;
-    }
-
-    pre > code {
-        font-size: $type-size-7;
-        margin-left: 2.5%;
-        overflow-x: auto;
-        display: block;
-    }
-
-    .full,
-    .fullwidth {
-        @include breakpoint($large) {
-            display: block; // Prevent float overlap
-            margin-right: calc(0px - #{$right-sidebar-width-narrow}) !important;
-            clear:both;
-        }
-        @include breakpoint($x-large) {
-            margin-right: calc(0px - #{$right-sidebar-width}) !important;
-        }
-    }
-    
-    video.full,
-    img.full {
-        @include breakpoint($large) {
-            max-width: calc(100% + #{$right-sidebar-width-narrow});
-            width: calc(100% + #{$right-sidebar-width-narrow});
-        }
-        @include breakpoint($x-large) {
-            max-width: calc(100% + #{$right-sidebar-width});
-            width: calc(100% + #{$right-sidebar-width});
-        }
-    }
-
-    span.newthought {
-        font-variant: small-caps;
-        font-size: $type-size-5;
-        .smallcaps {
-          text-transform: uppercase;
-        }
-    }
-
-    input.margin-toggle {
-        display: none;
-    }
-
-    label.sidenote-number {
-        display: inline;
-    }
-
-    label.margin-toggle:not(.sidenote-number) {
-        display: inline;
-        @include breakpoint($large) {
-            display: none;
-        }
-    }
-
-    .iframe-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 */
-        padding-top: 25px;
-        height: 0;
-    }
-
-    .iframe-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 // Use reduced widths only on .wide pages

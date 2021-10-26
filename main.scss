@@ -17,8 +17,8 @@
 
 /* system typefaces */
 $serif: "cormorant-garamond", Georgia, Times, serif;
-$sans-serif: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-$monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$sans-serif: "source-sans-pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+$monospace: "source-code-pro", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 /* serif typefaces */
 $garamond: "eb-garamond", "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
@@ -40,6 +40,7 @@ $dark-gray: lighten($darker-gray, 10%);
 
 $background-color: $lighter-gray;
 $text-color: $darker-gray;
+$footer-background-color: transparentize($background-color, 0);
 
 /*
    Other

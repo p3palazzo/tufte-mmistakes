@@ -55,155 +55,153 @@
 	}
 }
 
-.page__content {
-    blockquote footer {
-        font-size: $type-size-6;
-        font-weight: 500;
-        margin-bottom: 0.3rem;
-    }
+blockquote footer {
+    font-size: $type-size-6;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
 
-    .toc {
-        font-size: $type-size-6;
-        blockquote {
-            padding: 0;
-        }
-        ul {
-            li {
-                font-style: italic;
-                margin-left: $type-size-4;
-                font-size: $type-size-5;
-            }
-        }
+.toc {
+    font-size: $type-size-6;
+    blockquote {
+        padding: 0;
     }
-
-    sup {
-        font-weight: 500;
-    }
-
-    div.fluid-width-video-wrapper {
-        float: left; // Allow caption to align to top of iframe container
-    }
-
-    img,
-    video,
-    iframe {
-        border: 0.5px solid $text-color;
-    }
-
-    img.line,
-    img.nobg {
-        border: 0;
-    }
-
     ul {
-        list-style-type: none;
         li {
-            text-indent: calc(0px - #{$type-size-4});
-            &::before {
-                content: "— ";
-            }
-            p {
-                text-indent: 0;
-                &:first-child {
-                    display: inline;
-                }
+            font-style: italic;
+            margin-left: $type-size-4;
+            font-size: $type-size-5;
+        }
+    }
+}
+
+sup {
+    font-weight: 500;
+}
+
+div.fluid-width-video-wrapper {
+    float: left; // Allow caption to align to top of iframe container
+}
+
+img,
+video,
+iframe {
+    border: 0.5px solid $text-color;
+}
+
+img.line,
+img.nobg {
+    border: 0;
+}
+
+.page__content ul {
+    list-style-type: none;
+    li {
+        text-indent: calc(0px - #{$type-size-4});
+        &::before {
+            content: "— ";
+        }
+        p {
+            text-indent: 0;
+            &:first-child {
+                display: inline;
             }
         }
     }
+}
 
-    // Use hr as an invisible clear/spacing
-    hr {
-        border: 0;
-        clear: both;
+// Use hr as an invisible clear/spacing
+hr {
+    border: 0;
+    clear: both;
+    width: 100%;
+    padding: 1.2rem 0;
+}
+
+table.total {
+    font-variant: tabular-nums oldstyle-nums;
+    tbody tr:last-of-type td {
+        border-top: 1px solid $text-color;
+    }
+}
+
+/*
+ * Minimal-Mistakes utility classes can pull their own weight.
+ */
+
+// .align-left can be use to float elements side-by-side.
+@include breakpoint($medium) {
+    // Right now we're hard-coding 2 elements side-by-side
+    // at normal width and 3 at full-width. See if we can
+    // do otherwise.
+    .align-left {
         width: 100%;
-        padding: 1.2rem 0;
-    }
-
-    table.total {
-        font-variant: tabular-nums oldstyle-nums;
-        tbody tr:last-of-type td {
-            border-top: 1px solid $text-color;
+        margin-bottom: 1em;
+        @include breakpoint($medium) {
+            width: calc(#{$right-sidebar-width-narrow} - 0.5em);
         }
     }
 
-    /*
-     * Minimal-Mistakes utility classes can pull their own weight.
-     */
-
-    // .align-left can be use to float elements side-by-side.
-    @include breakpoint($medium) {
-        // Right now we're hard-coding 2 elements side-by-side
-        // at normal width and 3 at full-width. See if we can
-        // do otherwise.
-        .align-left {
-            width: 100%;
-            margin-bottom: 1em;
+    div.subfigures > figure { // account for the width of letter captions
+        img.align-left {
             @include breakpoint($medium) {
-                width: calc(#{$right-sidebar-width-narrow} - 0.5em);
+                max-width: calc(#{$right-sidebar-width-narrow} - 3em);
             }
         }
-
-        div.subfigures > figure { // account for the width of letter captions
-            img.align-left {
-                @include breakpoint($medium) {
-                    max-width: calc(#{$right-sidebar-width-narrow} - 3em);
-                }
-            }
-            figcaption {
-                padding-left: 0;
-                max-width: 2em;
-            }
-            &:not(:last-of-type) img:not(.align-right) + figcaption {
-                margin-right: 1em;
-            }
-        }
-
-        // Pandoc + reveal.js multicolumn slides
-        .column {
-            display: block;
-            clear: both;
-            width: 90%;
-            margin-right: 10%;
-            @include breakpoint($medium) {
-                clear: none;
-                margin-right: 0;
-                width: unset;
-            }
-        }
-    }
-
-    // .align-center prevents elements from taking up the width of the container
-    .align-center {
-        width: auto;
-        min-width: 0;
-        max-width: 100%;
-    }
-
-    // .align-right as equivalent to marginnote
-    img.align-right {
-        @include breakpoint($large) {
+        figcaption {
             padding-left: 0;
-            margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
-            max-width: calc(#{$right-sidebar-width-narrow} - 1em);
+            max-width: 2em;
         }
-        @include breakpoint($x-large) {
-            max-width: calc(#{$right-sidebar-width} - 1em);
-            margin-right: calc(0px - #{$right-sidebar-width});
+        &:not(:last-of-type) img:not(.align-right) + figcaption {
+            margin-right: 1em;
         }
     }
 
-    // Turn marginnotes on narrow screens into a lighbox
-    .margin-toggle:checked + span.sidenote,
-    .margin-toggle:checked + span.marginnote {
-        @extend .notice;
-        position: absolute;
-        height: auto;
-        left: auto;
-        right: auto;
-        top: auto;
-        bottom: auto;
-        box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
+    // Pandoc + reveal.js multicolumn slides
+    .column {
+        display: block;
+        clear: both;
+        width: 90%;
+        margin-right: 10%;
+        @include breakpoint($medium) {
+            clear: none;
+            margin-right: 0;
+            width: unset;
+        }
     }
+}
+
+// .align-center prevents elements from taking up the width of the container
+.align-center {
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+// .align-right as equivalent to marginnote
+img.align-right {
+    @include breakpoint($large) {
+        padding-left: 0;
+        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
+        max-width: calc(#{$right-sidebar-width-narrow} - 1em);
+    }
+    @include breakpoint($x-large) {
+        max-width: calc(#{$right-sidebar-width} - 1em);
+        margin-right: calc(0px - #{$right-sidebar-width});
+    }
+}
+
+// Turn marginnotes on narrow screens into a lighbox
+.margin-toggle:checked + span.sidenote,
+.margin-toggle:checked + span.marginnote {
+    @extend .notice;
+    position: absolute;
+    height: auto;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
 }
 
 // A class to get outset dates in a résumé or CV
@@ -246,6 +244,10 @@ p.signoff,
 /*******************************************
  * Masthead, site title and navigation links
  *******************************************/
+.masthead__inner-wrap {
+    font-family: $header-font-family;
+}
+
 a.site-title,
 ul.visible-links a {
       background: none !important;
@@ -254,6 +256,7 @@ ul.visible-links a {
 a.site-title {
     font-size: $h-size-3;
     font-variant: all-small-caps;
+    font-weight: 300;
     .site-subtitle {
         font-size: $h-size-6;
         font-variant: normal oldstyle-nums;
@@ -265,15 +268,8 @@ ul.visible-links {
     font-size: $h-size-6;
 }
 
-// Fix FontAwesome icons
-.fas,
-.fab,
-.fa {
-	font-family: "Font Awesome 5 Free" !important;
-}
-
 // Minimal-Mistakes page footer
-.page__footer-follow,
+.page__footer-follow li,
 ul.social-icons {
     a:link {
         border: 0;
@@ -281,8 +277,11 @@ ul.social-icons {
         text-shadow: none;
     }
 }
-.page__footer-follow,
+.page__footer-follow li strong,
+.page__footer-follow li a,
 .page__footer-copyright {
+    font-weight: 500;
+    text-transform: none;
     a:hover {
         color: inherit;
     }
@@ -336,18 +335,104 @@ a:hover {
 }
 
 a.pagination--pager {
-    @extend .tufte-underline;
     border: none;
     font-weight: 500;
-    text-shadow: none;
     &:hover {
-        @extend .hover-tufte-underline;
-        color: $text-color;
-        background: $background-color;
+        background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
+        background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
+        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-repeat: no-repeat, no-repeat, repeat-x;
+        text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
+        background-position: 0% 93%, 100% 93%, 0% 93%;
+        background-color: $dark-gray;
     }
+}
+
+.page__share,
+.page__related {
+    border: none;
 }
 
 .page__footer-copyright {
     font-size: $type-size-6;
+}
+
+// Dark colorscheme with a softer background
+// TODO: use variables and a rebase mixin instead of
+//       hard-coding every color twice.
+@media (prefers-color-scheme: dark) {
+    html,
+    body,
+    .greedy-nav,
+    .page__footer {
+        color: $light-gray;
+        background-color: $dark-gray;
+    }
+    .masthead,
+    .page__content h2 {
+        border-bottom-color: $dark-gray;
+    }
+    .page__content,
+    .page__meta,
+    .align-right,
+    .sidenote,
+    .sidenote-number,
+    .marginnote,
+    .subfigures p:last-of-type,
+    figcaption {
+        color: $light-gray;
+    }
+    a:hover {
+        color: $lighter-gray !important;
+    }
+    a.pagination--pager:hover {
+        color: $gray;
+        background-color: $light-gray;
+    }
+    .greedy-nav,
+    .page__content,
+    .page__footer,
+    .page__meta,
+    .page__share,
+    .pagination,
+    .archive__item-title,
+    .sidenote,
+    .marginnote,
+    .subfigures p:last-of-type,
+    figcaption {
+        a:link {
+            background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
+            background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
+            -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            background-repeat: no-repeat, no-repeat, repeat-x;
+            text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
+            background-position: 0% 93%, 100% 93%, 0% 93%;
+        }
+    }
+    table {
+        border-top-color: $light-gray;
+        border-bottom-color: $light-gray;
+        td {
+            border-top-color: $light-gray;
+        }
+        th {
+            border-bottom-color: $light-gray;
+        }
+    }
+    img:not(.line) {
+        background-color: $background-color;
+        border-color: $light-gray;
+        -webkit-filter: brightness(0.8);
+                filter: brightness(0.8);
+    }
+    .line {
+        background: none;
+        -webkit-filter: invert(0.83);
+                filter: invert(0.83);
+    }
 }
 // vim: set shiftwidth=4 foldmethod=indent :
