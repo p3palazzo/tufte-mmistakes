@@ -279,6 +279,10 @@ ul.visible-links {
 }
 
 // Minimal-Mistakes page footer
+.page__footer {
+    background-color: $footer-background-color;
+}
+
 .page__footer-follow li,
 ul.social-icons {
     font-family: $global-font-family;
@@ -373,6 +377,11 @@ a.pagination--pager {
 /**********************
  * Archives and grids *
  **********************/
+.archive__subtitle {
+    margin-top: 5rem;
+    border-bottom: 0;
+}
+
 .archive__item {
     padding: 0;
     h2 {
@@ -392,12 +401,10 @@ a.pagination--pager {
         color: $light-gray;
         background-color: $dark-gray;
     }
-    .masthead,
-    .page__content h2 {
-        border-bottom-color: $dark-gray;
-    }
-    .page__content,
+    .initial-content,
+    .archive__subtitle,
     .page__meta,
+    .page__footer,
     .align-right,
     .sidenote,
     .sidenote-number,
@@ -414,7 +421,7 @@ a.pagination--pager {
         background-color: $light-gray;
     }
     .greedy-nav,
-    .page__content,
+    .initial-content,
     .page__footer,
     .page__meta,
     .page__share,

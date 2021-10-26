@@ -40,7 +40,7 @@ $dark-gray: lighten($darker-gray, 10%);
 
 $background-color: $lighter-gray;
 $text-color: $darker-gray;
-$footer-background-color: transparentize($background-color, 0);
+$footer-background-color: $background-color;
 
 /*
    Other
