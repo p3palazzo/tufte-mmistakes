@@ -17,7 +17,7 @@ body {
 
 .page__inner-wrap {
     h1 {
-        font-weight: $heading-font-weight;
+        font-weight: $header-font-weight;
         margin-top: 4rem;
         margin-bottom: 1.5rem;
         line-height: 1;
@@ -35,8 +35,8 @@ body {
 
 h2 {
     clear: both;
-    font-style: italic;
-    font-weight: $heading-font-weight;
+    font-style: $header-font-style;
+    font-weight: $header-font-weight;
     margin-top: 2.1rem;
     margin-bottom: $type-size-5;
     line-height: 1;
@@ -44,7 +44,7 @@ h2 {
 }
 
 h3 {
-    font-style: italic;
+    font-style: $header-font-style;
     font-weight: 400;
     margin-top: $type-size-4;
     margin-bottom: $type-size-5;

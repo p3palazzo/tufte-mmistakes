@@ -69,7 +69,7 @@ ul.visible-links a {
 a.site-title {
     font-size: $h-size-3;
     font-variant: all-small-caps;
-    font-weight: $heading-font-weight;
+    font-weight: $header-font-weight;
     .site-subtitle {
         font-size: $h-size-6;
         font-variant: normal oldstyle-nums;
@@ -94,7 +94,7 @@ ul.visible-links {
 	  }
 
 	  h1 {
-        font-weight: $heading-font-weight;
+        font-weight: $header-font-weight;
 	  }
 
     .page__lead,
@@ -111,7 +111,7 @@ ul.visible-links {
 	  }
 
 	  .page__hero-caption {
-		    font-weight: 500;
+		    font-weight: $meta-font-weight;
 	  }
 
 	  blockquote a,
@@ -137,7 +137,7 @@ ul.visible-links {
 
 .page__meta-readtime {
     font-size: $type-size-6;
-    font-weight: 500;
+    font-weight: $meta-font-weight;
 }
 
 .archive__item .page__meta {
@@ -166,7 +166,7 @@ ul.visible-links {
 .sidebar p,
 ul.nav__items li .nav__sub-title {
     font-family: $global-font-family;
-    font-weight: 500;
+    font-weight: $meta-font-weight;
     text-transform: none;
 }
 
@@ -188,7 +188,7 @@ blockquote footer {
             font-style: italic;
             margin-left: $type-size-4;
             a {
-                font-weight: 500;
+                font-weight: $meta-font-weight;
             }
         }
     }
@@ -301,7 +301,7 @@ img.align-right {
         }
     }
     float: right;
-    font-weight: 500;
+    font-weight: $meta-font-weight;
     margin-right: 45%;
     margin-top: 0.5rem;
     margin-top: 1rem;
@@ -423,7 +423,6 @@ ul.social-icons {
 .page__footer-follow li strong,
 .page__footer-follow li a,
 .page__footer-copyright {
-    font-family: $sans-serif;
     font-weight: $meta-font-weight;
     text-transform: none;
     a:hover {
@@ -433,11 +432,12 @@ ul.social-icons {
 
 .page__footer-follow + .page__footer-copyright {
     display: inline;
-    padding-left: 1.3rem;
 }
 
 .page__footer-copyright {
+    font-family: $global-font-family;
     font-size: $type-size-6;
+    font-weight: $meta-font-weight;
 }
 
 // Dark colorscheme with a softer background
