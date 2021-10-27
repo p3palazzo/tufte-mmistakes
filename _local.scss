@@ -4,9 +4,15 @@
 }
 
 .page__meta,
+.page__date time,
 .page__date strong {
+    font-family: $sans-serif;
     font-variant: lining-nums;
-  	font-weight: 500;
+  	font-weight: $meta-font-weight;
+}
+
+.page__meta-readtime {
+    font-size: $type-size-6;
 }
 
 /******************
@@ -17,7 +23,7 @@
 	  padding: 5rem 0;
 
 	  h1 {
-        font-weight: 300;
+        font-weight: $heading-font-weight;
         margin-top: 4rem;
         margin-bottom: 1.5rem;
         font-size: 3.2rem;
@@ -270,7 +276,7 @@ ul.visible-links a {
 a.site-title {
     font-size: $h-size-3;
     font-variant: all-small-caps;
-    font-weight: 300;
+    font-weight: $heading-font-weight;
     .site-subtitle {
         font-size: $h-size-6;
         font-variant: normal oldstyle-nums;
@@ -280,30 +286,6 @@ a.site-title {
 // Smaller Masthead links
 ul.visible-links {
     font-size: $h-size-6;
-}
-
-// Minimal-Mistakes page footer
-.page__footer {
-    background-color: $footer-background-color;
-}
-
-.page__footer-follow li,
-ul.social-icons {
-    font-family: $global-font-family;
-    a:link {
-        border: 0;
-        background: none;
-        text-shadow: none;
-    }
-}
-.page__footer-follow li strong,
-.page__footer-follow li a,
-.page__footer-copyright {
-    font-weight: 500;
-    text-transform: none;
-    a:hover {
-        color: inherit;
-    }
 }
 
 /****************************
@@ -353,9 +335,42 @@ a:hover {
     text-decoration: none !important;
 }
 
+/**********************
+ * Archives and grids *
+ **********************/
+div.feature__wrapper,
+.page__share,
+.page__related {
+    border: none;
+}
+
+.page__footer-copyright {
+    font-size: $type-size-6;
+}
+
+.archive__subtitle {
+    margin-top: 5rem;
+    border-bottom: 0;
+}
+
+.archive__item {
+    padding: 0;
+    h2 {
+        font-family: $garamond;
+    }
+}
+
+.page__share a:link {
+    color: $lighter-gray;
+}
+
+.page__share + .pagination {
+    border-top: 0;
+}
+
 a.pagination--pager {
     border-color: $text-color;
-    font-weight: 500;
+    font-weight: $meta-font-weight;
     &:hover {
         background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
         background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
@@ -369,38 +384,36 @@ a.pagination--pager {
     }
 }
 
-div.feature__wrapper,
-.page__share,
-.page__related {
-    border: none;
+p.page__taxonomy strong {
+    font-family: $sans-serif;
+    font-weight: $meta-font-weight;
+    text-transform: none;
 }
 
-.page__footer-copyright {
-    font-size: $type-size-6;
+// Minimal-Mistakes page footer
+.page__footer {
+    background-color: $footer-background-color;
 }
 
-/**********************
- * Archives and grids *
- **********************/
-.archive__subtitle {
-    margin-top: 5rem;
-    border-bottom: 0;
-}
-
-.archive__item {
-    padding: 0;
-    h2 {
-        font-family: $garamond;
+.page__footer-follow li,
+ul.social-icons {
+    font-family: $sans-serif;
+    a:link {
+        border: 0;
+        background: none;
+        text-shadow: none;
     }
 }
 
-.page__share + .pagination {
-    border-top: 0;
-}
-
-p.page__taxonomy strong {
+.page__footer-follow li strong,
+.page__footer-follow li a,
+.page__footer-copyright {
+    font-family: $sans-serif;
+    font-weight: $meta-font-weight;
     text-transform: none;
-    font-weight: 500;
+    a:hover {
+        color: inherit;
+    }
 }
 
 // Dark colorscheme with a softer background

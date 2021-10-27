@@ -59,6 +59,9 @@ $right-sidebar-width-wide: 400px;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+$meta-font-weight: 300;
+$heading-font-weight: 400;
+
 @import
     "tufte",
     "tufte-extra",
