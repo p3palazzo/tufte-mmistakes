@@ -167,7 +167,6 @@ ul.visible-links {
 ul.nav__items li .nav__sub-title {
     font-family: $global-font-family;
     font-weight: $meta-font-weight;
-    text-transform: none;
 }
 
 blockquote footer {
@@ -320,6 +319,7 @@ img.align-right {
 a.btn {
     font-weight: 400;
     letter-spacing: 0.05rem;
+    text-transform: uppercase;
 }
 
 a.btn--primary,
@@ -396,18 +396,11 @@ a.pagination--pager {
 p.page__taxonomy strong {
     font-family: $sans-serif;
     font-weight: $meta-font-weight;
-    text-transform: none;
 }
 
 // Minimal-Mistakes page footer
 .page__footer {
     background-color: $footer-background-color;
-}
-
-.page__footer-follow {
-    &, & ul {
-        display: inline;
-    }
 }
 
 .page__footer-follow li,
@@ -424,20 +417,14 @@ ul.social-icons {
 .page__footer-follow li a,
 .page__footer-copyright {
     font-weight: $meta-font-weight;
-    text-transform: none;
     a:hover {
         color: inherit;
     }
 }
 
-.page__footer-follow + .page__footer-copyright {
-    display: inline;
-}
-
 .page__footer-copyright {
     font-family: $global-font-family;
     font-size: $type-size-6;
-    font-weight: $meta-font-weight;
 }
 
 // Dark colorscheme with a softer background
