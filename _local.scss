@@ -335,6 +335,21 @@ a:hover {
     text-decoration: none !important;
 }
 
+/************
+ * Features *
+ ************/
+a.btn {
+    font-weight: 600;
+}
+
+a.btn--primary,
+a.btn--success,
+a.btn--warning,
+a.btn--danger,
+a.btn--info {
+    color: $background-color;
+}
+
 /**********************
  * Archives and grids *
  **********************/
