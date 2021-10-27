@@ -17,7 +17,7 @@
 
 /* system typefaces */
 $serif: "cormorant-garamond", Georgia, Times, serif;
-$sans-serif: "source-sans-pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+$sans-serif: "league-gothic", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 $monospace: "source-code-pro", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 /* serif typefaces */
@@ -59,7 +59,7 @@ $right-sidebar-width-wide: 400px;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-$meta-font-weight: 300;
+$meta-font-weight: 400;
 $heading-font-weight: 400;
 
 @import

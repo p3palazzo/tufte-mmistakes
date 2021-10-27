@@ -3,27 +3,96 @@
     font-variant: all-small-caps;
 }
 
-.page__meta,
-.page__date time,
-.page__date strong {
-    font-family: $sans-serif;
-    font-variant: lining-nums;
-  	font-weight: $meta-font-weight;
-}
-
-.page__meta-readtime {
-    font-size: $type-size-6;
+sup {
     font-weight: 500;
 }
 
-.archive__item .page__meta {
-    display: none;
+div.fluid-width-video-wrapper {
+    float: left; // Allow caption to align to top of iframe container
 }
 
-/******************
- * Header overlay *
- ******************/
+img,
+video,
+iframe {
+    border: 0.5px solid $text-color;
+}
+
+img.line,
+img.nobg {
+    border: 0;
+}
+
+// Use hr as an invisible clear/spacing
+hr {
+    border: 0;
+    clear: both;
+    width: 100%;
+    padding: 1.2rem 0;
+}
+
+table.total {
+    font-variant: tabular-nums oldstyle-nums;
+    tbody tr:last-of-type td {
+        border-top: 1px solid $text-color;
+    }
+}
+
+/***************************
+ * Minimal-Mistakes resets *
+ ***************************/
+ul li,
+ol li {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border: none;
+    font-style: normal;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+/*******************************************
+ * Masthead, site title and navigation links
+ *******************************************/
+.masthead__inner-wrap {
+    font-family: $header-font-family;
+}
+
+a.site-title,
+ul.visible-links a {
+      background: none !important;
+}
+
+a.site-title {
+    font-size: $h-size-3;
+    font-variant: all-small-caps;
+    font-weight: $heading-font-weight;
+    .site-subtitle {
+        font-size: $h-size-6;
+        font-variant: normal oldstyle-nums;
+    }
+}
+
+// Smaller Masthead links
+ul.visible-links {
+    font-size: $h-size-6;
+}
+
+/*******************
+ * Header and meta *
+ *******************/
 .page__hero--overlay {
+	  &,
+	  & .page__title,
+	  & .page__meta,
+	  & a {
+	    	color: $background-color;
+	    	text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
+	  }
+
 	  h1 {
         font-weight: $heading-font-weight;
 	  }
@@ -44,6 +113,61 @@
 	  .page__hero-caption {
 		    font-weight: 500;
 	  }
+
+	  blockquote a,
+	  .page__hero-caption a {
+	  	  text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
+        background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
+        background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
+        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-repeat: no-repeat, no-repeat, repeat-x;
+        background-position: 0% 93%, 100% 93%, 0% 93%; 
+	  }
+}
+
+.page__meta,
+.page__date time,
+.page__date strong {
+    font-family: $sans-serif;
+    font-variant: lining-nums;
+  	font-weight: $meta-font-weight;
+}
+
+.page__meta-readtime {
+    font-size: $type-size-6;
+    font-weight: 500;
+}
+
+.archive__item .page__meta {
+    display: none;
+}
+
+/***********
+ * Sidebar *
+ ***********/
+.initial-content ul:not(.toc__menu) {
+    list-style-type: none;
+    &:not(.nav__items) li {
+        text-indent: calc(0px - #{$type-size-4});
+        &::before {
+            content: "— ";
+        }
+        p {
+            text-indent: 0;
+            &:first-child {
+                display: inline;
+            }
+        }
+    }
+}
+
+.sidebar p,
+ul.nav__items li .nav__sub-title {
+    font-family: $global-font-family;
+    font-weight: 500;
+    text-transform: none;
 }
 
 blockquote footer {
@@ -67,56 +191,6 @@ blockquote footer {
                 font-weight: 500;
             }
         }
-    }
-}
-
-sup {
-    font-weight: 500;
-}
-
-div.fluid-width-video-wrapper {
-    float: left; // Allow caption to align to top of iframe container
-}
-
-img,
-video,
-iframe {
-    border: 0.5px solid $text-color;
-}
-
-img.line,
-img.nobg {
-    border: 0;
-}
-
-.initial-content ul:not(.toc__menu) {
-    list-style-type: none;
-    li {
-        text-indent: calc(0px - #{$type-size-4});
-        &::before {
-            content: "— ";
-        }
-        p {
-            text-indent: 0;
-            &:first-child {
-                display: inline;
-            }
-        }
-    }
-}
-
-// Use hr as an invisible clear/spacing
-hr {
-    border: 0;
-    clear: both;
-    width: 100%;
-    padding: 1.2rem 0;
-}
-
-table.total {
-    font-variant: tabular-nums oldstyle-nums;
-    tbody tr:last-of-type td {
-        border-top: 1px solid $text-color;
     }
 }
 
@@ -218,8 +292,6 @@ img.align-right {
 /*************************
  * Multilingual websites *
  *************************/
-p.signoff,
-#main-nav,
 #lang-select {
     a:link {
         background: none;
@@ -228,9 +300,6 @@ p.signoff,
             content: "  ";
         }
     }
-}
-
-#lang-select {
     float: right;
     font-weight: 500;
     margin-right: 45%;
@@ -245,85 +314,12 @@ p.signoff,
     color: $muted-text-color;
 }
 
-/*******************************************
- * Masthead, site title and navigation links
- *******************************************/
-.masthead__inner-wrap {
-    font-family: $header-font-family;
-}
-
-a.site-title,
-ul.visible-links a {
-      background: none !important;
-}
-
-a.site-title {
-    font-size: $h-size-3;
-    font-variant: all-small-caps;
-    font-weight: $heading-font-weight;
-    .site-subtitle {
-        font-size: $h-size-6;
-        font-variant: normal oldstyle-nums;
-    }
-}
-
-// Smaller Masthead links
-ul.visible-links {
-    font-size: $h-size-6;
-}
-
-/****************************
- * Header overlay gradients *
- ****************************/
-.page__hero--overlay {
-	  &,
-	  & .page__title,
-	  & .page__meta,
-	  & a {
-	    	color: $background-color;
-	    	text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
-	  }
-
-	  a.btn,
-	  blockquote,
-	  blockquote a,
-	  .page__hero-caption a {
-	  	  text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
-	  }
-
-	  blockquote a,
-	  .page__hero-caption a {
-        background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
-        background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
-        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        background-position: 0% 93%, 100% 93%, 0% 93%; 
-	  }
-}
-
-// Resets minimal-mistakes/_base.scss
-ul li,
-ol li {
-    margin-bottom: 0;
-}
-
-blockquote {
-    border: none;
-    font-style: normal;
-}
-
-// Fix link underlines
-a:hover {
-    text-decoration: none !important;
-}
-
 /************
  * Features *
  ************/
 a.btn {
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
 }
 
 a.btn--primary,
@@ -359,10 +355,6 @@ div.feature__wrapper {
     .archive__item-excerpt {
         font-weight: 500;
     }
-}
-
-.page__footer-copyright {
-    font-size: $type-size-6;
 }
 
 .archive__subtitle {
@@ -412,6 +404,12 @@ p.page__taxonomy strong {
     background-color: $footer-background-color;
 }
 
+.page__footer-follow {
+    &, & ul {
+        display: inline;
+    }
+}
+
 .page__footer-follow li,
 ul.social-icons {
     font-family: $sans-serif;
@@ -431,6 +429,15 @@ ul.social-icons {
     a:hover {
         color: inherit;
     }
+}
+
+.page__footer-follow + .page__footer-copyright {
+    display: inline;
+    padding-left: 1.3rem;
+}
+
+.page__footer-copyright {
+    font-size: $type-size-6;
 }
 
 // Dark colorscheme with a softer background
