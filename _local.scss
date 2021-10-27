@@ -474,7 +474,14 @@ ul.social-icons {
     a.pagination--pager {
         border-color: $light-gray;
         &:hover {
-            background-color: $light-gray;
+            background: -webkit-linear-gradient($darker-gray, $darker-gray), -webkit-linear-gradient($darker-gray, $darker-gray), -webkit-linear-gradient(currentColor, currentColor);
+            background: linear-gradient($darker-gray, $darker-gray), linear-gradient($darker-gray, $darker-gray), linear-gradient(currentColor, currentColor);
+            -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            background-repeat: no-repeat, no-repeat, repeat-x;
+            text-shadow: 0.03em 0 $darker-gray, -0.03em 0 $darker-gray, 0 0.03em $darker-gray, 0 -0.03em $darker-gray, 0.06em 0 $darker-gray, -0.06em 0 $darker-gray, 0.09em 0 $darker-gray, -0.09em 0 $darker-gray, 0.12em 0 $darker-gray, -0.12em 0 $darker-gray, 0.15em 0 $darker-gray, -0.15em 0 $darker-gray;
+            background-color: $darker-gray;
         }
     }
     .greedy-nav,
