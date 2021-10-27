@@ -1,12 +1,12 @@
 body.wide {
-    /**
-     * Makes it so that top-level <p> don't need to be wrapped in <section>
-     */
-    article > p,
-    article > li,
-    article > footer,
-    article > table {
-        width: 55%;
+     // Makes it so that top-level <p> don't need to be wrapped in <section>
+    article:not(.archive__item) {
+        & > p,
+        & > li,
+        & > footer,
+        & > table {
+            width: 55%;
+        }
     }
 }
 
