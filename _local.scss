@@ -94,10 +94,19 @@ ul.visible-links {
 	  &,
 	  & .page__title,
 	  & .page__meta,
-	  & a {
+    & a:link:not(.btn) {
 	    	color: $background-color;
 	    	text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
 	  }
+    & a:link:not(.btn) {
+        background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
+        background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
+        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+        background-repeat: no-repeat, no-repeat, repeat-x;
+        background-position: 0% 93%, 100% 93%, 0% 93%;
+    }
 
 	  h1 {
         font-weight: $header-font-weight;
