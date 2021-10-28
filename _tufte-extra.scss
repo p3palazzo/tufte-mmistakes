@@ -116,7 +116,7 @@ h6 {
 // This reverses the margin setting on l.160 of _tufte.scss
 .initial-content,
 .page__content {
-    dt:not(:first-child),
+    dt,
     li:not(:first-child) {
         margin-top: 0;
     }
