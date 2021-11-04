@@ -52,17 +52,22 @@ h3 {
     em { font-style: normal; }
 }
 
-.page__content h3 {
-    @include breakpoint($large) {
-        float: left;
-        margin-top: 0;
-        margin-left: calc(0px - #{$right-sidebar-width-narrow});
-        width: calc(#{$right-sidebar-width-narrow} - 1em);
-        font-size: $type-size-5;
+.page__content {
+    h2 {
+        border: none;
     }
-    @include breakpoint($x-large) {
-        margin-left: calc(0px - #{$right-sidebar-width});
-        width: calc(#{$right-sidebar-width} - 1em);
+    h3 {
+        @include breakpoint($large) {
+            float: left;
+            margin-top: 0;
+            margin-left: calc(0px - #{$right-sidebar-width-narrow});
+            width: calc(#{$right-sidebar-width-narrow} - 1em);
+            font-size: $type-size-5;
+        }
+        @include breakpoint($x-large) {
+            margin-left: calc(0px - #{$right-sidebar-width});
+            width: calc(#{$right-sidebar-width} - 1em);
+        }
     }
 }
 
