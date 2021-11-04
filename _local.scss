@@ -170,9 +170,9 @@ ul.visible-links {
 .initial-content ul:not(.toc__menu) {
     list-style-type: none;
     &:not(.nav__items) li {
-        text-indent: calc(0px - #{$type-size-4});
+        text-indent: calc(0px - #{$type-size-6});
         &::before {
-            content: "— ";
+            content: "› ";
         }
         p {
             text-indent: 0;
