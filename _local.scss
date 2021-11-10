@@ -183,6 +183,10 @@ ul.visible-links {
     }
 }
 
+nav.toc li::before {
+    content: none !important;
+}
+
 .sidebar p,
 ul.nav__items li .nav__sub-title {
     font-family: $global-font-family;
@@ -205,9 +209,12 @@ blockquote footer {
         li {
             font-size: $type-size-5;
             font-style: italic;
-            margin-left: $type-size-4;
+            margin-left: 0;
             a {
                 font-weight: $meta-font-weight;
+                &:link {
+                    background: none;
+                }
             }
         }
     }
@@ -512,6 +519,9 @@ ul.social-icons {
             background-repeat: no-repeat, no-repeat, repeat-x;
             text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
             background-position: 0% 93%, 100% 93%, 0% 93%;
+        }
+        .toc__menu a:link {
+            background: none;
         }
     }
     table {
