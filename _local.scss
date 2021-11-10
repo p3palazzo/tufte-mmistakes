@@ -183,10 +183,6 @@ ul.visible-links {
     }
 }
 
-nav.toc li::before {
-    content: none !important;
-}
-
 .sidebar p,
 ul.nav__items li .nav__sub-title {
     font-family: $global-font-family;
@@ -199,17 +195,24 @@ blockquote footer {
     margin-bottom: 0.3rem;
 }
 
-.toc {
+nav.toc {
     font-size: $type-size-6;
     color: $text-color;
     blockquote {
         padding: 0;
+    }
+    h4.nav__title {
+        color: $text-color;
+        font-size: $type-size-5;
     }
     ul {
         li {
             font-size: $type-size-5;
             font-style: italic;
             margin-left: 0;
+            &::before {
+                content: none;
+            }
             a {
                 font-weight: $meta-font-weight;
                 &:link {
@@ -461,7 +464,7 @@ ul.social-icons {
     html,
     body,
     .greedy-nav,
-    .toc,
+    nav.toc,
     .page__footer {
         color: $light-gray;
         background-color: $dark-gray;
@@ -523,6 +526,11 @@ ul.social-icons {
         .toc__menu a:link {
             background: none;
         }
+    }
+    nav.toc h4.nav__title {
+        color: $light-gray;
+        background-color: $dark-gray;
+        border-bottom: 1px solid $light-gray;
     }
     table {
         border-top-color: $light-gray;
