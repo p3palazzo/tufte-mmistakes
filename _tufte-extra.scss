@@ -102,6 +102,7 @@ h6 {
 
 // ...third, we take care of the styling...
 dt,
+.page__content dt,
 dt > a,
 h5,
 h6 {
@@ -109,7 +110,7 @@ h6 {
     clear: left;
     font-style: normal;
     font-variant: small-caps;
-    font-weight: 400;
+    font-weight: $meta-font-weight;
 }
 
 // Finally, we flush the <dt> inline with the <dd>.
