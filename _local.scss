@@ -549,7 +549,7 @@ ul.social-icons {
             border-bottom-color: $light-gray;
         }
     }
-    img:not(.line) {
+    img:not(.line):not(.nobg) {
         background-color: $background-color;
         border-color: $light-gray;
         -webkit-filter: brightness(0.8);
