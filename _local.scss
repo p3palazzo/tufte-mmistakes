@@ -551,13 +551,19 @@ ul.social-icons {
         border-bottom: 1px solid $light-gray;
     }
     table {
-        border-top-color: $light-gray;
-        border-bottom-color: $light-gray;
+        thead {
+            background-color: $dark-gray;
+            border-top: 2px solid $light-gray;
+            border-bottom: 1px solid $light-gray;
+        }
         td {
             border-top-color: $light-gray;
         }
         th {
             border-bottom-color: $light-gray;
+        }
+        tbody {
+            border-bottom: 2px solid $light-gray;
         }
     }
     img:not(.line):not(.nobg) {
