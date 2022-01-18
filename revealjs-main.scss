@@ -126,6 +126,11 @@ html {
       & > img:not(.r-stretch):not(.r-stack):not(.align-right),
       & > video:not(.r-stretch):not(.r-stack):not(.align-right) {
 	visibility: hidden;
+	& + figcaption {
+	  position: fixed;
+	  bottom: 2.5%;
+	  left: 2.5%;
+	}
       }
       & > img.overlay-slide,
       & > img.overlay-slide + figcaption {
