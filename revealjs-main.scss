@@ -36,6 +36,7 @@ html {
   figcaption,
   h3, h4, h5,
   ol, ul,
+  .r-frame,
   .box {
     background: transparentize($backgroundColor, 0.3);
     backdrop-filter: blur(5px);
@@ -116,16 +117,22 @@ html {
         display: none;
       }
     }
-    h2:empty {
-      padding: 0;
-    }
     // Make sure images don't overflow from their containers
     img {
       object-fit: contain;
     }
-    & > figure > img:not(.r-stretch),
-    & > figure > video:not(.r-stretch) {
-      visibility: hidden;
+    // Hide single images so we can use data-background-image
+    & > figure {
+      & > img:not(.r-stretch):not(.r-stack):not(.align-right),
+      & > video:not(.r-stretch):not(.r-stack):not(.align-right) {
+	visibility: hidden;
+      }
+      & > img.overlay-slide,
+      & > img.overlay-slide + figcaption {
+	float: right;
+	clear: right;
+	max-width: 25%;
+      }
     }
   }
 
@@ -147,8 +154,6 @@ html {
   figcaption,
   div.subfigures > p:last-of-type {
     padding: 8px 2.5%; // 2.5% + 45% + 2.5% = 50% column width.
-    position: fixed;
-    bottom: 2.5%;
     height: auto;
     max-width: 60%;
     text-align: left;
@@ -174,4 +179,4 @@ html {
     }
   }
 }
-// vim: set foldmethod=indent :
+// vim: set foldmethod=indent  shiftwidth=2:
