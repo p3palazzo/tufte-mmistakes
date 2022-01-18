@@ -233,28 +233,36 @@ nav.toc {
 /*******************
  * Utility classes *
  *******************/
-// .align-left can be use to float elements side-by-side.
+// First we set defaults on narrow screens
+.column {
+    display: block;
+    clear: both;
+    width: 90%;
+    margin-right: 10%;
+}
+
+.align-left {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
 @include breakpoint($medium) {
-    // Right now we're hard-coding 2 elements side-by-side
+    // Right now we're hard-coding up to 2 elements side-by-side
     // at normal width and 3 at full-width. See if we can
     // do otherwise.
+    // .align-left can be use to float elements side-by-side.
     .align-left {
-        width: 100%;
-        margin-bottom: 1em;
-        @include breakpoint($medium) {
-            width: calc(#{$right-sidebar-width-narrow} - 0.5em);
-        }
+        width: calc(#{$right-sidebar-width-narrow} - 0.5em);
     }
 
     div.subfigures > figure { // account for the width of letter captions
         img.align-left {
-            @include breakpoint($medium) {
-                max-width: calc(#{$right-sidebar-width-narrow} - 3em);
-            }
+            max-width: calc(#{$right-sidebar-width-narrow} - 3em);
         }
         figcaption {
             padding-left: 0;
             max-width: 2em;
+            margin-right: -2em;
         }
         &:not(:last-of-type) img:not(.align-right) + figcaption {
             margin-right: 1em;
@@ -263,15 +271,18 @@ nav.toc {
 
     // Pandoc + reveal.js multicolumn slides
     .column {
-        display: block;
-        clear: both;
-        width: 90%;
-        margin-right: 10%;
-        @include breakpoint($medium) {
-            clear: none;
-            margin-right: 0;
-            width: unset;
-        }
+        clear: none;
+        margin-right: 0;
+        width: unset;
+    }
+}
+
+@include breakpoint($x-large) {
+    .align-left {
+        width: calc(#{$right-sidebar-width} - 0.5em);
+    }
+    div.subfigures > figure img.align-left {
+        max-width: calc(#{$right-sidebar-width} - 3em);
     }
 }
 
@@ -279,7 +290,7 @@ nav.toc {
 .align-center {
     width: auto;
     min-width: 0;
-    max-width: 100%;
+    max-width: calc(50% - 0.5em);
 }
 
 // .align-right as equivalent to marginnote
@@ -541,16 +552,22 @@ ul.social-icons {
         border-bottom: 1px solid $light-gray;
     }
     table {
-        border-top-color: $light-gray;
-        border-bottom-color: $light-gray;
+        thead {
+            background-color: $dark-gray;
+            border-top: 2px solid $light-gray;
+            border-bottom: 1px solid $light-gray;
+        }
         td {
             border-top-color: $light-gray;
         }
         th {
             border-bottom-color: $light-gray;
         }
+        tbody {
+            border-bottom: 2px solid $light-gray;
+        }
     }
-    img:not(.line) {
+    img:not(.line):not(.nobg) {
         background-color: $background-color;
         border-color: $light-gray;
         -webkit-filter: brightness(0.8);

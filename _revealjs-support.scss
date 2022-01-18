@@ -39,13 +39,22 @@
 
     .column  {
         float: left;
+        &:not(:last-of-type) {
+            padding-right: 1em;
+        }
         img {
             margin-bottom: 1em;
+        }
+        .subfigures img {
             max-width: calc(100% - 3em);
         }
-        figcaption {
+        .subfigures p:last-of-type,
+        & > figure > figcaption {
+            padding-left: 0;
             margin-right: 0;
             max-width: none;
+        }
+        .subfigures figcaption {
             @include breakpoint($medium) {
                 margin-right: 1em;
                 float: right;
