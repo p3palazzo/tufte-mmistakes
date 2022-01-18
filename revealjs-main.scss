@@ -123,8 +123,8 @@ html {
     }
     // Hide single images so we can use data-background-image
     & > figure {
-      & > img:not(.r-stretch):not(.r-stack):not(.align-right),
-      & > video:not(.r-stretch):not(.r-stack):not(.align-right) {
+      & > img:not(.r-stretch):not(.r-stack):not(.overlay-slide),
+      & > video:not(.r-stretch):not(.r-stack):not(.overlay-slide) {
 	visibility: hidden;
 	& + figcaption {
 	  position: fixed;
