@@ -123,7 +123,8 @@ html {
     img {
       object-fit: contain;
     }
-    & > figure > img:not(.r-stretch) {
+    & > figure > img:not(.r-stretch),
+    & > figure > video:not(.r-stretch) {
       visibility: hidden;
     }
   }
