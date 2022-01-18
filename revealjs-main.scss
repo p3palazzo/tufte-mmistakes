@@ -116,16 +116,6 @@ html {
         display: none;
       }
     }
-    h1:not(.allowframebreaks),
-    h2 {
-      background: $backgroundColor;
-      position: fixed;
-      bottom: 5%;
-      margin-left: auto;
-      margin-right: auto;
-      padding-top: 0.3rem;
-      width: 100%;
-    }
     h2:empty {
       padding: 0;
     }
@@ -133,18 +123,8 @@ html {
     img {
       object-fit: contain;
     }
-    // Hide images and text we can't put into presenter notes.
-    // Prefer images as backgrounds so they fill the entire slide.
-    dd,
-    & > div.iframe-wrapper,
-    & > div:not(.columns):not(.r-stack) > figure,
-    & > figure {
-      & > iframe,
-      & > img:not(.fragment),
-      & > video {
-        display: none;
-        visibility: hidden;
-      }
+    & > figure > img:not(.r-stretch) {
+      visibility: hidden;
     }
   }
 
