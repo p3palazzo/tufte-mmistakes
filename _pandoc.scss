@@ -43,11 +43,15 @@ table {
     padding: 10px;
     text-align: left;
     vertical-align: top;
-    & > p {
-      margin-top: 0;
+    p,
+    li {
       line-height: 1;
       font-variant: proportional-nums oldstyle-nums;
     }
+    & > ul:first-child,
+    & > p:first-child {
+        margin-top: 0;
+      }
   }
   tbody {
     border-bottom: 2px solid $text-color;
