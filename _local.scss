@@ -22,7 +22,12 @@ img.nobg {
     border: 0;
 }
 
-// Good alignment of li > dl
+// Good alignment of dl
+div > dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+div > dl > dt:first-child,
 li > dl > dt:first-child {
     margin-top: 0;
 }
