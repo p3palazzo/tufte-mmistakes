@@ -55,6 +55,11 @@ ol li {
     margin-bottom: 0;
 }
 
+li ul,
+li ol {
+    margin: $indent-var 0;
+}
+
 blockquote {
     border: none;
     font-style: normal;
