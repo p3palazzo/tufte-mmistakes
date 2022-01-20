@@ -39,9 +39,7 @@
 
     .column  {
         float: left;
-        &:not(:last-of-type) {
-            padding-right: 1em;
-        }
+        padding-right: 1em;
         img {
             margin-bottom: 1em;
         }
