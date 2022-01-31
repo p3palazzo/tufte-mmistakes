@@ -410,6 +410,29 @@ img.align-right {
     color: $muted-text-color;
 }
 
+/*******************************
+ * Horizontal scrolling frames *
+ *******************************
+ *
+ * How-to: (the full class is optional but makes sense here)
+ * <div id="#fig:name" class="full">
+ *   <div class="h-scroll">
+ *     <img src="https://example.com/image.jpg">
+ *   </div>
+ * </div>
+ *******************************/
+div.h-scroll {
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: auto;
+    img {
+        max-width: none;
+        height: 720px;
+        max-height: 90vh;
+    }
+}
+
 /************
  * Features *
  ************/
