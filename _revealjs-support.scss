@@ -41,6 +41,7 @@ div.notes {
     &:not(.subfigures) figcaption,
     &.subfigures.full p:last-of-type {
         margin-right: 0;
+        padding-left: 0;
         width: unset;
         @include breakpoint($large) {
             max-width: $right-sidebar-width-narrow;
