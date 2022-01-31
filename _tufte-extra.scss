@@ -19,8 +19,9 @@ code {
     font-size: 1.05rem;
 }
 /* Also make the sidenote numbers hang */
+// Disabled by using positive text-indent instead of negative.
 .sidenote {
-    text-indent: -0.4rem;
+    text-indent: 0.4rem;
 }
 .sidenote:before {
     /* removes trailing space from the counter content */
