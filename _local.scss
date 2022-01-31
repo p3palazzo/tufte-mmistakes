@@ -50,6 +50,11 @@ table.total {
 /***************************
  * Minimal-Mistakes resets *
  ***************************/
+#main {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
 ul li,
 ol li {
     margin-bottom: 0;
@@ -243,14 +248,45 @@ nav.toc {
 /*******************
  * Utility classes *
  *******************/
-// First we set defaults on narrow screens
-.column {
-    display: block;
-    clear: both;
-    width: 90%;
-    margin-right: 10%;
-}
+/* Pandoc and Pandoc-crossref have strict and peculiar ways
+ * of generating HTML figures. Notably, Pandoc applies classes
+ * not to the <figure> tag, but to the <img> within it.
+ * Pandoc-crossref has a .subfigures class used for complex
+ * figures containing several related images. The caption of a
+ * .subfigures is not a <figcaption> but a simple <p>. Here we
+ * try to account for all these cases and make sure everything
+ * lines up. */
 
+// Subfigures need to share width and margin features of regular
+// figures, but zero-padding them leads to unexpected results.
+div.subfigures {
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    margin-bottom: 3em;
+    figure {
+        display: inline; // Do we really need this when we have img.align-left?
+    }
+    figcaption {
+        float: left;
+        clear: none;
+        // Make an exception for the following in img.align-right
+        margin: 0.3rem 0.3rem 0 -1.3em;
+        max-width: 1em;
+        padding-left: unset; //Unset padding for all sidebar blocks in _tufte.scss
+        overflow: visible;
+    }
+    &:not(.full) > p:not(:last-of-type) {
+        float: left; // Allow caption to align to top of subfigure container
+    }
+    &.full p:last-of-type {
+        margin-right: 0;
+    }
+}
+/*
+ * Here there ends the styling of Pandoc and Pandoc-crossref figures
+ */
+
+// First we set defaults on narrow screens
 .align-left {
     width: 100%;
     margin-bottom: 1em;
@@ -265,25 +301,15 @@ nav.toc {
         width: calc(#{$right-sidebar-width-narrow} - 0.5em);
     }
 
-    div.subfigures > figure { // account for the width of letter captions
+    // Does not affect div.subfigures > div.column > figure...
+    div.subfigures > figure {
         img.align-left {
-            max-width: calc(#{$right-sidebar-width-narrow} - 3em);
+            max-width: calc(#{$right-sidebar-width-narrow} - 1.3em);
         }
-        figcaption {
-            padding-left: 0;
-            max-width: 2em;
-            margin-right: -2em;
-        }
+        // ...so we need to set this again (see _revealjs-support.scss).
         &:not(:last-of-type) img:not(.align-right) + figcaption {
-            margin-right: 1em;
+            padding-right: 1.3em;
         }
-    }
-
-    // Pandoc + reveal.js multicolumn slides
-    .column {
-        clear: none;
-        margin-right: 0;
-        width: unset;
     }
 }
 
@@ -292,7 +318,7 @@ nav.toc {
         width: calc(#{$right-sidebar-width} - 0.5em);
     }
     div.subfigures > figure img.align-left {
-        max-width: calc(#{$right-sidebar-width} - 3em);
+        max-width: calc(#{$right-sidebar-width} - 1.3em);
     }
 }
 
@@ -307,7 +333,7 @@ nav.toc {
 img.align-right {
     @include breakpoint($large) {
         padding-left: 0;
-        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
+        margin: 1em calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
         max-width: calc(#{$right-sidebar-width-narrow} - 1em);
     }
     @include breakpoint($x-large) {
@@ -318,6 +344,19 @@ img.align-right {
 
 .wide img.align-right {
     margin-right: 0;
+}
+
+.subfigures img.align-right + figcaption {
+    @include breakpoint($large) {
+        float: right;
+        margin: unset;
+        margin-right: calc(0px - 1rem - #{$right-sidebar-width-narrow});
+        width: $right-sidebar-width-narrow;
+    }
+    @include breakpoint($x-large) {
+        margin-right: calc(0px - 1rem - #{$right-sidebar-width});
+        width: $right-sidebar-width;
+    }
 }
 
 // Turn marginnotes on narrow screens into a lighbox
@@ -488,6 +527,7 @@ ul.social-icons {
 // Dark colorscheme with a softer background
 // TODO: use variables and a rebase mixin instead of
 //       hard-coding every color twice.
+/*****************************************************
 @media (prefers-color-scheme: dark) {
     html,
     body,
@@ -588,4 +628,5 @@ ul.social-icons {
                 filter: invert(0.83);
     }
 }
+ ****************************************************/
 // vim: set shiftwidth=4 foldmethod=indent :

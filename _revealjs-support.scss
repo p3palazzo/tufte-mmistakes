@@ -1,62 +1,52 @@
-.page__content {
-    // Reveal.js uses <h2> to make new slides. Typically, we will
-    // have Pandoc shift these headings when generating a regular
-    // web page, so they become <h3>. Headings that use the
-    // .unlisted class may have no title and are there just to
-    // provide a background-image in reveal.js. Therefore, we don't
-    // want them to add unnecessary vertical space and just suppress
-    // them completely.
-    // Comment this line out if this is not the behavior you expect.
-    h3.unlisted {
-        display: none;
+// Fix width of incremental Reveal.js sections
+// Align Reveal.js presenter notes as regular paragraphs.
+// Alternatively, uncomment the second line to hide them completely.
+div.incremental,
+div.notes {
+    @extend section;
+    // &.notes { display: none !important; }
+}
+
+// Support Pandoc columns for reveal.js
+.columns {
+    min-width: calc(100% + 1.3em);
+    margin-left: -1.3em;
+    .column  {
+        display: block;
+        clear: both;
+        min-width: 90%;
+        margin-right: 10%;
+        padding-left: 1.3em;
+        @include breakpoint($medium) {
+            float: left;
+            clear: none;
+            margin-right: 0;
+            min-width: unset;
+        }
+        img,
+        video {
+            margin-bottom: 0;
+        }
     }
-
-    // Similarly, we might be using <hr> to start a new slide and
-    // therefore might not want it to show up at all in the text.
-    // Uncomment this line if you want to suppress it.
-    // hr { display: none; }
-
-    // Fix width of incremental Reveal.js sections
-    // Align Reveal.js presenter notes as regular paragraphs.
-    // Alternatively, uncomment the second line to hide them completely.
-    div.incremental,
-    div.notes {
-        @extend section;
-        // &.notes { display: none !important; }
-    }
-
-    // Allow subfigures to display side-by-side
-    div.subfigures > figure {
-        display: inline;
-    }
-
-    // Support Pandoc columns for reveal.js
-    .columns {
-        &.subfigures > p:last-of-type {
+    &.subfigures {
+        img,
+        video {
+            // This is needed for letter captions to flush top.
+            max-width: calc(100% - 0.1em);
+        }
+        p:last-of-type {
             margin-bottom: 1.1rem;
         }
     }
-
-    .column  {
-        float: left;
-        padding-right: 1em;
-        img {
-            margin-bottom: 1em;
+    &:not(.subfigures) figcaption,
+    &.subfigures.full p:last-of-type {
+        margin-right: 0;
+        width: unset;
+        @include breakpoint($large) {
+            max-width: $right-sidebar-width-narrow;
         }
-        .subfigures img {
-            max-width: calc(100% - 3em);
-        }
-        .subfigures p:last-of-type,
-        & > figure > figcaption {
-            padding-left: 0;
-            margin-right: 0;
-            max-width: none;
-        }
-        .subfigures figcaption {
-            @include breakpoint($medium) {
-                margin-right: 1em;
-                float: right;
-            }
+        @include breakpoint($x-large) {
+            max-width: $right-sidebar-width;
         }
     }
 }

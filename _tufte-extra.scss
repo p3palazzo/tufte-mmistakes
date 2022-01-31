@@ -19,8 +19,9 @@ code {
     font-size: 1.05rem;
 }
 /* Also make the sidenote numbers hang */
+// Disabled by using positive text-indent instead of negative.
 .sidenote {
-    text-indent: -0.4rem;
+    text-indent: 0.4rem;
 }
 .sidenote:before {
     /* removes trailing space from the counter content */
@@ -131,43 +132,4 @@ li > dl {
 }
 /* Here there ends the semantic emulation of .newthought */
 
-/* Pandoc and Pandoc-crossref have strict and peculiar ways
- * of generating HTML figures. Notably, Pandoc applies classes
- * not to the <figure> tag, but to the <img> within it.
- * Pandoc-crossref has a .subfigures class used for complex
- * figures containing several related images. The caption of a
- * .subfigures is not a <figcaption> but a simple <p>. Here we
- * try to account for all these cases and make sure everything
- * lines up. */
-
-// Subfigures need to share width and margin features of regular
-// figures, but zero-padding them leads to unexpected results.
-div.subfigures {
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
-    img:not(.align-right) + figcaption {
-        float: left;
-        margin-right: 1em;
-    }
-    &:not(.full) > p:not(:last-of-type) {
-        float: left; // Allow caption to align to top of subfigure container
-    }
-}
-
-// Fullwidth images within Pandoc-crossref figures and subfigures
-div.fullwidth,
-div.full {
-    &:not(.subfigures) > figure {
-        max-width: 100%;
-    }
-    &.subfigures p:last-of-type,
-    &:not(.columns) figcaption {
-        margin-right: 0;
-    }
-}
-
-/*
- * Here there ends the styling of Pandoc and Pandoc-crossref figures
- */
 // vim: set shiftwidth=4 foldmethod=indent :
