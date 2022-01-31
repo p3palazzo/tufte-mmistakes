@@ -368,24 +368,18 @@ pre > code {
 }
 
 .full,
-.fullwidth {
-    @include breakpoint($large) {
-        display: block; // Prevent float overlap
-        margin-right: calc(0px - #{$right-sidebar-width-narrow}) !important;
-        clear:both;
-    }
-    @include breakpoint($x-large) {
-        margin-right: calc(0px - #{$right-sidebar-width}) !important;
-    }
-}
-
 video.full,
 img.full {
+    margin-top: 1em;
+    margin-bottom: 0;
     @include breakpoint($large) {
-        max-width: calc(100% + #{$right-sidebar-width-narrow});
+        display: block; // Prevent float overlap
+        clear:both;
+        margin-right: calc(0px - #{$right-sidebar-width-narrow}) !important;
         width: calc(100% + #{$right-sidebar-width-narrow});
     }
     @include breakpoint($x-large) {
+        margin-right: calc(0px - #{$right-sidebar-width}) !important;
         max-width: calc(100% + #{$right-sidebar-width});
         width: calc(100% + #{$right-sidebar-width});
     }
@@ -453,9 +447,8 @@ label.margin-toggle:not(.sidenote-number) {
         max-width: 90%;
     }
 
-    figcaption,
-    div.fullwidth figcaption,
-    figure.fullwidth figcaption {
+    div.full figcaption,
+    img.full + figcaption {
         margin-right: 0%;
         max-width: none;
     }
@@ -493,17 +486,17 @@ label.margin-toggle:not(.sidenote-number) {
         figure {
             max-width: 55%;
         }
-        div.fullwidth,
-        table.fullwidth {
+        div.full,
+        table.full {
             width: 100%;
         }
         pre > code {
             width: 52.5%;
         }
-        pre.fullwidth > code {
+        pre.full > code {
             width: 90%;
         }
-        .fullwidth {
+        .full {
             max-width: 90%;
         }
     }
