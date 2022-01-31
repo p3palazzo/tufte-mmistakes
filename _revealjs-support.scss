@@ -14,6 +14,7 @@ div.notes {
         clear: both;
         min-width: 90%;
         margin-right: 10%;
+        padding-right: 1.3em;
         @include breakpoint($medium) {
             float: left;
             clear: none;
@@ -23,11 +24,6 @@ div.notes {
         img,
         video {
             margin-bottom: 0;
-        }
-        //The following causes column widths set in the
-        //document to be off. Find a better solution.
-        &:not(:last-of-type) {
-            padding-right: 1.3em;
         }
     }
     &.subfigures {
