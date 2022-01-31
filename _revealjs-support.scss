@@ -9,12 +9,14 @@ div.notes {
 
 // Support Pandoc columns for reveal.js
 .columns {
+    min-width: calc(100% + 1.3em);
+    margin-left: -1.3em;
     .column  {
         display: block;
         clear: both;
         min-width: 90%;
         margin-right: 10%;
-        padding-right: 1.3em;
+        padding-left: 1.3em;
         @include breakpoint($medium) {
             float: left;
             clear: none;
@@ -39,7 +41,13 @@ div.notes {
     &:not(.subfigures) figcaption,
     &.subfigures.full p:last-of-type {
         margin-right: 0;
-        max-width: unset;
+        width: unset;
+        @include breakpoint($large) {
+            max-width: $right-sidebar-width-narrow;
+        }
+        @include breakpoint($x-large) {
+            max-width: $right-sidebar-width;
+        }
     }
 }
 
