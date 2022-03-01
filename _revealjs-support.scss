@@ -52,4 +52,10 @@ div.notes {
     }
 }
 
+// Hide stuff that should only appear on slides
+.slide-only {
+    display: none;
+    visibility: hidden;
+}
+
 // vim: set shiftwidth=4 foldmethod=indent :
