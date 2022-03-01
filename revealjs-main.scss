@@ -147,9 +147,11 @@ html {
       iframe,
       img,
       video {
-        display: none;
         visibility: hidden;
       }
+    }
+    img.slide-bg {
+      visibility: hidden;
     }
   }
 
