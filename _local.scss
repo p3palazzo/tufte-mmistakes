@@ -292,15 +292,22 @@ div.subfigures {
     margin-bottom: 1em;
 }
 
+// .align-center prevents elements from taking up the width of the container
+.align-center {
+    width: auto;
+    min-width: 0;
+    max-width: calc(50% - 0.5em);
+}
+
+.wide img.align-right {
+    margin-right: 0;
+}
+
 @include breakpoint($medium) {
-    // Right now we're hard-coding up to 2 elements side-by-side
-    // at normal width and 3 at full-width. See if we can
-    // do otherwise.
     // .align-left can be use to float elements side-by-side.
     .align-left {
         width: calc(#{$right-sidebar-width-narrow} - 0.5em);
     }
-
     // Does not affect div.subfigures > div.column > figure...
     div.subfigures > figure {
         img.align-left {
@@ -313,47 +320,39 @@ div.subfigures {
     }
 }
 
-@include breakpoint($x-large) {
+@include breakpoint($large) {
     .align-left {
         width: calc(#{$right-sidebar-width} - 0.5em);
     }
     div.subfigures > figure img.align-left {
         max-width: calc(#{$right-sidebar-width} - 1.3em);
     }
-}
-
-// .align-center prevents elements from taking up the width of the container
-.align-center {
-    width: auto;
-    min-width: 0;
-    max-width: calc(50% - 0.5em);
-}
-
-// .align-right as equivalent to marginnote
-img.align-right {
-    @include breakpoint($large) {
+    // .align-right as equivalent to marginnote
+    img.align-right {
         padding-left: 0;
         margin: 1em calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
         max-width: calc(#{$right-sidebar-width-narrow} - 1em);
     }
-    @include breakpoint($x-large) {
-        max-width: calc(#{$right-sidebar-width} - 1em);
-        margin-right: calc(0px - #{$right-sidebar-width});
-    }
-}
-
-.wide img.align-right {
-    margin-right: 0;
-}
-
-.subfigures img.align-right + figcaption {
-    @include breakpoint($large) {
+    .subfigures img.align-right + figcaption {
         float: right;
         margin: unset;
         margin-right: calc(0px - 1rem - #{$right-sidebar-width-narrow});
         width: $right-sidebar-width-narrow;
     }
-    @include breakpoint($x-large) {
+}
+
+@include breakpoint($x-large) {
+    .align-left {
+        width: calc(#{$right-sidebar-width-wide} - 0.5em);
+    }
+    div.subfigures > figure img.align-left {
+        max-width: calc(#{$right-sidebar-width-wide} - 1.3em);
+    }
+    img.align-right {
+        max-width: calc(#{$right-sidebar-width} - 1em);
+        margin-right: calc(0px - #{$right-sidebar-width});
+    }
+    .subfigures img.align-right + figcaption {
         margin-right: calc(0px - 1rem - #{$right-sidebar-width});
         width: $right-sidebar-width;
     }
