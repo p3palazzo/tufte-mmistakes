@@ -549,7 +549,6 @@ ul.social-icons {
 // Dark colorscheme with a softer background
 // TODO: use variables and a rebase mixin instead of
 //       hard-coding every color twice.
-/*****************************************************
 @media (prefers-color-scheme: dark) {
     html,
     body,
@@ -650,5 +649,4 @@ ul.social-icons {
                 filter: invert(0.83);
     }
 }
- ****************************************************/
 // vim: set shiftwidth=4 foldmethod=indent :
