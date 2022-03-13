@@ -299,8 +299,11 @@ div.subfigures {
     max-width: calc(50% - 0.5em);
 }
 
-.wide img.align-right {
-    margin-right: 0;
+.layout--splash,
+.wide {
+    img.align-right {
+        margin-right: 0;
+    }
 }
 
 @include breakpoint($medium) {
