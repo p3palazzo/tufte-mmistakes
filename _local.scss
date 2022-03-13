@@ -100,7 +100,8 @@ a.site-title {
     .site-subtitle {
         font-size: $h-size-6;
         font-style: italic;
-        font-variant: normal oldstyle-nums;
+        font-variant: normal;
+        font-variant-numeric: oldstyle-nums;
     }
 }
 
