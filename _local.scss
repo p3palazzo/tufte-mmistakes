@@ -98,10 +98,9 @@ a.site-title {
     font-variant: all-small-caps;
     font-weight: $header-font-weight;
     .site-subtitle {
-        font-size: $h-size-6;
+        font-size: $type-size-6;
         font-style: italic;
-        font-variant: normal;
-        font-variant-numeric: oldstyle-nums;
+        font-variant: normal oldstyle-nums;
     }
 }
 
