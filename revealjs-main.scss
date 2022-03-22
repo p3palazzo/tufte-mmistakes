@@ -159,6 +159,9 @@ html {
       visibility: hidden;
       height: 100vh;
     }
+    .subfigures > p:last-of-type {
+      @extend figcaption;
+    }
   }
 
   // Classes -------------------------------------
@@ -167,7 +170,6 @@ html {
   .columns {
     margin-top: -20px;
   }
-  .subfigures > p,
   .column figure {
     margin: 0;
     padding: 0;
