@@ -98,9 +98,10 @@ a.site-title {
     font-variant: all-small-caps;
     font-weight: $header-font-weight;
     .site-subtitle {
-        font-size: $h-size-6;
+        font-size: $type-size-6;
         font-style: italic;
-        font-variant: normal oldstyle-nums;
+        font-variant: normal;
+        font-variant-numeric: oldstyle-nums;
     }
 }
 
@@ -299,8 +300,11 @@ div.subfigures {
     max-width: calc(50% - 0.5em);
 }
 
-.wide img.align-right {
-    margin-right: 0;
+.layout--splash,
+.wide {
+    img.align-right {
+        margin-right: 0;
+    }
 }
 
 @include breakpoint($medium) {
@@ -466,6 +470,8 @@ div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
         @extend h5;
+        margin-right: 0;
+        font-weight: $meta-font-weight;
         float: none;
         a:link {
             background: none;
@@ -549,7 +555,6 @@ ul.social-icons {
 // Dark colorscheme with a softer background
 // TODO: use variables and a rebase mixin instead of
 //       hard-coding every color twice.
-/*****************************************************
 @media (prefers-color-scheme: dark) {
     html,
     body,
@@ -650,5 +655,4 @@ ul.social-icons {
                 filter: invert(0.83);
     }
 }
- ****************************************************/
 // vim: set shiftwidth=4 foldmethod=indent :
