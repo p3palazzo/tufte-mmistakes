@@ -50,6 +50,12 @@ div.notes {
             max-width: $right-sidebar-width;
         }
     }
+    & + hr {
+        // Use hr as an invisible clear/spacing
+        clear: both;
+        width: 100%;
+        padding: 1.2rem 0;
+    }
 }
 
 // Hide stuff that should only appear on slides

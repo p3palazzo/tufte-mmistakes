@@ -32,12 +32,8 @@ li > dl > dt:first-child {
     margin-top: 0;
 }
 
-// Use hr as an invisible clear/spacing
 hr {
     border: 0;
-    clear: both;
-    width: 100%;
-    padding: 1.2rem 0;
 }
 
 table.total {
