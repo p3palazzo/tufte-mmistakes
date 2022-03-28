@@ -51,14 +51,16 @@ table.total {
     padding-right: 1.5em;
 }
 
-ul li,
-ol li {
-    margin-bottom: 0;
-}
-
 li ul,
 li ol {
     margin: $indent-var 0;
+}
+
+ul li,
+ol li,
+ul li ul,
+ol li ol {
+    margin: 0;
 }
 
 blockquote {
