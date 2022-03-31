@@ -75,10 +75,6 @@ a:hover {
 /*******************************************
  * Masthead, site title and navigation links
  *******************************************/
-.masthead__inner-wrap {
-    font-family: $header-font-family;
-}
-
 .greedy-nav a.site-logo:link,
 a.site-logo img,
 a.site-title,
@@ -130,10 +126,6 @@ ul.visible-links {
         background-position: 0% 93%, 100% 93%, 0% 93%;
     }
 
-    .subtitle {
-        font-size: $type-size-7;
-    }
-
 	  h1 {
         font-weight: $header-font-weight;
 	  }
@@ -146,43 +138,30 @@ ul.visible-links {
         }
 	  }
 
-	  blockquote {
-		    font-style: italic;
-		    padding: 0;
-	  }
-
 	  .page__hero-caption {
-		    font-weight: $meta-font-weight;
-	  }
-
-	  blockquote a,
-	  .page__hero-caption a {
-	  	  text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
-        background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
-        background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
-        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        background-position: 0% 93%, 100% 93%, 0% 93%; 
+        a {
+            text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
+            background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
+            background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
+            -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+            background-repeat: no-repeat, no-repeat, repeat-x;
+            background-position: 0% 93%, 100% 93%, 0% 93%; 
+        }
 	  }
 }
 
+.page__hero-caption,
 .page__meta,
 .page__date time,
-.page__date strong {
-    font-family: $sans-serif;
-    font-variant: lining-nums;
+.page__date strong,
+.page__meta-readtime {
   	font-weight: $meta-font-weight;
 }
 
 .page__meta-readtime {
-    font-size: $type-size-6;
-    font-weight: $meta-font-weight;
-}
-
-.archive__item .page__meta {
-    display: none;
+    font-size: $type-size-5;
 }
 
 /***********
@@ -213,7 +192,6 @@ ul.nav__items li .nav__sub-title {
 blockquote footer {
     font-size: $type-size-6;
     font-weight: 500;
-    margin-bottom: 0.3rem;
 }
 
 nav.toc {
@@ -264,15 +242,15 @@ div.subfigures {
     margin-bottom: 3em;
     figure {
         display: inline; // Do we really need this when we have img.align-left?
-    }
-    figcaption {
-        float: left;
-        clear: none;
-        // Make an exception for the following in img.align-right
-        margin: 0.3rem 0.3rem 0 -1.3em;
-        max-width: 1em;
-        padding-left: unset; //Unset padding for all sidebar blocks in _tufte.scss
-        overflow: visible;
+        figcaption {
+            float: left;
+            clear: none;
+            // Make an exception for the following in img.align-right
+            margin: 0.3rem 0.3rem 0 -1.3em;
+            max-width: 1em;
+            padding-left: unset; //Unset padding for all sidebar blocks in _tufte.scss
+            overflow: visible;
+        }
     }
     &:not(.full) > p:not(:last-of-type) {
         float: left; // Allow caption to align to top of subfigure container
