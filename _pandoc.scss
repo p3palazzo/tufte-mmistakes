@@ -1,50 +1,49 @@
-
 /* For smart quotes */
 q { quotes: "“" "”" "‘" "’"; }
 
 /* Simulate Pandoc's table output styles */
 table {
-  border: 0;
-  border-collapse: collapse;
-  font-size: $type-size-5;
-  caption {
-    float: none;
-  }
-  thead,
-  th {
-    border-top: 2px solid $text-color;
-    border-bottom: 1px solid $text-color;
-  }
-  td, th {
     border: 0;
+    border-collapse: collapse;
     font-size: $type-size-5;
-    font-variant: tabular-nums oldstyle-nums;
-    padding: 10px;
-    text-align: left;
-    vertical-align: top;
-    p,
-    li {
-      line-height: 1;
-      font-variant: proportional-nums oldstyle-nums;
+    caption {
+        float: none;
     }
-    & > ul:first-child,
-    & > p:first-child {
-        margin-top: 0;
-      }
-  }
-  tbody {
-    border-bottom: 2px solid $text-color;
-  }
+    thead,
+    th {
+        border-top: 2px solid $text-color;
+        border-bottom: 1px solid $text-color;
+    }
+    td, th {
+        border: 0;
+        font-size: $type-size-5;
+        font-variant: tabular-nums oldstyle-nums;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+        p,
+        li {
+            line-height: 1;
+            font-variant: proportional-nums oldstyle-nums;
+        }
+        & > ul:first-child,
+        & > p:first-child {
+              margin-top: 0;
+            }
+    }
+    tbody {
+        border-bottom: 2px solid $text-color;
+    }
 }
 
 /* Allow tables to be full width
  * if they're wrapped in a figure.fullwidth
  * (Easier to insert from Pandoc than manually adding table) */
 .full table {
-  width: 100%;
-  @include breakpoint($large) {
-      width: 90%;
-  }
+    width: 100%;
+    @include breakpoint($large) {
+          width: 90%;
+    }
 }
 
 /* Code blocks
@@ -54,32 +53,55 @@ table {
 
 /* Unset the tufte-css defaults that we'd like to overwrite */
 pre > code {
-  margin-left: initial;
-  overflow-x: initial;
-  display: initial;
+    margin-left: initial;
+    overflow-x: initial;
+    display: initial;
 }
 
 .sourceCode.numberLines a:link {
-  text-decoration: initial;
-  background: initial;
-  text-shadow: initial;
+    text-decoration: initial;
+    background: initial;
+    text-shadow: initial;
 }
 
 // Line blocks (e.g. for poetry)
 .line-block {
-  font-size: $type-size-5;
-  line-height: 2;
+    font-size: $type-size-5;
+    line-height: 2;
 }
 
 /* Math formatting */
 .katex {
-  font-size: inherit !important;
+    font-size: inherit !important;
 }
 
 /* Wrap long URLs in references */
 #refs a {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-// vim: set shiftwidth=2 foldmethod=indent :
+/* Pandoc and Pandoc-crossref have strict and peculiar ways
+ * of generating HTML figures. Notably, Pandoc applies classes
+ * not to the <figure> tag, but to the <img> within it.
+ * Pandoc-crossref has a .subfigures class used for complex
+ * figures containing several related images. The caption of a
+ * .subfigures is not a <figcaption> but a simple <p>. Here we
+ * try to account for all these cases and make sure everything
+ * lines up. */
+
+div.subfigures {
+    // Subfigures need to share width and margin features of regular
+    // figures, but zero-padding them leads to unexpected results.
+    @extend figure;
+    &:not(.align-right) figure figcaption {
+        margin: 0.3rem 0.3rem 0 -1.3em;
+        max-width: 1em;
+        padding-left: unset; //Unset padding for all sidebar blocks in _tufte.scss
+        overflow: visible;
+    }
+    &:not(.full) > p:not(:last-of-type) {
+        float: left; // Allow caption to align to top of subfigure container
+    }
+}
+// vim: set shiftwidth=4 foldmethod=indent :

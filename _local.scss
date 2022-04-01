@@ -3,51 +3,6 @@
     border: 0;
 }
 
-// Good alignment of dl
-div > dl {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-div > dl > dt:first-child,
-li > dl > dt:first-child {
-    margin-top: 0;
-}
-
-table.total {
-    font-variant: tabular-nums oldstyle-nums;
-    tbody tr:last-of-type td {
-        border-top: 1px solid $text-color;
-    }
-}
-
-/***************************
- * Minimal-Mistakes resets *
- ***************************/
-li ul,
-li ol {
-    margin: $indent-var 0;
-}
-
-ul li,
-ol li,
-ul li ul,
-ol li ol {
-    margin: 0;
-}
-
-blockquote {
-    border-color: $background-color;
-    em {
-        font-style: normal;
-    }
-}
-
-// Prevent Minimal-Mistakes from doing its thing and
-// interfering with the Tufte decoration.
-a:hover {
-    text-decoration: none !important;
-}
-
 /*******************************************
  * Masthead, site title and navigation links
  *******************************************/
@@ -143,22 +98,6 @@ ul.visible-links {
 /***********
  * Sidebar *
  ***********/
-.initial-content ul:not(.toc__menu) {
-    list-style-type: none;
-    &:not(.nav__items) li {
-        text-indent: calc(0px - #{$type-size-6});
-        &::before {
-            content: "› ";
-        }
-        p {
-            text-indent: 0;
-            &:first-child {
-                display: inline;
-            }
-        }
-    }
-}
-
 .sidebar p,
 ul.nav__items li .nav__sub-title {
     font-family: $global-font-family;
@@ -196,36 +135,6 @@ nav.toc {
 /*******************
  * Utility classes *
  *******************/
-/* Pandoc and Pandoc-crossref have strict and peculiar ways
- * of generating HTML figures. Notably, Pandoc applies classes
- * not to the <figure> tag, but to the <img> within it.
- * Pandoc-crossref has a .subfigures class used for complex
- * figures containing several related images. The caption of a
- * .subfigures is not a <figcaption> but a simple <p>. Here we
- * try to account for all these cases and make sure everything
- * lines up. */
-
-// Subfigures need to share width and margin features of regular
-// figures, but zero-padding them leads to unexpected results.
-div.subfigures {
-    @extend figure;
-    figure {
-        figcaption {
-            // Make an exception for the following in img.align-right
-            margin: 0.3rem 0.3rem 0 -1.3em;
-            max-width: 1em;
-            padding-left: unset; //Unset padding for all sidebar blocks in _tufte.scss
-            overflow: visible;
-        }
-    }
-    &:not(.full) > p:not(:last-of-type) {
-        float: left; // Allow caption to align to top of subfigure container
-    }
-}
-/*
- * Here there ends the styling of Pandoc and Pandoc-crossref figures
- */
-
 // Replicates _base.scss l.235
 .half img {
     @include breakpoint($small) {
@@ -237,147 +146,6 @@ div.subfigures {
     @include breakpoint($small) {
         max-width: calc(33.3333% - 0.5em);
     }
-}
-
-// First we set defaults on narrow screens
-.align-left {
-    width: 100%;
-    margin-bottom: 1em;
-}
-
-// .align-center prevents elements from taking up the width of the container
-.align-center {
-    width: auto;
-    min-width: 0;
-    max-width: calc(50% - 0.5em);
-}
-
-.layout--splash,
-.wide {
-    img.align-right {
-        margin-right: 0;
-    }
-}
-
-@include breakpoint($medium) {
-    // .align-left can be use to float elements side-by-side.
-    .align-left {
-        width: calc(#{$right-sidebar-width-narrow} - 0.5em);
-    }
-    // Does not affect div.subfigures > div.column > figure...
-    div.subfigures > figure {
-        img.align-left {
-            max-width: calc(#{$right-sidebar-width-narrow} - 1.3em);
-        }
-        // ...so we need to set this again (see _revealjs-support.scss).
-        &:not(:last-of-type) img:not(.align-right) + figcaption {
-            padding-right: 1.3em;
-        }
-    }
-}
-
-@include breakpoint($large) {
-    .align-left {
-        width: calc(#{$right-sidebar-width} - 0.5em);
-    }
-    div.subfigures > figure img.align-left {
-        max-width: calc(#{$right-sidebar-width} - 1.3em);
-    }
-    // .align-right as equivalent to marginnote
-    img.align-right {
-        padding-left: 0;
-        margin: 1em calc(0px - #{$right-sidebar-width-narrow}) 0 1em;
-        max-width: calc(#{$right-sidebar-width-narrow} - 1em);
-    }
-    .subfigures img.align-right + figcaption {
-        float: right;
-        margin: unset;
-        margin-right: calc(0px - 1rem - #{$right-sidebar-width-narrow});
-        width: $right-sidebar-width-narrow;
-    }
-}
-
-@include breakpoint($x-large) {
-    .align-left {
-        width: calc(#{$right-sidebar-width-wide} - 0.5em);
-    }
-    div.subfigures > figure img.align-left {
-        max-width: calc(#{$right-sidebar-width-wide} - 1.3em);
-    }
-    img.align-right {
-        max-width: calc(#{$right-sidebar-width} - 1em);
-        margin-right: calc(0px - #{$right-sidebar-width});
-    }
-    .subfigures img.align-right + figcaption {
-        margin-right: calc(0px - 1rem - #{$right-sidebar-width});
-        width: $right-sidebar-width;
-    }
-}
-
-// Turn marginnotes on narrow screens into a lighbox
-.margin-toggle:checked + span.sidenote,
-.margin-toggle:checked + span.marginnote {
-    @extend .notice;
-    position: absolute;
-    height: auto;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    box-shadow: 4px 4px 8px 8px transparentize($text-color, 0.7);
-}
-
-// A class to get outset dates in a résumé or CV
-.cv {
-    dt {
-        font-variant: tabular-nums oldstyle-nums all-small-caps;
-        font-weight: 400;
-        margin-left: -6rem;
-        margin-top: 0;
-    }
-    dd {
-        margin-left: 0;
-    }
-}
-
-/*******************************
- * Horizontal scrolling frames *
- *******************************
- *
- * How-to: (the full class is optional but makes sense here)
- * <div id="#fig:name" class="full">
- *   <div class="h-scroll">
- *     <img src="https://example.com/image.jpg">
- *   </div>
- * </div>
- *******************************/
-div.h-scroll {
-    overflow: auto;
-    overflow-y: hidden;
-    overflow-x: auto;
-    height: auto;
-    img {
-        max-width: none;
-        height: 720px;
-        max-height: 90vh;
-    }
-}
-
-/************
- * Features *
- ************/
-a.btn {
-    font-weight: $meta-font-weight;
-    letter-spacing: 0.05rem;
-}
-
-.btn--inverse,
-img,
-video,
-iframe,
-.author__avatar img {
-    border: 0.5px solid $primary-color;
-    background-color: $background-color;
 }
 
 /**********************

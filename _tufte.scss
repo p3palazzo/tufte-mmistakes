@@ -5,6 +5,9 @@ body {
     counter-reset: sidenote-counter;
 }
 
+/***************************
+ * Minimal-Mistakes resets *
+ ***************************/
 .page__inner-wrap {
     h1 {
         font-weight: $header-font-weight;
@@ -49,11 +52,10 @@ h4 {
 .page__content {
     h3 {
         @include breakpoint($large) {
-            float: left;
-            margin-top: 0;
-            margin-left: calc(0px - #{$right-sidebar-width-narrow});
-            width: calc(#{$right-sidebar-width-narrow} - 1em);
             font-size: $type-size-5;
+            float: left;
+            margin: 0 0 0 calc(0px - #{$right-sidebar-width-narrow});
+            width: calc(#{$right-sidebar-width-narrow} - 1em);
         }
         @include breakpoint($x-large) {
             margin-left: calc(0px - #{$right-sidebar-width});
@@ -70,6 +72,38 @@ h4 {
     ul {
         font-size: $type-size-5;
         line-height: 1.3;
+    }
+}
+
+li ul,
+li ol {
+    margin: $indent-var 0;
+}
+
+ul li,
+ol li,
+ul li ul,
+ol li ol {
+    margin: 0;
+}
+
+// Good alignment of dl
+div > dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+div > dl > dt:first-child,
+li > dl > dt:first-child {
+    margin-top: 0;
+}
+
+/* 50 + 5 == 55, to be the same width as paragraph */
+section > dl,
+section > ol,
+section > ul {
+    -webkit-padding-start: 5%;
+    @include breakpoint($large) {
+        padding-left: 0;
     }
 }
 
@@ -140,60 +174,41 @@ video {
 
 span.sidenote,
 span.marginnote {
-    @extend figcaption;
     display: none;
     vertical-align: baseline;
     position: relative;
 }
 
+span.sidenote,
+span.marginnote,
 .subfigures p:last-of-type {
     @extend figcaption;
 }
 
-.subfigures p:last-of-type,
-figcaption {
-    @include breakpoint($large) {
-        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem auto;
-        padding-left: 1rem;
-        width: $right-sidebar-width-narrow;
-    }
-    @include breakpoint($x-large) {
-        margin-right: calc(0px - #{$right-sidebar-width});
-        width: $right-sidebar-width;
-    }
-}
-
 .align-right,
-span.sidenote,
-span.marginnote {
+figcaption {
     @include breakpoint($large) {
         display: block;
         float: right;
         clear: right;
+        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem auto;
+        padding-left: 1rem;
         width: $right-sidebar-width-narrow;
-        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem 0;
-        padding-left: 1em;
         figcaption {
             margin: 0 0 0.3rem 0;
             padding-left: 0;
         }
     }
     @include breakpoint($x-large) {
-        width: $right-sidebar-width;
         margin-right: calc(0px - #{$right-sidebar-width});
+        width: $right-sidebar-width;
     }
 }
 
 .margin-toggle:checked + .sidenote,
 .margin-toggle:checked + .marginnote {
+    @extend .notice;
     display: block;
-    float: left;
-    left: 1rem;
-    clear: both;
-    width: 95%;
-    margin: 1rem 2.5%;
-    vertical-align: baseline;
-    position: relative;
 }
 
 .sidenote-number {
@@ -263,13 +278,19 @@ span.newthought {
     letter-spacing: .03em;
 }
 
-/* 50 + 5 == 55, to be the same width as paragraph */
-section > dl,
-section > ol,
-section > ul {
-    -webkit-padding-start: 5%;
-    @include breakpoint($large) {
-        padding-left: 0;
+.initial-content ul:not(.toc__menu) {
+    list-style-type: none;
+    &:not(.nav__items) li {
+        text-indent: calc(0px - #{$type-size-6});
+        &::before {
+            content: "› ";
+        }
+        p {
+            text-indent: 0;
+            &:first-child {
+                display: inline;
+            }
+        }
     }
 }
 
@@ -282,9 +303,36 @@ sup {
     font-weight: $meta-font-weight;
 }
 
-blockquote footer {
-    font-size: $type-size-6;
-    font-weight: 500;
+blockquote {
+    border-color: $background-color;
+    em {
+        font-style: normal;
+    }
+    footer {
+        font-size: $type-size-6;
+        font-weight: 500;
+    }
+}
+
+// A class to get outset dates in a résumé or CV
+.cv {
+    dt {
+        font-variant: tabular-nums oldstyle-nums all-small-caps;
+        font-weight: 400;
+        margin-left: -6rem;
+        margin-top: 0;
+    }
+    dd {
+        margin-left: 0;
+    }
+}
+
+// A table with a totals line
+table.total {
+    font-variant: tabular-nums oldstyle-nums;
+    tbody tr:last-of-type td {
+        border-top: 1px solid $text-color;
+    }
 }
 
 /********************
@@ -333,16 +381,54 @@ div.fluid-width-video-wrapper {
     float: left; // Allow caption to align to top of iframe container
 }
 
+.layout--splash,
+.wide {
+    figcaption,
+    .align-right {
+        @include breakpoint($large) {
+            margin-right: 0;
+        }
+        @include breakpoint($x-large) {
+            margin-right: 0;
+        }
+    }
+}
+
+/*******************************
+ * Horizontal scrolling frames *
+ *******************************
+ *
+ * How-to: (the full class is optional but makes sense here)
+ * <div id="#fig:name" class="full">
+ *   <div class="h-scroll">
+ *     <img src="https://example.com/image.jpg">
+ *   </div>
+ * </div>
+ *******************************/
+.h-scroll {
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: auto;
+    img {
+        max-width: none;
+        height: 720px;
+        max-height: 90vh;
+    }
+}
+
 /*****************************************************
  * Links: replicate underline that clears descenders *
  *****************************************************/
+// Prevent Minimal-Mistakes from doing its thing and
+// interfering with the Tufte decoration.
+a:hover {
+    text-decoration: none !important;
+}
+
 a:link,
 a:visited {
     color: inherit;
-}
-.page__content a:hover,
-a:hover {
-    color: $gray;
 }
 
 .no-tufte-underline:link {
@@ -381,5 +467,22 @@ a:link::selection,
 a:link::-moz-selection {
     text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
     background: #b4d5fe;
+}
+
+/***********************
+ * Buttons and borders *
+ ***********************/
+a.btn {
+    font-weight: $meta-font-weight;
+    letter-spacing: 0.05rem;
+}
+
+.btn--inverse,
+img,
+video,
+iframe,
+.author__avatar img {
+    border: 0.5px solid $primary-color;
+    background-color: $background-color;
 }
 // vim: set shiftwidth=4 foldmethod=indent :

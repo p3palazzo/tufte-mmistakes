@@ -4,9 +4,10 @@
 div.incremental,
 div.notes {
     @extend section;
-    // &.notes { display: none !important; }
 }
 
+// <hr> is used by reveal.js to separate slides so there's a lot
+//  of them going around.
 hr {
     border: 0;
 }
@@ -27,10 +28,6 @@ hr {
             margin-right: 0;
             min-width: unset;
         }
-        img,
-        video {
-            margin-bottom: 3em;
-        }
     }
     &.subfigures {
         img,
@@ -38,15 +35,12 @@ hr {
             // This is needed for letter captions to flush top.
             max-width: calc(100% - 0.1em);
         }
-        p:last-of-type {
-            margin-bottom: 1.1rem;
-        }
     }
     &:not(.subfigures) figcaption,
     &.subfigures.full p:last-of-type {
         margin-right: 0;
         padding-left: 0;
-        width: unset;
+        width: 100%;
         @include breakpoint($large) {
             max-width: $right-sidebar-width-narrow;
         }
@@ -54,8 +48,9 @@ hr {
             max-width: $right-sidebar-width;
         }
     }
-    & + hr {
-        // Use hr as an invisible clear/spacing
+    &:after {
+        content: " ";
+        display: block;
         clear: both;
         width: 100%;
     }
@@ -66,5 +61,4 @@ hr {
     display: none;
     visibility: hidden;
 }
-
 // vim: set shiftwidth=4 foldmethod=indent :
