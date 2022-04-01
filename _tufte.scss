@@ -80,21 +80,6 @@ div.epigraph {
     margin: 5em 0;
 }
 
-figure {
-    // Figures in Minimal-mistakes are flex.
-    // One should either reset them to display:block (easy fix)
-    // or use margin-left: auto in its child elements.
-    display: block;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
-}
-
 /******************************
  * CSL styling from Tufte-CSS *
  ******************************/
@@ -142,31 +127,56 @@ figcaption,
     font-weight: 500;
 }
 
-.align-right,
-.subfigures p:last-of-type,
-table caption,
+video {
+    @extend img;
+}
+
+.fluid-width-video-wrapper {
+    iframe {
+        border-radius: 5px;
+    }
+    margin-bottom: 1em;
+}
+
 span.sidenote,
 span.marginnote {
     @extend figcaption;
+    display: none;
+    vertical-align: baseline;
+    position: relative;
 }
 
-span.sidenote,
-span.marginnote {
-    display: none;
+.subfigures p:last-of-type {
+    @extend figcaption;
+}
+
+.subfigures p:last-of-type,
+figcaption {
     @include breakpoint($large) {
-        display: block;
+        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem auto;
+        padding-left: 1rem;
+        width: $right-sidebar-width-narrow;
+    }
+    @include breakpoint($x-large) {
+        margin-right: calc(0px - #{$right-sidebar-width});
+        width: $right-sidebar-width;
     }
 }
 
-figcaption {
-    vertical-align: baseline;
-    position: relative;
+.align-right,
+span.sidenote,
+span.marginnote {
     @include breakpoint($large) {
+        display: block;
         float: right;
         clear: right;
         width: $right-sidebar-width-narrow;
         margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem 0;
         padding-left: 1em;
+        figcaption {
+            margin: 0 0 0.3rem 0;
+            padding-left: 0;
+        }
     }
     @include breakpoint($x-large) {
         width: $right-sidebar-width;
@@ -253,6 +263,30 @@ span.newthought {
     letter-spacing: .03em;
 }
 
+/* 50 + 5 == 55, to be the same width as paragraph */
+section > dl,
+section > ol,
+section > ul {
+    -webkit-padding-start: 5%;
+    @include breakpoint($large) {
+        padding-left: 0;
+    }
+}
+
+/* Typographically correct small caps. */
+.smallcaps {
+    font-variant: all-small-caps;
+}
+
+sup {
+    font-weight: $meta-font-weight;
+}
+
+blockquote footer {
+    font-size: $type-size-6;
+    font-weight: 500;
+}
+
 /********************
  * Widths of things *
  ********************/
@@ -260,15 +294,18 @@ div.table-wrapper {
     overflow-x: auto;
 }
 
-.full,
-video.full,
-img.full {
+.full {
+    clear: both;
     @include breakpoint($large) {
         display: block; // Prevent float overlap
         clear:both;
         margin-right: calc(0px - #{$right-sidebar-width-narrow}) !important;
         max-width: calc(100% + #{$right-sidebar-width-narrow});
         width: calc(100% + #{$right-sidebar-width-narrow});
+        &.subfigures p:last-of-type,
+        figcaption {
+            margin-right: 0;
+        }
     }
     @include breakpoint($x-large) {
         margin-right: calc(0px - #{$right-sidebar-width}) !important;
@@ -290,6 +327,10 @@ img.full {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+div.fluid-width-video-wrapper {
+    float: left; // Allow caption to align to top of iframe container
 }
 
 /*****************************************************
