@@ -73,28 +73,11 @@ h4 {
     }
 }
 
-/* Chapter Epigraphs */
+/*********************
+ * Chapter Epigraphs *
+ *********************/
 div.epigraph {
     margin: 5em 0;
-}
-
-.epigraph > blockquote,
-.epigraph > blockquote > p {
-    font-style: italic;
-    em {
-        font-style: normal;
-    }
-}
-/* end chapter epigraphs styles */
-
-/* 50 + 5 == 55, to be the same width as paragraph */
-section > dl,
-section > ol,
-section > ul {
-    -webkit-padding-start: 5%;
-    @include breakpoint($large) {
-        padding-left: 0;
-    }
 }
 
 figure {
@@ -112,10 +95,9 @@ figure {
     margin: 0 0 3em 0;
 }
 
-/******************************************************
- * CSL styling taken from Tufte-CSS, not yet
-   implemented in Jekyll-Pandoc-Tufte.
- */
+/******************************
+ * CSL styling from Tufte-CSS *
+ ******************************/
 div.csl-bib-body {
     font-size: $type-size-5;
     line-height: 1.3;
@@ -150,6 +132,17 @@ div.hanging-indent{
     text-indent: -1.5rem;
 }
 
+/**************************
+ * Figures and marginalia *
+ **************************/
+figcaption,
+.sidenote-number,
+.sidenote-number:after,
+.sidenote:before {
+    font-weight: 500;
+}
+
+.align-right,
 .subfigures p:last-of-type,
 table caption,
 span.sidenote,
@@ -165,19 +158,14 @@ span.marginnote {
     }
 }
 
-figcaption,
-.subfigures p:last-of-type,
-.align-right,
-.sidenote,
-.marginnote {
-    font-weight: 500;
+figcaption {
     vertical-align: baseline;
     position: relative;
     @include breakpoint($large) {
         float: right;
         clear: right;
         width: $right-sidebar-width-narrow;
-        margin: 0.3rem calc(0px - #{$right-sidebar-width-narrow}) 0 0;
+        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem 0;
         padding-left: 1em;
     }
     @include breakpoint($x-large) {
@@ -200,25 +188,18 @@ figcaption,
 
 .sidenote-number {
     counter-increment: sidenote-counter;
-}
-
-.sidenote-number,
-.sidenote-number:after,
-.sidenote:before {
-    font-weight: 500;
+    &:after {
+        content: counter(sidenote-counter);
+        font-size: $type-size-6;
+        top: -0.5rem;
+        left: 0.1rem;
+    }
 }
 
 .sidenote-number:after,
 .sidenote:before {
     position: relative;
     vertical-align: baseline;
-}
-
-.sidenote-number:after {
-    content: counter(sidenote-counter);
-    font-size: $type-size-6;
-    top: -0.5rem;
-    left: 0.1rem;
 }
 
 .sidenote:before {
@@ -256,10 +237,9 @@ label.margin-toggle:not(.sidenote-number) {
     }
 }
 
-div.table-wrapper {
-    overflow-x: auto;
-}
-
+/**************
+ * Typography *
+ **************/
 span.newthought {
     font-variant: small-caps;
     font-size: $type-size-5;
@@ -273,11 +253,16 @@ span.newthought {
     letter-spacing: .03em;
 }
 
+/********************
+ * Widths of things *
+ ********************/
+div.table-wrapper {
+    overflow-x: auto;
+}
+
 .full,
 video.full,
 img.full {
-    margin-top: 1em;
-    margin-bottom: 0;
     @include breakpoint($large) {
         display: block; // Prevent float overlap
         clear:both;
@@ -307,7 +292,9 @@ img.full {
     height: 100%;
 }
 
-/* Links: replicate underline that clears descenders */
+/*****************************************************
+ * Links: replicate underline that clears descenders *
+ *****************************************************/
 a:link,
 a:visited {
     color: inherit;

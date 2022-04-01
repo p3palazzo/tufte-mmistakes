@@ -4,21 +4,24 @@
 }
 
 sup {
-    font-weight: 500;
+    font-weight: $meta-font-weight;
 }
 
 div.fluid-width-video-wrapper {
     float: left; // Allow caption to align to top of iframe container
 }
 
+.btn--inverse,
 img,
 video,
-iframe {
-    border: 0.5px solid $text-color;
+iframe,
+.author__avatar img {
+    border: 0.5px solid $primary-color;
+    background-color: $background-color;
 }
 
-img.line,
-img.nobg {
+.line,
+.nobg {
     border: 0;
 }
 
@@ -32,10 +35,6 @@ li > dl > dt:first-child {
     margin-top: 0;
 }
 
-hr {
-    border: 0;
-}
-
 table.total {
     font-variant: tabular-nums oldstyle-nums;
     tbody tr:last-of-type td {
@@ -46,11 +45,6 @@ table.total {
 /***************************
  * Minimal-Mistakes resets *
  ***************************/
-#main {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-}
-
 li ul,
 li ol {
     margin: $indent-var 0;
@@ -64,10 +58,14 @@ ol li ol {
 }
 
 blockquote {
-    border: none;
-    font-style: normal;
+    border-color: $background-color;
+    em {
+        font-style: normal;
+    }
 }
 
+// Prevent Minimal-Mistakes from doing its thing and
+// interfering with the Tufte decoration.
 a:hover {
     text-decoration: none !important;
 }
@@ -364,31 +362,6 @@ div.subfigures {
     }
 }
 
-/*************************
- * Multilingual websites *
- *************************/
-#lang-select {
-    a:link {
-        background: none;
-        text-shadow: none;
-        &::after {
-            content: "  ";
-        }
-    }
-    float: right;
-    font-weight: $meta-font-weight;
-    margin-right: 45%;
-    margin-top: 0.5rem;
-    margin-top: 1rem;
-}
-
-// Add languages as needed.
-.en:lang(en),
-.fr:lang(fr),
-.pt:lang(pt) {
-    color: $muted-text-color;
-}
-
 /*******************************
  * Horizontal scrolling frames *
  *******************************
@@ -416,17 +389,8 @@ div.h-scroll {
  * Features *
  ************/
 a.btn {
-    font-weight: 400;
+    font-weight: $meta-font-weight;
     letter-spacing: 0.05rem;
-    text-transform: uppercase;
-}
-
-a.btn--primary,
-a.btn--success,
-a.btn--warning,
-a.btn--danger,
-a.btn--info {
-    color: $background-color;
 }
 
 /**********************
@@ -446,28 +410,25 @@ div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
         @extend h5;
-        margin-right: 0;
-        font-weight: $meta-font-weight;
+        margin: 0.3rem 0;
+        font-weight: $header-font-weight;
         float: none;
         a:link {
             background: none;
         }
+        -webkit-hyphens: none;
+            -ms-hyphens: none;
+                hyphens: none;
     }
     .archive__item-excerpt {
-        font-weight: 500;
+        font-style: italic;
+        font-weight: $meta-font-weight;
     }
 }
 
 .archive__subtitle {
     margin-top: 5rem;
     border-bottom: 0;
-}
-
-.archive__item {
-    padding: 0;
-    h2 {
-        font-family: $garamond;
-    }
 }
 
 .page__share a:link {
@@ -499,11 +460,6 @@ p.page__taxonomy strong {
     font-weight: $meta-font-weight;
 }
 
-// Minimal-Mistakes page footer
-.page__footer {
-    background-color: $footer-background-color;
-}
-
 .page__footer-follow li,
 ul.social-icons {
     font-family: $sans-serif;
@@ -521,11 +477,6 @@ ul.social-icons {
     a:hover {
         color: inherit;
     }
-}
-
-.page__footer-copyright {
-    font-family: $global-font-family;
-    font-size: $type-size-6;
 }
 
 // Dark colorscheme with a softer background

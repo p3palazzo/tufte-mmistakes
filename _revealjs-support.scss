@@ -7,6 +7,10 @@ div.notes {
     // &.notes { display: none !important; }
 }
 
+hr {
+    border: 0;
+}
+
 // Support Pandoc columns for reveal.js
 .columns {
     min-width: calc(100% + 1.3em);
