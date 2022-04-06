@@ -8,6 +8,10 @@ body {
 /***************************
  * Minimal-Mistakes resets *
  ***************************/
+a.site-title {
+    font-family: $global-font-family;
+}
+
 .page__inner-wrap {
     h1 {
         font-weight: $header-font-weight;
@@ -23,16 +27,9 @@ body {
 
 h2 {
     clear: both;
+    font-family: $serif;
     font-style: $header-font-style;
     font-weight: $header-font-weight;
-    em {
-        font-style: normal;
-    }
-}
-
-h3 {
-    font-style: $header-font-style;
-    font-weight: 400;
     em {
         font-style: normal;
     }
@@ -51,6 +48,11 @@ h4 {
 
 .page__content {
     h3 {
+        font-weight: 400;
+        em {
+            font-style: normal;
+        }
+        font-style: $header-font-style;
         @include breakpoint($large) {
             font-size: $type-size-5;
             float: left;
@@ -62,6 +64,7 @@ h4 {
             width: calc(#{$right-sidebar-width} - 1em);
         }
     }
+    h4,
     h5,
     h6,
     p,
@@ -70,6 +73,7 @@ h4 {
     dd,
     ol,
     ul {
+        font-family: $global-font-family;
         font-size: $type-size-5;
         line-height: 1.3;
     }
