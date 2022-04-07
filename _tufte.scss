@@ -348,6 +348,20 @@ table.total {
     }
 }
 
+/*
+ * Enable hyphens on supported platforms
+ */
+article {
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+}
+/* Sidenotes end up with a bunch of hyphens because they're so small */
+.sidenote,
+.marginnote {
+  hyphens: none;
+}
+
 /********************
  * Widths of things *
  ********************/
@@ -708,19 +722,4 @@ ul.social-icons {
         color: inherit;
     }
 }
-
-/*
- * Enable hyphens on supported platforms
- */
-article {
-    -webkit-hyphens: auto;
-        -ms-hyphens: auto;
-            hyphens: auto;
-}
-/* Sidenotes end up with a bunch of hyphens because they're so small */
-.sidenote,
-.marginnote {
-  hyphens: none;
-}
-
 // vim: set shiftwidth=4 foldmethod=indent :
