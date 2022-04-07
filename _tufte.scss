@@ -37,9 +37,6 @@ h2 {
 
 h4 {
     font-family: $sans-serif;
-    font-variant: all-small-caps;
-    font-weight: $meta-font-weight;
-    letter-spacing: 0.05rem;
     &.page__related-title,
     &.page__share-title {
         font-size: $h-size-5;
@@ -64,6 +61,7 @@ h4 {
             width: calc(#{$right-sidebar-width} - 1em);
         }
     }
+    h2.archive__item-title,
     h4,
     h5,
     h6,
@@ -76,6 +74,12 @@ h4 {
         font-family: $global-font-family;
         font-size: $type-size-5;
         line-height: 1.3;
+    }
+    h2.archive__item-title,
+    h4,
+    dt {
+	@extend span.newthought;
+	font-weight: $meta-font-weight;
     }
 }
 
@@ -278,7 +282,7 @@ span.newthought {
     font-variant: small-caps;
     font-size: $type-size-5;
     .smallcaps {
-      text-transform: uppercase;
+	text-transform: uppercase;
     }
 }
 
@@ -481,11 +485,6 @@ a:link::-moz-selection {
 /***********************
  * Buttons and borders *
  ***********************/
-a.btn {
-    font-weight: $meta-font-weight;
-    letter-spacing: 0.05rem;
-}
-
 .btn--inverse,
 img,
 video,
@@ -650,6 +649,11 @@ div.feature__wrapper,
     border: none;
 }
 
+.archive__item-excerpt {
+    float: right;
+    max-width: $small;
+}
+
 h3.archive__subtitle {
     font-size: $h-size-2;
     @include breakpoint($large) {
@@ -660,8 +664,8 @@ h3.archive__subtitle {
 div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
-        @extend h5;
-        float: none !important;
+	font-style: normal;
+	font-variant: small-caps;
         margin: 0.3rem 0;
         a:link {
             background: none;
