@@ -178,6 +178,9 @@ div.feature__wrapper {
     .archive__item-excerpt {
         font-style: italic;
         font-weight: $meta-font-weight;
+	em {
+	    font-style: normal;
+	}
     }
 }
 
