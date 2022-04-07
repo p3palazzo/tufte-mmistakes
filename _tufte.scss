@@ -458,16 +458,7 @@ a:visited {
     color: inherit;
 }
 
-.no-tufte-underline:link {
-    background: unset;
-    text-shadow: unset;
-}
-
-.page__hero--overlay a:link:not(.btn),
-.page__content a:link:not(.btn),
-.archive a:link:not(.btn),
-.page__related a:link:not(.btn),
-.page__footer-copyright a:link:not(.btn),
+a:link:not(.btn),
 .tufte-underline,
 .hover-tufte-underline:hover {
     text-decoration: none;
@@ -480,10 +471,34 @@ a:visited {
     text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
     background-position: 0% 93%, 100% 93%, 0% 93%;
 }
+.page__lead a:link {
+    background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
+    background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
+    -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+    -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+    background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
+    background-position: 0% 93%, 100% 93%, 0% 93%;
+}
+.page__hero-caption a:link {
+    text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
+    background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
+    background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
+    -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+    -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+    background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-position: 0% 93%, 100% 93%, 0% 93%; 
+}
+
+.no-tufte-underline:link {
+    background: unset;
+    text-shadow: unset;
+}
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    .page__content a:link:not(.btn),
-    .archive a:link:not(.btn),
+    a:link:not(.btn),
     .tufte-underline,
     .hover-tufte-underline:hover {
         background-position-y: 87%, 87%, 87%;
@@ -547,16 +562,6 @@ ul.visible-links {
     .page__title {
 	font-weight: $header-font-weight;
     }
-    a:link:not(.btn) {
-	text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
-        background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
-        background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
-        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        background-position: 0% 93%, 100% 93%, 0% 93%;
-    }
     .page__lead {
 	font-style: italic;
 	em {
@@ -565,16 +570,6 @@ ul.visible-links {
     }
     .page__hero-caption {
 	font-weight: $meta-font-weight;
-	a {
-	    text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
-	    background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
-	    background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
-	    -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-	    -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-	    background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-	    background-repeat: no-repeat, no-repeat, repeat-x;
-	    background-position: 0% 93%, 100% 93%, 0% 93%; 
-	}
     }
 }
 
