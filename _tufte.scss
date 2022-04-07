@@ -78,8 +78,8 @@ h4 {
     h2.archive__item-title,
     h4,
     dt {
-	@extend span.newthought;
-	font-weight: $meta-font-weight;
+        @extend span.newthought;
+        font-weight: $meta-font-weight;
     }
 }
 
@@ -634,11 +634,6 @@ div.feature__wrapper,
 .page__share,
 .page__related {
     border: none;
-}
-
-.archive__item-excerpt {
-    float: right;
-    max-width: $small;
 }
 
 h3.archive__subtitle {
