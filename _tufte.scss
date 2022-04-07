@@ -661,7 +661,7 @@ div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
         @extend h5;
-        float: none;
+        float: none !important;
         margin: 0.3rem 0;
         a:link {
             background: none;
