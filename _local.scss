@@ -3,239 +3,83 @@
     border: 0;
 }
 
-/*******************************************
- * Masthead, site title and navigation links
- *******************************************/
-.greedy-nav a.site-logo:link,
-a.site-logo img,
-a.site-title,
-ul.visible-links a {
-    background: none !important;
-    text-shadow: none !important;
+/* <details> is a little used collapsible block. */
+details {
+    @extend section;
+    summary > p:first-child { display: inline; }
 }
 
-a.site-logo img {
-    border: 0 !important;
-}
-
-a.site-title {
-    font-size: $h-size-3;
-    font-variant: all-small-caps;
-    font-weight: $header-font-weight;
-    .site-subtitle {
-        font-size: $type-size-6;
-        font-style: italic;
-        font-variant: normal;
-        font-variant-numeric: oldstyle-nums;
+/* Tabular numbers for list items, small-caps Roman numerals */
+ol,
+ul {
+    & > li::marker {
+        font-variant: tabular-nums oldstyle-nums all-small-caps !important;
     }
 }
 
-// Smaller Masthead links
-ul.visible-links {
-    font-size: $h-size-6;
-}
+/* Semantic emulation of NEWTHOUGHT
+ *
+ * .newthought provides no semantic cues in the markup.
+ * However, we can style semantic elements so that they
+ * look just like Tufte's emphasized paragraph openings.
+ * We do this to <h5> and <h6> by analogy with the LaTeX
+ * \paragraph and \subparagraph features. We have also
+ * thrown in <dt> because what else are we going to use
+ * definition lists for? */
 
-/*******************
- * Header and meta *
- *******************/
-.page__hero--overlay {
-	  &,
-	  .page__title,
-	  .page__meta,
-    a:link:not(.btn) {
-	    	color: $background-color;
-	    	text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
-	  }
-
-    a:link:not(.btn) {
-        background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
-        background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
-        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        background-position: 0% 93%, 100% 93%, 0% 93%;
-    }
-
-	  h1 {
-        font-weight: $header-font-weight;
-	  }
-
-    .page__lead,
-	  span.subtitle {
-		    font-style: italic;
-		    em {
-            font-style: normal;
-        }
-	  }
-
-	  .page__hero-caption {
-        a {
-            text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
-            background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
-            background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
-            -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-            -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-            background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-            background-repeat: no-repeat, no-repeat, repeat-x;
-            background-position: 0% 93%, 100% 93%, 0% 93%; 
-        }
-	  }
-}
-
-.page__hero-caption,
-.page__meta,
-.page__date time,
-.page__date strong,
-.page__meta-readtime {
-  	font-weight: $meta-font-weight;
-}
-
-.page__meta-readtime {
+// First, we make sure line heights and font sizes match.
+article > dl,
+section > dl {
+    clear: left;
     font-size: $type-size-5;
-}
-
-/***********
- * Sidebar *
- ***********/
-.sidebar p,
-ul.nav__items li .nav__sub-title {
-    font-family: $global-font-family;
-    font-weight: $meta-font-weight;
-}
-
-nav.toc {
-    font-size: $type-size-6;
-    color: $text-color;
-    blockquote {
-        padding: 0;
-    }
-    h4.nav__title {
-        color: $text-color;
+    line-height: 1.3;
+    dd {
         font-size: $type-size-5;
     }
-    ul {
-        li {
-            font-size: $type-size-5;
-            font-style: italic;
-            margin-left: 0;
-            &::before {
-                content: none;
-            }
-            a {
-                font-weight: $meta-font-weight;
-                &:link {
-                    background: none;
-                }
-            }
-        }
+}
+
+// ...second, we float the headings so they run in with
+// the following paragraph...
+dt,
+h5,
+h6 {
+    @include breakpoint($medium) {
+        float: left;
+        margin: 0 $type-size-5 0 0;
+        padding: 0;
     }
 }
 
-/*******************
- * Utility classes *
- *******************/
-// Replicates _base.scss l.235
-.half img {
-    @include breakpoint($small) {
-        max-width: calc(50% - 1em);
-    }
-}
-
-.third img {
-    @include breakpoint($small) {
-        max-width: calc(33.3333% - 0.5em);
-    }
-}
-
-/**********************
- * Archives and grids *
- **********************/
-div.feature__wrapper,
-.page__share,
-.page__related {
-    border: none;
-}
-
-h3.archive__subtitle {
-    font-size: $h-size-2;
-}
-
-div.archive,
-div.feature__wrapper {
-    h2.archive__item-title {
-        @extend h5;
-        margin: 0.3rem 0;
-        font-weight: $header-font-weight;
-        float: none;
-        a:link {
-            background: none;
-        }
-        -webkit-hyphens: none;
-            -ms-hyphens: none;
-                hyphens: none;
-    }
-    .archive__item-excerpt {
-        font-style: italic;
-        font-weight: $meta-font-weight;
-	em {
-	    font-style: normal;
-	}
-    }
-}
-
-.archive__subtitle {
-    margin-top: 5rem;
-    border-bottom: 0;
-}
-
-.page__share a:link {
-    color: $lighter-gray;
-}
-
-.page__share + .pagination {
-    border-top: 0;
-}
-
-a.pagination--pager {
-    border-color: $text-color;
-    font-weight: $meta-font-weight;
-    &:hover {
-        background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
-        background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
-        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
-        background-position: 0% 93%, 100% 93%, 0% 93%;
-        background-color: $dark-gray;
-    }
-}
-
-p.page__taxonomy strong {
-    font-family: $sans-serif;
+// ...third, we take care of the styling...
+dt,
+.page__content dt,
+dt > a,
+h5,
+h6 {
+    @extend .newthought;
+    clear: left;
+    font-style: normal;
+    font-variant: small-caps;
     font-weight: $meta-font-weight;
 }
 
-.page__footer-follow li,
-ul.social-icons {
-    font-family: $sans-serif;
-    a:link {
-        border: 0;
-        background: none;
-        text-shadow: none;
+// Finally, we flush the <dt> inline with the <dd>.
+// This reverses the margin setting on l.160 of _tufte.scss
+.initial-content,
+.page__content {
+    dt,
+    li:not(:first-child) {
+        margin-top: 0;
     }
 }
 
-.page__footer-follow li strong,
-.page__footer-follow li a,
-.page__footer-copyright {
-    font-weight: $meta-font-weight;
-    a:hover {
-        color: inherit;
+// Bonus: fix width of <dl> inside <li>
+li > dl {
+    &, & > p {
+        width: 100%;
     }
 }
+/* Here there ends the semantic emulation of .newthought */
 
 // Dark colorscheme with a softer background
 // TODO: use variables and a rebase mixin instead of
