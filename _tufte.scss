@@ -78,7 +78,7 @@ h4 {
     h2.archive__item-title,
     h4,
     dt {
-        @extend span.newthought;
+        @extend span, .newthought;
         font-weight: $meta-font-weight;
     }
 }
