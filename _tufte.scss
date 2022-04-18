@@ -78,7 +78,7 @@ h4 {
     h2.archive__item-title,
     h4,
     dt {
-        @extend span, .newthought;
+        @extend .newthought;
         font-weight: $meta-font-weight;
     }
 }
@@ -278,7 +278,7 @@ label.margin-toggle:not(.sidenote-number) {
 /**************
  * Typography *
  **************/
-span.newthought {
+.newthought {
     font-variant: small-caps;
     font-size: $type-size-5;
     .smallcaps {
