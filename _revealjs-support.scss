@@ -21,12 +21,12 @@ hr {
         clear: both;
         min-width: 90%;
         margin-right: 10%;
-        padding-left: 1.3em;
         @include breakpoint($medium) {
             float: left;
             clear: none;
             margin-right: 0;
             min-width: unset;
+            padding-right: 1.3em;
         }
     }
     &.subfigures {
