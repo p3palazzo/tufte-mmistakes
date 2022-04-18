@@ -12,6 +12,10 @@ hr {
     border: 0;
 }
 
+.notes hr {
+    clear: both;
+}
+
 // Support Pandoc columns for reveal.js
 .columns {
     min-width: calc(100% + 1.3em);
