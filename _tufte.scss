@@ -576,7 +576,12 @@ ul.visible-links {
 /***********
  * Sidebar *
  ***********/
+.sidebar ul {
+    margin-left: -1rem;
+}
+
 .sidebar p,
+.sidebar li,
 ul.nav__items li .nav__sub-title {
     font-family: $global-font-family;
     font-weight: $meta-font-weight;
