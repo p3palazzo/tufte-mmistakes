@@ -61,7 +61,6 @@ h4 {
             width: calc(#{$right-sidebar-width} - 1em);
         }
     }
-    h2.archive__item-title,
     h4,
     h5,
     h6,
@@ -75,12 +74,19 @@ h4 {
         font-size: $type-size-5;
         line-height: 1.3;
     }
-    h2.archive__item-title,
     h4,
     dt {
         @extend .newthought;
         font-weight: $meta-font-weight;
     }
+}
+
+h2.archive__item-title {
+    @extend .newthought;
+    font-family: $global-font-family;
+    font-size: $type-size-5;
+    font-weight: $meta-font-weight;
+    line-height: 1.3;
 }
 
 li ul,
@@ -458,7 +464,7 @@ a:visited {
     color: inherit;
 }
 
-a:link:not(.btn),
+//a:link,
 .tufte-underline,
 .hover-tufte-underline:hover {
     text-decoration: none;
@@ -470,26 +476,6 @@ a:link:not(.btn),
     background-repeat: no-repeat, no-repeat, repeat-x;
     text-shadow: 0.03em 0 $background-color, -0.03em 0 $background-color, 0 0.03em $background-color, 0 -0.03em $background-color, 0.06em 0 $background-color, -0.06em 0 $background-color, 0.09em 0 $background-color, -0.09em 0 $background-color, 0.12em 0 $background-color, -0.12em 0 $background-color, 0.15em 0 $background-color, -0.15em 0 $background-color;
     background-position: 0% 93%, 100% 93%, 0% 93%;
-}
-.page__lead a:link {
-    background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
-    background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
-    -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-    -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-    background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    text-shadow: 0.03em 0 4px rgba($text-color, 0.2), -0.03em 0 4px rgba($text-color, 0.2), 0 0.03em 4px rgba($text-color, 0.2), 0 -0.03em 4px rgba($text-color, 0.2), 0.06em 0 6px rgba($text-color, 0.2), -0.06em 0 6px rgba($text-color, 0.2), 0.09em 0 4px rgba($text-color, 0.2), -0.09em 0 4px rgba($text-color, 0.2), 0.12em 0 9px rgba($text-color, 0.2), -0.12em 0 9px rgba($text-color, 0.2), 0.15em 0 12px rgba($text-color, 0.2), -0.15em 0 12px rgba($text-color, 0.2);
-    background-position: 0% 93%, 100% 93%, 0% 93%;
-}
-.page__hero-caption a:link {
-    text-shadow: 0.03em 0 1px rgba($text-color, 0.5), -0.03em 0 1px rgba($text-color, 0.5), 0 0.03em 1px rgba($text-color, 0.5), 0 -0.03em 1px rgba($text-color, 0.5), 0.06em 0 2px rgba($text-color, 0.3), -0.06em 0 2px rgba($text-color, 0.3), 0.09em 0 3px rgba($text-color, 0.3), -0.09em 0 3px rgba($text-color, 0.3), 0.12em 0 4px rgba($text-color, 0.3), -0.12em 0 4px rgba($text-color, 0.3), 0.15em 0 5px rgba($text-color, 0.3), -0.15em 0 5px rgba($text-color, 0.3);
-    background: -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($text-color, $text-color), -webkit-linear-gradient($lighter-gray, $lighter-gray);
-    background: linear-gradient($text-color, $text-color), linear-gradient($text-color, $text-color), linear-gradient($lighter-gray, $lighter-gray);
-    -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-    -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-    background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    background-position: 0% 93%, 100% 93%, 0% 93%; 
 }
 
 .no-tufte-underline:link {
@@ -655,15 +641,15 @@ h3.archive__subtitle {
 div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
-	font-style: normal;
-	font-variant: small-caps;
-        margin: 0.3rem 0;
-        a:link {
-            background: none;
-        }
-        -webkit-hyphens: none;
-            -ms-hyphens: none;
-                hyphens: none;
+	    font-style: normal;
+	    font-variant: small-caps;
+          margin: 0.3rem 0;
+          a:link {
+              background: none;
+          }
+          -webkit-hyphens: none;
+              -ms-hyphens: none;
+                  hyphens: none;
     }
     .archive__item-excerpt {
         font-style: italic;
@@ -687,38 +673,24 @@ div.feature__wrapper {
     border-top: 0;
 }
 
-a.pagination--pager {
-    border-color: $text-color;
+.page__share-title,
+.page__related-title {
+    text-transform: unset;
     font-weight: $meta-font-weight;
-    &:hover {
-        background: -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($dark-gray, $dark-gray), -webkit-linear-gradient($light-gray, $light-gray);
-        background: linear-gradient($dark-gray, $dark-gray), linear-gradient($dark-gray, $dark-gray), linear-gradient($light-gray, $light-gray);
-        -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        text-shadow: 0.03em 0 $dark-gray, -0.03em 0 $dark-gray, 0 0.03em $dark-gray, 0 -0.03em $dark-gray, 0.06em 0 $dark-gray, -0.06em 0 $dark-gray, 0.09em 0 $dark-gray, -0.09em 0 $dark-gray, 0.12em 0 $dark-gray, -0.12em 0 $dark-gray, 0.15em 0 $dark-gray, -0.15em 0 $dark-gray;
-        background-position: 0% 93%, 100% 93%, 0% 93%;
-        background-color: $dark-gray;
-    }
+}
+
+.page__related-title {
+    font-family: $global-font-family;
 }
 
 .page__footer-follow li,
 ul.social-icons {
     text-transform: none;
-    a:link {
-        border: 0;
-        background: none;
-        text-shadow: none;
-    }
 }
 
 .page__footer-follow li strong,
 .page__footer-follow li a,
 .page__footer-copyright {
     font-weight: $meta-font-weight;
-    a:hover {
-        color: inherit;
-    }
 }
 // vim: set shiftwidth=4 foldmethod=indent :
