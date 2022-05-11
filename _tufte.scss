@@ -641,22 +641,15 @@ h3.archive__subtitle {
 div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
-	    font-style: normal;
-	    font-variant: small-caps;
-          margin: 0.3rem 0;
-          a:link {
-              background: none;
-          }
-          -webkit-hyphens: none;
-              -ms-hyphens: none;
-                  hyphens: none;
+	font-style: normal;
+	font-variant: small-caps;
+	margin: 0.3rem 0;
+	-webkit-hyphens: none;
+	    -ms-hyphens: none;
+		hyphens: none;
     }
     .archive__item-excerpt {
-        font-style: italic;
         font-weight: $meta-font-weight;
-        em {
-            font-style: normal;
-        }
     }
 }
 
