@@ -453,8 +453,6 @@ div.fluid-width-video-wrapper {
 /*****************************************************
  * Links: replicate underline that clears descenders *
  *****************************************************/
-// Prevent Minimal-Mistakes from doing its thing and
-// interfering with the Tufte decoration.
 a:hover {
     text-decoration: none !important;
 }
@@ -501,7 +499,7 @@ a:link::-moz-selection {
  * Buttons and borders *
  ***********************/
 .btn--inverse,
-img,
+.page__content img,
 video,
 iframe,
 .author__avatar img {
@@ -512,20 +510,7 @@ iframe,
 /*******************************************
  * Masthead, site title and navigation links
  *******************************************/
-.greedy-nav a.site-logo:link,
-a.site-logo img,
-a.site-title,
-ul.visible-links a {
-    background: none !important;
-    text-shadow: none !important;
-}
-
-a.site-logo img {
-    border: 0 !important;
-}
-
 a.site-title {
-    font-size: $h-size-3;
     font-variant: all-small-caps;
     font-weight: $header-font-weight;
     .site-subtitle {
@@ -534,11 +519,6 @@ a.site-title {
         font-variant: normal;
         font-variant-numeric: oldstyle-nums;
     }
-}
-
-// Smaller Masthead links
-ul.visible-links {
-    font-size: $h-size-6;
 }
 
 /*******************
@@ -568,36 +548,23 @@ ul.visible-links {
 
 .sidebar p,
 .sidebar li,
+nav.toc li,
+nav.toc li a,
 ul.nav__items li .nav__sub-title {
     font-family: $global-font-family;
     font-weight: $meta-font-weight;
 }
 
 nav.toc {
-    font-size: $type-size-6;
-    color: $text-color;
-    blockquote {
-        padding: 0;
-    }
     h4.nav__title {
-        color: $text-color;
-        font-size: $type-size-5;
+	font-family: $sans-serif-narrow;
+	font-variant: unset;
+	i {
+	    margin-right: $type-size-6;
+	}
     }
-    ul {
-        li {
-            font-size: $type-size-5;
-            font-style: italic;
-            margin-left: 0;
-            &::before {
-                content: none;
-            }
-            a {
-                font-weight: $meta-font-weight;
-                &:link {
-                    background: none;
-                }
-            }
-        }
+    li {
+	font-size: $type-size-6;
     }
 }
 
@@ -605,32 +572,26 @@ nav.toc {
  * Utility classes *
  *******************/
 // Replicates _base.scss l.235
-.half img,
-.third img {
+div.half img,
+div.third img {
     @include breakpoint($small) {
         max-width: calc(50% - 1em);
     }
 }
 
-.third img {
+div.third img {
     @include breakpoint($large) {
         max-width: calc(33.3333% - 0.5em);
     }
 }
 
-.align-right figure {
+div.align-right figure {
     margin-top: 0;
 }
 
 /**********************
  * Archives and grids *
  **********************/
-div.feature__wrapper,
-.page__share,
-.page__related {
-    border: none;
-}
-
 h3.archive__subtitle {
     font-size: $h-size-2;
     @include breakpoint($large) {
@@ -641,8 +602,8 @@ h3.archive__subtitle {
 div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
+	@extend .newthought;
 	font-style: normal;
-	font-variant: small-caps;
 	margin: 0.3rem 0;
 	-webkit-hyphens: none;
 	    -ms-hyphens: none;
@@ -662,28 +623,19 @@ div.feature__wrapper {
     color: $lighter-gray;
 }
 
-.page__share + .pagination {
-    border-top: 0;
-}
-
 .page__share-title,
 .page__related-title {
     text-transform: unset;
-    font-weight: $meta-font-weight;
-}
-
-.page__related-title {
     font-family: $global-font-family;
+    font-weight: 400;
 }
 
 .page__footer-follow li,
-ul.social-icons {
-    text-transform: none;
-}
-
 .page__footer-follow li strong,
 .page__footer-follow li a,
-.page__footer-copyright {
+.page__footer-copyright,
+ul.social-icons {
     font-weight: $meta-font-weight;
+    text-transform: unset;
 }
 // vim: set shiftwidth=4 foldmethod=indent :
