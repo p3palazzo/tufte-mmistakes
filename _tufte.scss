@@ -34,6 +34,10 @@ h2 {
     }
 }
 
+h3.archive__subtitle {
+    @extend h2;
+}
+
 h4 {
     font-family: $sans-serif;
     &.page__related-title,
