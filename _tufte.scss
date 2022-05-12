@@ -12,10 +12,9 @@ a.site-title {
     font-family: $global-font-family;
 }
 
-.page__inner-wrap {
-    h1 {
-        font-weight: $header-font-weight;
-    }
+h1,
+.page__inner-wrap h1 {
+    font-weight: $header-font-weight;
     p.subtitle {
         font-style: italic;
         display: block;
