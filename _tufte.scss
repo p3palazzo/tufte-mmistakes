@@ -14,6 +14,7 @@ a.site-title {
 
 h1,
 .page__inner-wrap h1 {
+    font-family: $serif;
     font-weight: $header-font-weight;
     p.subtitle {
         font-style: italic;
@@ -32,10 +33,6 @@ h2 {
     em {
         font-style: normal;
     }
-}
-
-h3.archive__subtitle {
-    @extend h2;
 }
 
 h4 {
@@ -529,16 +526,20 @@ a.site-title {
  *******************/
 .page__hero--overlay {
     .page__title {
-	font-weight: $header-font-weight;
+        font-weight: $header-font-weight;
     }
     .page__lead {
-	font-style: italic;
-	em {
-	    font-style: normal;
-	}
+        font-style: italic;
+        em {
+            font-style: normal;
+        }
+    }
+    .page__title,
+    .page__lead {
+        text-shadow: 2px 2px 3px #000;
     }
     .page__hero-caption {
-	font-weight: $meta-font-weight;
+        font-weight: $meta-font-weight;
     }
 }
 
@@ -560,14 +561,14 @@ ul.nav__items li .nav__sub-title {
 
 nav.toc {
     h4.nav__title {
-	font-family: $sans-serif-narrow;
-	font-variant: unset;
-	i {
-	    margin-right: $type-size-6;
-	}
+        font-family: $sans-serif-narrow;
+        font-variant: unset;
+        i {
+            margin-right: $type-size-6;
+        }
     }
     li {
-	font-size: $type-size-6;
+	      font-size: $type-size-6;
     }
 }
 
@@ -597,6 +598,7 @@ div.align-right figure {
  **********************/
 h3.archive__subtitle {
     font-size: $h-size-2;
+    font-weight: $header-font-weight;
     @include breakpoint($large) {
         float: none;
     }
@@ -605,12 +607,12 @@ h3.archive__subtitle {
 div.archive,
 div.feature__wrapper {
     h2.archive__item-title {
-	@extend .newthought;
-	font-style: normal;
-	margin: 0.3rem 0;
-	-webkit-hyphens: none;
-	    -ms-hyphens: none;
-		hyphens: none;
+	  @extend .newthought;
+	  font-style: normal;
+	  margin: 0.3rem 0;
+	  -webkit-hyphens: none;
+	      -ms-hyphens: none;
+		        hyphens: none;
     }
     .archive__item-excerpt {
         font-weight: $meta-font-weight;
