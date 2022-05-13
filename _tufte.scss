@@ -279,16 +279,16 @@ label.margin-toggle:not(.sidenote-number) {
     font-variant: small-caps;
     font-size: $type-size-5;
     .smallcaps {
-	text-transform: uppercase;
+        text-transform: uppercase;
     }
 }
 
 .sans {
-    font-family: $sans-serif;
+    font-family: $sans-serif-narrow;
     letter-spacing: .03em;
 }
 
-.initial-content ul:not(.toc__menu) {
+.section ul {
     list-style-type: none;
     &:not(.nav__items) li {
         text-indent: calc(0px - #{$type-size-6});
@@ -537,23 +537,17 @@ a.site-title {
 /***********
  * Sidebar *
  ***********/
-.sidebar ul {
-    margin-left: -1rem;
-}
-
 .sidebar p,
 .sidebar li,
 nav.toc li,
 nav.toc li a,
 ul.nav__items li .nav__sub-title {
-    font-family: $global-font-family;
     font-weight: $meta-font-weight;
 }
 
 nav.toc {
     h4.nav__title {
-        font-family: $sans-serif-narrow;
-        font-variant: unset;
+        font-variant: all-small-caps;
         i {
             margin-right: $type-size-6;
         }
