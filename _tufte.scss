@@ -346,10 +346,6 @@ li > dl {
 .section ul {
     list-style-type: none;
     &:not(.nav__items) li {
-        text-indent: calc(0px - #{$type-size-6});
-        &::before {
-            content: "› ";
-        }
         p {
             text-indent: 0;
             &:first-child {
@@ -365,6 +361,10 @@ li > dl {
     & > li::marker {
         font-variant: tabular-nums oldstyle-nums all-small-caps !important;
     }
+}
+
+.page__content ul li::marker {
+    content: "› ";
 }
 
 /* Typographically correct small caps. */
