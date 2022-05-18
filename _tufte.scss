@@ -14,7 +14,7 @@ a.site-title {
 
 h1,
 .page__inner-wrap h1 {
-    font-family: $serif;
+    font-family: $header-font-family;
     font-weight: $header-font-weight;
     p.subtitle {
         font-style: italic;
@@ -26,7 +26,7 @@ h1,
 }
 
 h2 {
-    font-family: $serif;
+    font-family: $header-font-family;
     font-style: $header-font-style;
     font-weight: $header-font-weight;
     em {
@@ -43,6 +43,9 @@ h4 {
 }
 
 .page__content {
+    h2 {
+	border-bottom: 0;
+    }
     h3 {
         font-weight: 400;
         em {
@@ -588,6 +591,10 @@ div.align-right figure {
 /**********************
  * Archives and grids *
  **********************/
+.feature__wrapper {
+    border-bottom: 0;
+}
+
 h2.archive__item-title,
 .archive__item-excerpt {
     font-weight: $meta-font-weight;
