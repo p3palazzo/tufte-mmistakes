@@ -79,8 +79,7 @@ h4 {
     }
     h4,
     dt {
-        @extend .newthought;
-        font-weight: $meta-font-weight;
+	font-weight: $meta-font-weight;
     }
 }
 
@@ -172,6 +171,11 @@ figcaption,
 
 video {
     @extend img;
+}
+
+.line,
+.nobg {
+    border: 0;
 }
 
 .fluid-width-video-wrapper {
@@ -287,6 +291,53 @@ label.margin-toggle:not(.sidenote-number) {
     }
 }
 
+/* Semantic emulation of NEWTHOUGHT
+ *
+ * .newthought provides no semantic cues in the markup.
+ * However, we can style semantic elements so that they
+ * look just like Tufte's emphasized paragraph openings.
+ * We do this to <h5> and <h6> by analogy with the LaTeX
+ * \paragraph and \subparagraph features. We have also
+ * thrown in <dt> because what else are we going to use
+ * definition lists for? */
+dt,
+h5,
+h6 {
+    float: left;
+    margin: 0 $type-size-5 0 0;
+    padding: 0;
+}
+
+// ...third, we take care of the styling...
+dt,
+.page__content dt,
+dt > a,
+h4,
+h5,
+h6 {
+    @extend .newthought;
+    clear: left;
+    font-style: normal;
+}
+
+// Finally, we flush the <dt> inline with the <dd>.
+// This reverses the margin setting on l.160 of _tufte.scss
+.initial-content,
+.page__content {
+    dt,
+    li:not(:first-child) {
+        margin-top: 0;
+    }
+}
+
+// Bonus: fix width of <dl> inside <li>
+li > dl {
+    &, & > p {
+        width: 100%;
+    }
+}
+/* Here there ends the semantic emulation of .newthought */
+
 .sans {
     font-family: $sans-serif-narrow;
     letter-spacing: .03em;
@@ -305,6 +356,14 @@ label.margin-toggle:not(.sidenote-number) {
                 display: inline;
             }
         }
+    }
+}
+
+/* Tabular numbers for list items, small-caps Roman numerals */
+.page__content ol,
+.page__content ul {
+    & > li::marker {
+        font-variant: tabular-nums oldstyle-nums all-small-caps !important;
     }
 }
 
@@ -361,6 +420,12 @@ article {
 .sidenote,
 .marginnote {
   hyphens: none;
+}
+
+/* <details> is a little used collapsible block. */
+details {
+    @extend section;
+    summary > p:first-child { display: inline; }
 }
 
 /********************
