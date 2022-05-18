@@ -531,6 +531,9 @@ a.site-title {
     }
     .page__hero-caption {
         font-weight: $meta-font-weight;
+	a:link {
+	    text-decoration: underline;
+	}
     }
 }
 
@@ -543,6 +546,10 @@ nav.toc li,
 nav.toc li a,
 ul.nav__items li .nav__sub-title {
     font-weight: $meta-font-weight;
+}
+
+.sidebar .author__name {
+    font-family: $sans-serif-narrow;
 }
 
 nav.toc {
