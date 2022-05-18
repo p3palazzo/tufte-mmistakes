@@ -492,6 +492,10 @@ a:link::-moz-selection {
 /***********************
  * Buttons and borders *
  ***********************/
+.btn {
+    font-family: $sans-serif-narrow;
+}
+
 .btn--inverse,
 .page__content img,
 video,
