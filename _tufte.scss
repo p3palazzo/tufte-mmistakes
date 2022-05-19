@@ -710,6 +710,11 @@ h3.archive__subtitle {
     border-bottom: 0;
 }
 
+.page__date,
+.page__date strong {
+    font-weight: $meta-font-weight;
+}
+
 .page__share a:link {
     color: $lighter-gray;
 }
