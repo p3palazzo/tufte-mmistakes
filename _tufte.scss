@@ -363,7 +363,7 @@ li > dl {
     }
 }
 
-.page__content ul li::marker {
+ul li::marker {
     content: "› ";
 }
 
@@ -623,6 +623,10 @@ nav.toc li,
 nav.toc li a,
 ul.nav__items li .nav__sub-title {
     font-weight: $meta-font-weight;
+}
+
+.sidebar ul {
+    padding-left: 1em;
 }
 
 .sidebar .author__name {
