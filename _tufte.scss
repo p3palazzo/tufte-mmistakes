@@ -319,6 +319,10 @@ h6 {
     font-style: normal;
 }
 
+h5 {
+    font-weight: $meta-font-weight;
+}
+
 // Finally, we flush the <dt> inline with the <dd>.
 // This reverses the margin setting on l.160 of _tufte.scss
 .initial-content,
