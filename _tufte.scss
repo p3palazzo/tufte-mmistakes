@@ -79,7 +79,7 @@ h4 {
     }
     h4,
     dt {
-	font-weight: $meta-font-weight;
+        font-weight: $meta-font-weight;
     }
 }
 
@@ -175,7 +175,7 @@ video {
 
 .line,
 .nobg {
-    border: 0;
+    border: 0 !important;
 }
 
 .fluid-width-video-wrapper {
