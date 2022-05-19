@@ -729,4 +729,16 @@ ul.social-icons {
     font-weight: $meta-font-weight;
     text-transform: unset;
 }
+
+/***********
+ * Notices *
+ ***********/
+.notice,
+.notice--primary,
+.notice--info,
+.notice--warning,
+.notice--success,
+.notice--danger {
+    font-size: $type-size-5 !important;
+}
 // vim: set shiftwidth=4 foldmethod=indent :
