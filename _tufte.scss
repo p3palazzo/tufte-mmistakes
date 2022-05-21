@@ -43,9 +43,6 @@ h4 {
 }
 
 .page__content {
-    h2 {
-        border-bottom: 0;
-    }
     h3 {
         font-family: $global-font-family;
         font-weight: 400;
@@ -383,7 +380,6 @@ sup {
 }
 
 blockquote {
-    border-color: $background-color;
     em {
         font-style: normal;
     }
@@ -572,9 +568,22 @@ a:link::-moz-selection {
 .page__content img,
 video,
 iframe,
+.fluid-width-video-wrapper iframe,
 .author__avatar img {
     border: 0.5px solid $primary-color;
     background-color: $background-color;
+}
+
+blockquote,
+.masthead,
+.page__content h2,
+.feature__wrapper,
+.archive__subtitle,
+.page__share,
+.page__content + .pagination, .page__meta + .pagination, .comment__date + .pagination, .page__share + .pagination, .page__comments + .pagination,
+.pagination,
+.page__related {
+    border: 0;
 }
 
 /*******************************************
@@ -677,10 +686,6 @@ div.align-right figure {
 /**********************
  * Archives and grids *
  **********************/
-.feature__wrapper {
-    border-bottom: 0;
-}
-
 h2.archive__item-title,
 .archive__item-excerpt {
     font-weight: $meta-font-weight;
@@ -709,7 +714,6 @@ h3.archive__subtitle {
 
 .archive__subtitle {
     margin-top: 5rem;
-    border-bottom: 0;
 }
 
 .page__date,
