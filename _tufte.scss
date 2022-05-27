@@ -34,6 +34,11 @@ h2 {
     }
 }
 
+.page__content > section:not(:first-child) > h2,
+.page__content > h2:not(:first-child) {
+    margin-top: 5em;
+}
+
 h4 {
     font-family: $sans-serif;
     &.page__related-title,
