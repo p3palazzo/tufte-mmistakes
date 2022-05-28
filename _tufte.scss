@@ -681,18 +681,24 @@ nav.toc {
  * Utility classes *
  *******************/
 // Replicates _base.scss l.235
-div.half figure,
-div.third figure {
-    @include breakpoint($small) {
-        float: left;
-        max-width: calc(50% - 1em);
-        margin-right: 0.3em;
+div.half,
+div.third {
+    & > figure,
+    & > img {
+        @include breakpoint($small) {
+            float: left;
+            max-width: calc(50% - 1em);
+            margin-right: 0.3em;
+        }
     }
 }
 
-div.third figure {
-    @include breakpoint($large) {
-        max-width: calc(33.3333% - 0.5em);
+div.third {
+    & > figure,
+    & > img {
+        @include breakpoint($large) {
+            max-width: calc(33.3333% - 0.5em);
+        }
     }
 }
 
