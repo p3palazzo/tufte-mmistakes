@@ -168,7 +168,6 @@ div.hanging-indent{
 /**************************
  * Figures and marginalia *
  **************************/
-figcaption,
 .sidenote-number,
 .sidenote-number:after,
 .sidenote:before {
@@ -191,6 +190,12 @@ video {
     margin-bottom: 1em;
 }
 
+.subfigures p:last-of-type,
+span.sidenote,
+span.marginnote {
+    @extend figcaption;
+}
+
 span.sidenote,
 span.marginnote {
     display: none;
@@ -198,36 +203,41 @@ span.marginnote {
     position: relative;
 }
 
-span.sidenote,
-span.marginnote,
-.subfigures p:last-of-type {
-    @extend figcaption;
-}
-
-.align-right,
-figcaption {
-    @include breakpoint($large) {
-        display: block;
-        float: right;
-        clear: right;
-        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem auto;
-        padding-left: 1rem;
-        width: $right-sidebar-width-narrow;
-        figcaption {
-            margin: 0 0 0.3rem 0;
-            padding-left: 0;
-        }
-    }
-    @include breakpoint($x-large) {
-        margin-right: calc(0px - #{$right-sidebar-width});
-        width: $right-sidebar-width;
-    }
-}
-
 .margin-toggle:checked + .sidenote,
 .margin-toggle:checked + .marginnote {
     @extend .notice;
     display: block;
+}
+
+figcaption,
+.align-right {
+    font-weight: 500;
+    @include breakpoint($large) {
+        display: block;
+        float: right;
+        clear: right;
+        margin: 0 0 0.3rem auto;
+        padding-left: 1rem;
+        width: $right-sidebar-width-narrow;
+        figcaption {
+            padding-left: 0;
+        }
+    }
+    @include breakpoint($x-large) {
+        width: $right-sidebar-width;
+    }
+}
+
+span.sidenote,
+span.marginnote,
+.align-right {
+    @include breakpoint($large) {
+        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem auto;
+        padding-left: 1rem;
+    }
+    @include breakpoint($x-large) {
+        margin-right: calc(0px - #{$right-sidebar-width});
+    }
 }
 
 .sidenote-number {
