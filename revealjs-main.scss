@@ -188,13 +188,13 @@ html {
     height: 100vh;
     width: 100%;
   }
-  .half > figure img {
+  .half > img {
     max-width: calc(50% - 1em);
-    vertical-align: middle;
+    vertical-align: top;
   }
-  .third > figure img {
+  .third > img {
     max-width: calc(33% - 1em);
-    vertical-align: middle;
+    vertical-align: top;
   }
 
   .epigraph > blockquote > p {
