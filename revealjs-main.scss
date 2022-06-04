@@ -123,6 +123,16 @@ html {
         display: none;
       }
     }
+    &:not(#title-slide) {
+      h1,
+      h2 {
+        letter-spacing: 0;
+      }
+      h2 {
+        font-family: $mainFont;
+        font-style: italic;
+      }
+    }
     // Make sure images don't overflow their containers.
     // Give room for 2-line captions @ 1080p.
     figure,
