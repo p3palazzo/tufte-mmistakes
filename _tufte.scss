@@ -684,7 +684,6 @@ nav.toc {
 div.half,
 div.third {
     & > figure,
-    & > p,
     & > img {
         @include breakpoint($small) {
             float: left;
@@ -696,7 +695,6 @@ div.third {
 
 div.third {
     & > figure,
-    & > p,
     & > img {
         @include breakpoint($large) {
             max-width: calc(33.3333% - 0.5em);
