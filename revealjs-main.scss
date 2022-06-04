@@ -97,26 +97,27 @@ html {
         font-weight: $headingFontWeight;
         letter-spacing: $headingLetterSpacing;
         text-shadow: $heading1TextShadow;
-        text-transform: $headingTextTransform;
+        text-transform: uppercase;
       }
       h1 {
         position: fixed;
         left: 0;
         right: 0;
-        bottom: 50%;
+        bottom: 60%;
       }
       p.author,
       p.subtitle {
+        font-family: $mainFont;
         position: fixed;
         left: 0;
         right: 0;
         text-align: center;
       }
       p.subtitle {
-        top: 10%;
+        top: 5%;
       }
       p.author {
-        bottom: 10%;
+        bottom: 20%;
       }
       p.date {
         display: none;

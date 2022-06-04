@@ -19,14 +19,14 @@ $mainColor: #3d4144;
 
 // Headings
 //$headingMargin: 0 0 $blockMargin 0;
-$headingFont: eb-garamond, Garamond, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+$headingFont: "cormorant-garamond", "eb-garamond", Georgia, Times, serif;
 $headingColor: #3d4144;
 //$headingLineHeight: 1.2;
 $headingLetterSpacing: 0.1rem;
-//$headingTextTransform: uppercase;
-//$headingTextShadow: none;
+$headingTextTransform: unset;
+$headingTextShadow: none;
 $headingFontWeight: 300;
-$heading1TextShadow: 0 0 20px $mainColor, 0 0 10px $mainColor;
+$heading1TextShadow: 2px 2px 4px #000, 0 0 10px #000;
 
 $heading1Size: 2.4rem;
 $heading2Size: 1.8rem;
