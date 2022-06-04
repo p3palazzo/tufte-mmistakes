@@ -127,21 +127,22 @@ html {
     // Give room for 2-line captions @ 1080p.
     figure,
     img {
-      object-fit: contain;
       max-height: calc(100vh - 128px);
     }
+    img {
+      object-fit: contain;
+    }
     // Images that float over other content
-    & > figure {
-      & > img.overlay-slide,
-      & > img.overlay-slide + figcaption {
-        float: right;
-        clear: right;
-        max-width: 25%;
-      }
+    img.overlay-slide,
+    img.overlay-slide + figcaption {
+      float: right;
+      clear: right;
+      max-width: 25%;
     }
     // Hide single images so we can use data-background-image
     .slide-bg,
     .no-slide {
+      &,
       iframe,
       img,
       video {
