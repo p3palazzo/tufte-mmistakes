@@ -75,6 +75,11 @@ html {
   td {
     font-variant: tabular-nums;
   }
+  ul {
+    li::marker {
+      content: "› ";
+    }
+  }
 
   // Section and heading modifiers ---------------
   box-shadow: inset 0 0 5em 1em darken($backgroundColor, 0.3);
