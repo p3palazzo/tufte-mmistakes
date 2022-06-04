@@ -188,6 +188,14 @@ html {
     height: 100vh;
     width: 100%;
   }
+  .half > p img {
+    max-width: calc(50% - 1em);
+    vertical-align: middle;
+  }
+  .third > p img {
+    max-width: calc(33% - 1em);
+    vertical-align: middle;
+  }
 
   .epigraph > blockquote > p {
     font-style: italic;
