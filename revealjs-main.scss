@@ -188,13 +188,21 @@ html {
     height: 100vh;
     width: 100%;
   }
-  .half > img {
+  .half > img,
+  .half > figure {
     max-width: calc(50% - 1em);
     vertical-align: top;
   }
-  .third > img {
+  .third > img,
+  .third > figure {
     max-width: calc(33% - 1em);
     vertical-align: top;
+  }
+  .half,
+  .third {
+    & > figure {
+      display: inline;
+    }
   }
 
   .epigraph > blockquote > p {
