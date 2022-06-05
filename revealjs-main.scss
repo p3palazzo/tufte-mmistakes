@@ -141,7 +141,9 @@ html {
     // Make sure images don't overflow their containers.
     // Give room for 2-line captions @ 1080p.
     h2 + figure img,
-    h2 + div img {
+    h2 + div img,
+    h2 + aside + figure img,
+    h2 + aside + div img {
       max-height: calc(100vh - 240px);
     }
     figure,
