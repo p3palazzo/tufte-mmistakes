@@ -46,6 +46,9 @@ hr {
                 padding-right: 1.3rem;
             }
         }
+        &.outset p:last-of-type {
+            padding-left: 0;
+        }
     }
     &:not(.subfigures) figcaption,
     &.subfigures.full p:last-of-type {
