@@ -237,6 +237,10 @@ span.marginnote,
     }
 }
 
+div.outset p:last-of-type {
+    float: left;
+}
+
 .sidenote-number {
     counter-increment: sidenote-counter;
     &:after {
