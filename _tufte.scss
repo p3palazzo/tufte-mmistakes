@@ -649,6 +649,11 @@ a.site-title {
 /***********
  * Sidebar *
  ***********/
+.sidebar.sticky {
+    background-color: $background-color;
+    z-index: 999;
+}
+
 .sidebar p,
 .sidebar li,
 nav.toc li,
