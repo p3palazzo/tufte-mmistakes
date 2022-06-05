@@ -41,6 +41,11 @@ hr {
             // This is needed for letter captions to flush top.
             max-width: calc(100% - 0.1em);
         }
+        p:last-of-type {
+            @include breakpoint($medium) {
+                padding-right: 1.3rem;
+            }
+        }
     }
     &:not(.subfigures) figcaption,
     &.subfigures.full p:last-of-type {
