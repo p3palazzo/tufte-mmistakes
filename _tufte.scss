@@ -178,11 +178,6 @@ video {
     @extend img;
 }
 
-.line,
-.nobg {
-    border: 0 !important;
-}
-
 .fluid-width-video-wrapper {
     iframe {
         border-radius: 5px;
@@ -588,7 +583,10 @@ iframe,
 .fluid-width-video-wrapper iframe,
 .author__avatar img {
     border: 0.5px solid $primary-color;
-    background-color: $background-color;
+    &.line,
+    &.nobg {
+        border: 0;
+    }
 }
 
 blockquote,
