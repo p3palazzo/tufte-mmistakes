@@ -46,9 +46,9 @@ html {
     padding-right: 10px;
   }
   dt, h3, h4, h5 {
-    @extend .smallcaps;
+    font-family: $mainFont;
     font-size: $heading2Size;
-    font-weight: 500;
+    font-variant: small-caps;
   }
   dd {
     display: none;
