@@ -40,8 +40,6 @@ html {
   .r-frame,
   .box {
     background: transparentize($backgroundColor, 0.3);
-    -webkit-backdrop-filter: blur(3px);
-            backdrop-filter: blur(3px);
     border: none;
     padding-left: 10px;
     padding-right: 10px;
