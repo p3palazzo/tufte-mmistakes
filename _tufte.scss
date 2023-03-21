@@ -646,6 +646,9 @@ a.site-title {
     .page__meta {
         font-weight: $meta-font-weight;
     }
+    dl {
+        @extend .page__lead;
+    }
 }
 
 /***********
