@@ -24,7 +24,8 @@ $headingColor: #3d4144;
 //$headingLineHeight: 1.2;
 $headingLetterSpacing: 0.1rem;
 $headingTextTransform: unset;
-$headingTextShadow: none;
+$headingTextShadow: 0px 0px 4px $backgroundColor,
+                    2px 2px 1px $backgroundColor;
 $headingFontWeight: 300;
 $heading1TextShadow: 2px 2px 4px #000, 0 0 10px #000;
 
