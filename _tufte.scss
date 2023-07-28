@@ -680,6 +680,9 @@ nav.toc {
     }
     li {
 	      font-size: $type-size-6;
+        &::marker {
+            content: "";
+        }
     }
 }
 
