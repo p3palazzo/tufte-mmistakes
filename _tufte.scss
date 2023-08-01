@@ -23,6 +23,11 @@ h1,
             font-style: normal;
         }
     }
+    &.page__title .subtitle {
+        display: block;
+        font-style: italic;
+        font-size: 75%;
+    }
 }
 
 h2 {
