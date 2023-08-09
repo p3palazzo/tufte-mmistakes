@@ -707,7 +707,7 @@ div.third {
     & > figure,
     & > img {
         @include breakpoint($large) {
-            max-width: calc(33.3333% - 0.5em);
+            max-width: calc(33.3333% - 1.5em);
             margin-left: calc(0px - #{$right-sidebar-width-narrow});
         }
     }
