@@ -186,7 +186,6 @@ video {
     margin-bottom: 1em;
 }
 
-.subfigures p:last-of-type,
 span.sidenote,
 span.marginnote {
     @extend figcaption;
@@ -225,7 +224,6 @@ figcaption,
 }
 
 img.outset + figcaption,
-div.outset p:last-of-type,
 span.sidenote,
 span.marginnote,
 .align-right {
@@ -236,10 +234,6 @@ span.marginnote,
     @include breakpoint($x-large) {
         margin-right: calc(0px - #{$right-sidebar-width});
     }
-}
-
-div.outset p:last-of-type {
-    float: left;
 }
 
 .sidenote-number {
@@ -462,7 +456,6 @@ div.table-wrapper {
         margin-right: calc(0px - #{$right-sidebar-width-narrow}) !important;
         max-width: calc(100% + #{$right-sidebar-width-narrow});
         width: calc(100% + #{$right-sidebar-width-narrow});
-        &.subfigures p:last-of-type,
         figcaption {
             margin-right: 0;
         }

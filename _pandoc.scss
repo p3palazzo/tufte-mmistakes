@@ -90,18 +90,14 @@ pre > code {
  * try to account for all these cases and make sure everything
  * lines up. */
 
-div.subfigures {
+figure.subfigures {
     // Subfigures need to share width and margin features of regular
     // figures, but zero-padding them leads to unexpected results.
-    @extend figure;
     &:not(.align-right) figure figcaption {
         margin: 0.3rem 0.3rem 0 -1.3em;
         max-width: 1em;
         padding-left: unset; //Unset padding for all sidebar blocks in _tufte.scss
         overflow: visible;
-    }
-    &:not(.full) > p:not(:last-of-type) {
-        float: left; // Allow caption to align to top of subfigure container
     }
 }
 // vim: set shiftwidth=4 foldmethod=indent :
