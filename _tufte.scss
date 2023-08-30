@@ -224,6 +224,7 @@ figcaption,
 }
 
 img.outset + figcaption,
+.subfigures.outset > figcaption,
 span.sidenote,
 span.marginnote,
 .align-right {
@@ -688,28 +689,21 @@ nav.toc {
  * Utility classes *
  *******************/
 // Replicates _base.scss l.235
-div.half,
-div.third {
-    & > figure,
-    & > img {
-        @include breakpoint($small) {
-            float: left;
-            max-width: calc(50% - 1em);
-            margin-right: 1em;
-        }
-    }
+.half,
+.third {
     & > figure {
         margin-top: 0;
     }
+    @include breakpoint($small) {
+        float: left;
+        max-width: calc(50% - 1em);
+        margin-right: 1em;
+    }
 }
 
-div.third {
-    & > figure,
-    & > img {
-        @include breakpoint($large) {
-            max-width: calc(33.3333% - 1.5em);
-            margin-left: calc(0px - #{$right-sidebar-width-narrow});
-        }
+.third {
+    @include breakpoint($large) {
+        max-width: calc(33.3333% - 1.5em);
     }
 }
 
