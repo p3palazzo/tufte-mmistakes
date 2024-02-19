@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+body {
+    counter-reset: sidenote-counter;
+}
+
+.book_content {
+    /* Apply width limits here */
+    /* section id="region-main" > div role="main" > div class="book_content" */
+    font-size: 1.1rem;
+}
+
+figure {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 2em 0;
+}
+
+img,
+iframe,
+.fluid-width-video-wrapper {
+    margin-bottom: 1em;
+}
+
+img {
+    width: 100%;
+}
+
+figcaption,
+.align-right {
+    font-size: 0.75em;
+    font-weight: 700;
+    /*
+    @include breakpoint($large) {
+        display: block;
+        float: right;
+        clear: right;
+        margin: 0 0 0.3rem auto;
+        padding-left: 1rem;
+        width: $right-sidebar-width-narrow;
+        figcaption {
+            padding-left: 0;
+        }
+    }
+    @include breakpoint($x-large) {
+        width: $right-sidebar-width;
+    }
+    */
+}
+
+/*
+img.outset + figcaption,
+.subfigures.outset > figcaption,
+.align-right {
+    @include breakpoint($large) {
+        margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem auto;
+        padding-left: 1rem;
+    }
+    @include breakpoint($x-large) {
+        margin-right: calc(0px - #{$right-sidebar-width});
+    }
+}
+*/
+
+/* Marginnotes / sidenotes don't work in Markdown_PHPExtra
+ * because the tag (or the linebreak it contains?) ends a
+ * paragraph.
+ */
+
+span.sidenote,
+span.marginnote {
+    display: none;
+    vertical-align: baseline;
+    position: relative;
+}
+
+.margin-toggle:checked + .sidenote,
+.margin-toggle:checked + .marginnote {
+    display: block;
+    background-color: #F0F0F4;
+    max-width: 50%;
+    padding: 1rem;
+    float: right;
+}
+
+.sidenote-number {
+    counter-increment: sidenote-counter;
+    &:after {
+        content: counter(sidenote-counter);
+        font-size: $type-size-6;
+        top: -0.5rem;
+        left: 0.1rem;
+    }
+}
+
+.sidenote-number:after,
+.sidenote:before {
+    position: relative;
+    vertical-align: baseline;
+}
+
+.sidenote {
+    text-indent: -0.4rem;
+}
+
+.sidenote:before {
+    content: counter(sidenote-counter) " ";
+    left: -0.4rem;
+    top: -0.5rem;
+}
+
+label {
+    cursor: pointer;
+}
+
+input.margin-toggle {
+    display: none;
+}

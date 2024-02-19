@@ -188,11 +188,6 @@ video {
 
 span.sidenote,
 span.marginnote {
-    @extend figcaption;
-}
-
-span.sidenote,
-span.marginnote {
     display: none;
     vertical-align: baseline;
     position: relative;
@@ -225,8 +220,6 @@ figcaption,
 
 img.outset + figcaption,
 .subfigures.outset > figcaption,
-span.sidenote,
-span.marginnote,
 .align-right {
     @include breakpoint($large) {
         margin: 0 calc(0px - #{$right-sidebar-width-narrow}) 0.3rem auto;
@@ -270,12 +263,6 @@ label {
 blockquote .sidenote,
 blockquote .marginnote {
     font-style: normal;
-    @include breakpoint($large) {
-        margin-right: calc(0px - #{$right-sidebar-width-narrow} - 2rem);
-    }
-    @include breakpoint($x-large) {
-        margin-right: calc(0px - #{$right-sidebar-width} - 2rem);
-    }
 }
 
 input.margin-toggle {
@@ -284,13 +271,6 @@ input.margin-toggle {
 
 label.sidenote-number {
     display: inline;
-}
-
-label.margin-toggle:not(.sidenote-number) {
-    display: inline;
-    @include breakpoint($large) {
-        display: none;
-    }
 }
 
 /**************
