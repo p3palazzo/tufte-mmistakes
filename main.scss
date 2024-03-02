@@ -124,6 +124,16 @@ body #page .page__content section.level2 > h2,
     font-weight: lighter;
 }
 
+blockquote cite::before {
+    content: "";
+    padding-right: 0;
+}
+
+blockquote.epigraph cite::before {
+    content: "—";
+    padding-right: 5px;
+}
+
 .page__content h3 {
     @include breakpoint($large) {
         float: none;
