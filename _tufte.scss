@@ -399,6 +399,13 @@ blockquote {
         font-size: $type-size-6;
         font-weight: 500;
     }
+    &:not(.epigraph) cite {
+	font-style: normal;
+	&::before {
+	    content: "";
+	    padding-right: 0;
+	}
+    }
 }
 
 // A class to get outset dates in a résumé or CV
@@ -607,6 +614,7 @@ a.site-title {
     font-variant: all-small-caps;
     font-weight: $header-font-weight;
     .site-subtitle {
+	display: inline;
         font-size: $type-size-6;
         font-style: italic;
         font-variant: normal;
